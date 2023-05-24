@@ -3483,6 +3483,7 @@
                     "description": "For details, refer [Classification](../../../../metadata-ingestion/docs/dev_guides/classification.md).",
                     "default": {
                         "enabled": false,
+                        "sample_size": 100,
                         "table_pattern": {
                             "allow": [
                                 ".*"
@@ -9439,7 +9440,7 @@
                     "description": "Usage related configs",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2023-05-24T06:27:15.561055+00:00",
+                        "end_time": "2023-05-24T07:52:59.280890+00:00",
                         "start_time": "2023-05-23T00:00:00+00:00",
                         "top_n_queries": 10,
                         "user_email_pattern": {
@@ -11653,6 +11654,12 @@
                     "description": "Whether classification should be used to auto-detect glossary terms",
                     "default": false,
                     "type": "boolean"
+                },
+                "sample_size": {
+                    "title": "Sample Size",
+                    "description": "Number of sample values used for classification.",
+                    "default": 100,
+                    "type": "integer"
                 },
                 "table_pattern": {
                     "title": "Table Pattern",
