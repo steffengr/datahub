@@ -3599,7 +3599,7 @@
                 },
                 "apply_view_usage_to_tables": {
                     "title": "Apply View Usage To Tables",
-                    "description": "Allow/deny patterns for views in snowflake dataset names.",
+                    "description": "Whether to apply view's usage to its base tables. If set to True, usage is applied to base tables only.",
                     "default": false,
                     "type": "boolean"
                 },
@@ -9440,7 +9440,7 @@
                     "description": "Usage related configs",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2023-05-24T15:57:16.258235+00:00",
+                        "end_time": "2023-05-24T16:56:28.551774+00:00",
                         "start_time": "2023-05-23T00:00:00+00:00",
                         "top_n_queries": 10,
                         "user_email_pattern": {
@@ -9454,7 +9454,8 @@
                         "include_read_operational_stats": false,
                         "format_sql_queries": false,
                         "include_top_n_queries": true,
-                        "max_query_duration": 900.0
+                        "max_query_duration": 900.0,
+                        "apply_view_usage_to_tables": false
                     },
                     "allOf": [
                         {
@@ -12250,6 +12251,12 @@
                     "default": 900.0,
                     "type": "number",
                     "format": "time-delta"
+                },
+                "apply_view_usage_to_tables": {
+                    "title": "Apply View Usage To Tables",
+                    "description": "Whether to apply view's usage to its base tables. If set to False, uses sql parser and applies usage to views / tables mentioned in the query. If set to True, usage is applied to base tables only.",
+                    "default": false,
+                    "type": "boolean"
                 }
             },
             "additionalProperties": false
