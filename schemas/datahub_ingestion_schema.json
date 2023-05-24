@@ -749,7 +749,7 @@
                     "type": "string"
                 },
                 "auth": {
-                    "description": "Nifi authentication. must be one of : NO_AUTH, SINGLE_USER, CLIENT_CERT",
+                    "description": "Nifi authentication. must be one of : NO_AUTH, SINGLE_USER, CLIENT_CERT, KERBEROS",
                     "default": "NO_AUTH",
                     "allOf": [
                         {
@@ -822,7 +822,14 @@
                 "ca_file": {
                     "title": "Ca File",
                     "description": "Path to PEM file containing certs for the root CA(s) for the NiFi",
-                    "type": "string"
+                    "anyOf": [
+                        {
+                            "type": "boolean"
+                        },
+                        {
+                            "type": "string"
+                        }
+                    ]
                 }
             },
             "required": [
@@ -9440,7 +9447,7 @@
                     "description": "Usage related configs",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2023-05-24T20:53:59.537026+00:00",
+                        "end_time": "2023-05-24T22:21:53.746624+00:00",
                         "start_time": "2023-05-23T00:00:00+00:00",
                         "top_n_queries": 10,
                         "user_email_pattern": {
@@ -11168,7 +11175,8 @@
             "enum": [
                 "NO_AUTH",
                 "SINGLE_USER",
-                "CLIENT_CERT"
+                "CLIENT_CERT",
+                "KERBEROS"
             ]
         },
         "GEProfilingConfig": {
