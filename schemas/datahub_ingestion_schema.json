@@ -2872,8 +2872,8 @@
                     "description": "Usage related configs",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2023-06-01T16:04:51.499253+00:00",
-                        "start_time": "2023-05-31T00:00:00+00:00",
+                        "end_time": "2023-06-02T13:51:28.400594+00:00",
+                        "start_time": "2023-06-01T00:00:00+00:00",
                         "top_n_queries": 10,
                         "user_email_pattern": {
                             "allow": [
@@ -6047,7 +6047,7 @@
                 },
                 "site_url": {
                     "title": "Site Url",
-                    "description": "URI to connect",
+                    "description": "URL for Nifi, ending with /nifi/. e.g. https://mynifi.domain/nifi/",
                     "type": "string"
                 },
                 "auth": {
@@ -6089,7 +6089,7 @@
                 },
                 "site_url_to_site_name": {
                     "title": "Site Url To Site Name",
-                    "description": "Lookup to find site_name for site_url, required if using remote process groups in nifi flow",
+                    "description": "Lookup to find site_name for site_url ending with /nifi/, required if using remote process groups in nifi flow",
                     "default": {},
                     "type": "object",
                     "additionalProperties": {
