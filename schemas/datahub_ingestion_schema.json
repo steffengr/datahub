@@ -2535,7 +2535,7 @@
                 "use_legacy_lineage_method": {
                     "title": "Use Legacy Lineage Method",
                     "description": "Whether to use the legacy lineage computation method. If set to False, ingestion uses new optimised lineage extraction method that requires less ingestion process memory.",
-                    "default": true,
+                    "default": false,
                     "type": "boolean"
                 },
                 "validate_upstreams_against_patterns": {
@@ -2872,8 +2872,8 @@
                     "description": "Usage related configs",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2023-06-02T13:51:28.400594+00:00",
-                        "start_time": "2023-06-01T00:00:00+00:00",
+                        "end_time": "2023-06-06T20:19:59.988176+00:00",
+                        "start_time": "2023-06-05T00:00:00+00:00",
                         "top_n_queries": 10,
                         "user_email_pattern": {
                             "allow": [
@@ -3231,7 +3231,8 @@
             "required": [
                 "okta_domain",
                 "okta_api_token"
-            ]
+            ],
+            "additionalProperties": false
         },
         "s3": {
             "type": "object",
@@ -5469,7 +5470,8 @@
                         "type": "string"
                     }
                 }
-            }
+            },
+            "additionalProperties": false
         },
         "tableau": {
             "type": "object",
