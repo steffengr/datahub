@@ -2417,7 +2417,7 @@
                     "description": "oauth configuration - https://docs.snowflake.com/en/user-guide/python-connector-example.html#connecting-with-oauth",
                     "allOf": [
                         {
-                            "$ref": "#/definitions/OauthConfiguration"
+                            "$ref": "#/definitions/OAuthConfiguration"
                         }
                     ]
                 },
@@ -2872,8 +2872,8 @@
                     "description": "Usage related configs",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2023-06-06T23:29:32.411481+00:00",
-                        "start_time": "2023-06-05T00:00:00+00:00",
+                        "end_time": "2023-06-07T08:51:56.608471+00:00",
+                        "start_time": "2023-06-06T00:00:00+00:00",
                         "top_n_queries": 10,
                         "user_email_pattern": {
                             "allow": [
@@ -11544,13 +11544,29 @@
             },
             "additionalProperties": false
         },
-        "OauthConfiguration": {
-            "title": "OauthConfiguration",
+        "OAuthIdentityProvider": {
+            "title": "OAuthIdentityProvider",
+            "description": "An enumeration.",
+            "enum": [
+                "microsoft",
+                "okta"
+            ]
+        },
+        "OAuthConfiguration": {
+            "title": "OAuthConfiguration",
             "type": "object",
             "properties": {
                 "provider": {
-                    "title": "Provider",
-                    "description": "Identity provider for oauth, e.g- microsoft",
+                    "description": "Identity provider for oauth.Supported providers are microsoft and okta.",
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/OAuthIdentityProvider"
+                        }
+                    ]
+                },
+                "authority_url": {
+                    "title": "Authority Url",
+                    "description": "Authority url of your identity provider",
                     "type": "string"
                 },
                 "client_id": {
@@ -11575,12 +11591,9 @@
                 "client_secret": {
                     "title": "Client Secret",
                     "description": "client secret of the application if use_certificate = false",
-                    "type": "string"
-                },
-                "authority_url": {
-                    "title": "Authority Url",
-                    "description": "Authority url of your identity provider",
-                    "type": "string"
+                    "type": "string",
+                    "writeOnly": true,
+                    "format": "password"
                 },
                 "encoded_oauth_public_key": {
                     "title": "Encoded Oauth Public Key",
@@ -11593,6 +11606,12 @@
                     "type": "string"
                 }
             },
+            "required": [
+                "provider",
+                "authority_url",
+                "client_id",
+                "scopes"
+            ],
             "additionalProperties": false
         },
         "TagOption": {
