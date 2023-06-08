@@ -1945,7 +1945,7 @@
                 },
                 "include_deleted": {
                     "title": "Include Deleted",
-                    "description": "Whether to include deleted dashboards.",
+                    "description": "Whether to include deleted dashboards and looks.",
                     "default": false,
                     "type": "boolean"
                 },
@@ -1999,6 +1999,12 @@
                     "title": "Extract Embed Urls",
                     "description": "Produce URLs used to render Looker Explores as Previews inside of DataHub UI. Embeds must be enabled inside of Looker to use this feature.",
                     "default": true,
+                    "type": "boolean"
+                },
+                "extract_independent_looks": {
+                    "title": "Extract Independent Looks",
+                    "description": "Extract looks which are not part of any Dashboard. To enable this flag the stateful_ingestion should also be enabled.",
+                    "default": false,
                     "type": "boolean"
                 }
             },
@@ -2872,7 +2878,7 @@
                     "description": "Usage related configs",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2023-06-08T04:37:02.116118+00:00",
+                        "end_time": "2023-06-08T07:56:50.257420+00:00",
                         "start_time": "2023-06-07T00:00:00+00:00",
                         "top_n_queries": 10,
                         "user_email_pattern": {
@@ -11019,7 +11025,7 @@
             "properties": {
                 "platform_instance": {
                     "title": "Platform Instance",
-                    "description": "DataHub platform instance name. To generate correct urn for upstream dataset, this should match with platform instance name used in ingestionrecipe of other datahub sources.",
+                    "description": "DataHub platform instance name. To generate correct urn for upstream dataset, this should match with platform instance name used in ingestion recipe of other datahub sources.",
                     "type": "string"
                 },
                 "env": {
