@@ -2878,7 +2878,7 @@
                     "description": "Usage related configs",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2023-06-15T05:30:36.162031+00:00",
+                        "end_time": "2023-06-15T07:24:52.280807+00:00",
                         "start_time": "2023-06-14T00:00:00+00:00",
                         "top_n_queries": 10,
                         "user_email_pattern": {
@@ -10112,28 +10112,6 @@
                     "title": "Workspace Name",
                     "description": "Name of the workspace. Default to deployment name present in workspace_url",
                     "type": "string"
-                },
-                "only_ingest_assigned_metastore": {
-                    "title": "Only Ingest Assigned Metastore",
-                    "description": "Only ingest the workspace's currently assigned metastore. Use if you only want to ingest one metastore and do not want to grant your ingestion service account the admin role.",
-                    "default": false,
-                    "type": "boolean"
-                },
-                "metastore_id_pattern": {
-                    "title": "Metastore Id Pattern",
-                    "description": "Regex patterns for metastore id to filter in ingestion.",
-                    "default": {
-                        "allow": [
-                            ".*"
-                        ],
-                        "deny": [],
-                        "ignoreCase": true
-                    },
-                    "allOf": [
-                        {
-                            "$ref": "#/definitions/AllowDenyPattern"
-                        }
-                    ]
                 },
                 "catalog_pattern": {
                     "title": "Catalog Pattern",
