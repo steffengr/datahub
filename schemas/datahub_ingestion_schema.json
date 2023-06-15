@@ -2210,7 +2210,7 @@
                     "description": "Usage related configs",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2023-06-15T17:38:21.539615+00:00",
+                        "end_time": "2023-06-15T21:16:43.979593+00:00",
                         "start_time": "2023-06-14T00:00:00+00:00",
                         "top_n_queries": 10,
                         "user_email_pattern": {
@@ -2916,6 +2916,12 @@
                 "admin_apis_only": {
                     "title": "Admin Apis Only",
                     "description": "Retrieve metadata using PowerBI Admin API only. If this is enabled, then Report Pages will not be extracted. Admin API access is required if this setting is enabled",
+                    "default": false,
+                    "type": "boolean"
+                },
+                "extract_independent_datasets": {
+                    "title": "Extract Independent Datasets",
+                    "description": "Whether to extract datasets not used in any PowerBI visualization",
                     "default": false,
                     "type": "boolean"
                 }
