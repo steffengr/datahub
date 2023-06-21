@@ -256,7 +256,7 @@
                 "okta_profile_to_username_attr": {
                     "title": "Okta Profile To Username Attr",
                     "description": "Which Okta User Profile attribute to use as input to DataHub username mapping. Common values used are - login, email.",
-                    "default": "login",
+                    "default": "email",
                     "type": "string"
                 },
                 "okta_profile_to_username_regex": {
@@ -2210,8 +2210,8 @@
                     "description": "Usage related configs",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2023-06-20T22:04:16.408209+00:00",
-                        "start_time": "2023-06-19T00:00:00+00:00",
+                        "end_time": "2023-06-21T08:24:52.043694+00:00",
+                        "start_time": "2023-06-20T00:00:00+00:00",
                         "top_n_queries": 10,
                         "user_email_pattern": {
                             "allow": [
