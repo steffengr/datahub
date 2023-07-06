@@ -5302,7 +5302,7 @@
                     "description": "Usage related configs",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2023-07-06T16:00:25.320172+00:00",
+                        "end_time": "2023-07-06T17:28:19.722751+00:00",
                         "start_time": "2023-07-05T00:00:00+00:00",
                         "top_n_queries": 10,
                         "user_email_pattern": {
