@@ -5308,7 +5308,7 @@
                     "description": "Usage related configs",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2023-07-11T17:05:22.370498+00:00",
+                        "end_time": "2023-07-11T18:21:12.224662+00:00",
                         "start_time": "2023-07-10T00:00:00+00:00",
                         "top_n_queries": 10,
                         "user_email_pattern": {
@@ -5415,7 +5415,7 @@
                 },
                 "lineage_use_sql_parser": {
                     "title": "Lineage Use Sql Parser",
-                    "description": "Use sql parser to resolve view/table lineage. Only invoked on tables with both upstream tables and views. Used to distinguish between direct/base objects accessed, to only emit upstream lineage for directly accessed objects.",
+                    "description": "Use sql parser to resolve view/table lineage.",
                     "default": true,
                     "type": "boolean"
                 },
@@ -5428,6 +5428,12 @@
                 "lineage_sql_parser_use_raw_names": {
                     "title": "Lineage Sql Parser Use Raw Names",
                     "description": "This parameter ignores the lowercase pattern stipulated in the SQLParser. NOTE: Ignored if lineage_use_sql_parser is False.",
+                    "default": false,
+                    "type": "boolean"
+                },
+                "extract_column_lineage": {
+                    "title": "Extract Column Lineage",
+                    "description": "If enabled, generate column level lineage. Requires lineage_use_sql_parser to be enabled. This and `incremental_lineage` cannot both be enabled.",
                     "default": false,
                     "type": "boolean"
                 },
