@@ -5299,8 +5299,8 @@
                     "description": "Usage related configs",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2023-07-13T23:00:47.390424+00:00",
-                        "start_time": "2023-07-12T00:00:00+00:00",
+                        "end_time": "2023-07-14T23:22:37.201150+00:00",
+                        "start_time": "2023-07-13T00:00:00+00:00",
                         "top_n_queries": 10,
                         "user_email_pattern": {
                             "allow": [
@@ -9317,7 +9317,7 @@
                 },
                 "include_view_lineage": {
                     "title": "Include View Lineage",
-                    "description": "If enabled, populates the snowflake view->table and table->view lineages (no view->view lineage yet). Requires appropriate grants given to the role, and include_table_lineage to be True. view->table lineage requires Snowflake Enterprise Edition or above.",
+                    "description": "If enabled, populates the snowflake view->table and table->view lineages. Requires appropriate grants given to the role, and include_table_lineage to be True. view->table lineage requires Snowflake Enterprise Edition or above.",
                     "default": true,
                     "type": "boolean"
                 },
@@ -9374,8 +9374,14 @@
                 },
                 "include_column_lineage": {
                     "title": "Include Column Lineage",
-                    "description": "If enabled, populates the column lineage. Supported only for snowflake table-to-table and view-to-table lineage edge (not supported in table-to-view or view-to-view lineage edge yet). Requires appropriate grants given to the role.",
+                    "description": "Populates table->table and view->table column lineage. Requires appropriate grants given to the role and the Snowflake Enterprise Edition or above.",
                     "default": true,
+                    "type": "boolean"
+                },
+                "include_view_column_lineage": {
+                    "title": "Include View Column Lineage",
+                    "description": "Populates view->view and table->view column lineage.",
+                    "default": false,
                     "type": "boolean"
                 },
                 "extract_tags": {
@@ -9401,7 +9407,7 @@
                 },
                 "use_legacy_lineage_method": {
                     "title": "Use Legacy Lineage Method",
-                    "description": "Whether to use the legacy lineage computation method. If set to False, ingestion uses new optimised lineage extraction method that requires less ingestion process memory.",
+                    "description": "Whether to use the legacy lineage computation method. By default, uses new optimised lineage extraction method that requires less ingestion process memory. Table-to-view and view-to-view column-level lineage are not supported with the legacy method.",
                     "default": false,
                     "type": "boolean"
                 },
