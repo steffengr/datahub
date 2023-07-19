@@ -5299,7 +5299,7 @@
                     "description": "Usage related configs",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2023-07-19T10:46:11.984081+00:00",
+                        "end_time": "2023-07-19T12:42:45.014242+00:00",
                         "start_time": "2023-07-18T00:00:00+00:00",
                         "top_n_queries": 10,
                         "user_email_pattern": {
@@ -11044,18 +11044,6 @@
                 "enabled": {
                     "title": "Enabled",
                     "description": "The type of the ingestion state provider registered with datahub.",
-                    "default": false,
-                    "type": "boolean"
-                },
-                "ignore_old_state": {
-                    "title": "Ignore Old State",
-                    "description": "If set to True, ignores the previous checkpoint state.",
-                    "default": false,
-                    "type": "boolean"
-                },
-                "ignore_new_state": {
-                    "title": "Ignore New State",
-                    "description": "If set to True, ignores the current checkpoint state.",
                     "default": false,
                     "type": "boolean"
                 },
