@@ -5305,7 +5305,7 @@
                     "description": "Usage related configs",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2023-07-20T03:06:47.178280+00:00",
+                        "end_time": "2023-07-20T18:44:03.706907+00:00",
                         "start_time": "2023-07-19T00:00:00+00:00",
                         "top_n_queries": 10,
                         "user_email_pattern": {
@@ -12344,7 +12344,8 @@
                 "NO_AUTH",
                 "SINGLE_USER",
                 "CLIENT_CERT",
-                "KERBEROS"
+                "KERBEROS",
+                "BASIC_AUTH"
             ]
         },
         "GitReference": {
