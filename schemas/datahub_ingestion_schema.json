@@ -4875,6 +4875,12 @@
                     "description": "By default, the connector overwrites properties every time. Set this to True to enable merging of properties with what exists on the server.",
                     "default": false,
                     "type": "boolean"
+                },
+                "simplify_nested_field_paths": {
+                    "title": "Simplify Nested Field Paths",
+                    "description": "Simplify v2 field paths to v1 by default. If the schema has Union or Array types, still falls back to v2",
+                    "default": false,
+                    "type": "boolean"
                 }
             },
             "additionalProperties": false
@@ -5299,7 +5305,7 @@
                     "description": "Usage related configs",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2023-08-01T20:48:30.577007+00:00",
+                        "end_time": "2023-08-01T21:17:01.601338+00:00",
                         "start_time": "2023-07-31T00:00:00+00:00",
                         "top_n_queries": 10,
                         "user_email_pattern": {
