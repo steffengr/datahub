@@ -3130,6 +3130,12 @@
                             "$ref": "#/definitions/AllowDenyPattern"
                         }
                     ]
+                },
+                "convert_urns_to_lowercase": {
+                    "title": "Convert Urns To Lowercase",
+                    "description": "Enable to convert the SQL Server assets urns to lowercase",
+                    "default": false,
+                    "type": "boolean"
                 }
             },
             "additionalProperties": false
@@ -5305,7 +5311,7 @@
                     "description": "Usage related configs",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2023-08-02T18:27:12.626669+00:00",
+                        "end_time": "2023-08-02T20:55:09.377146+00:00",
                         "start_time": "2023-08-01T00:00:00+00:00",
                         "top_n_queries": 10,
                         "user_email_pattern": {
