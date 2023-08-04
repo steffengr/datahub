@@ -330,6 +330,11 @@
                     "title": "Profiling",
                     "default": {
                         "enabled": false,
+                        "operation_config": {
+                            "lower_freq_profile_enabled": false,
+                            "profile_day_of_week": null,
+                            "profile_date_of_month": null
+                        },
                         "limit": null,
                         "offset": null,
                         "report_dropped_profiles": false,
@@ -558,6 +563,11 @@
                     "title": "Profiling",
                     "default": {
                         "enabled": false,
+                        "operation_config": {
+                            "lower_freq_profile_enabled": false,
+                            "profile_day_of_week": null,
+                            "profile_date_of_month": null
+                        },
                         "limit": null,
                         "offset": null,
                         "report_dropped_profiles": false,
@@ -968,6 +978,11 @@
                     "title": "Profiling",
                     "default": {
                         "enabled": false,
+                        "operation_config": {
+                            "lower_freq_profile_enabled": false,
+                            "profile_day_of_week": null,
+                            "profile_date_of_month": null
+                        },
                         "limit": null,
                         "offset": null,
                         "report_dropped_profiles": false,
@@ -1048,7 +1063,7 @@
                     "description": "Usage related configs",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2023-08-04T02:42:05.950456+00:00",
+                        "end_time": "2023-08-04T05:13:12.502240+00:00",
                         "start_time": "2023-08-03T00:00:00+00:00",
                         "top_n_queries": 10,
                         "user_email_pattern": {
@@ -1915,6 +1930,11 @@
                     "title": "Profiling",
                     "default": {
                         "enabled": false,
+                        "operation_config": {
+                            "lower_freq_profile_enabled": false,
+                            "profile_day_of_week": null,
+                            "profile_date_of_month": null
+                        },
                         "limit": null,
                         "offset": null,
                         "report_dropped_profiles": false,
@@ -2275,6 +2295,11 @@
                     "title": "Profiling",
                     "default": {
                         "enabled": false,
+                        "operation_config": {
+                            "lower_freq_profile_enabled": false,
+                            "profile_day_of_week": null,
+                            "profile_date_of_month": null
+                        },
                         "limit": null,
                         "offset": null,
                         "report_dropped_profiles": false,
@@ -2553,6 +2578,11 @@
                     "title": "Profiling",
                     "default": {
                         "enabled": false,
+                        "operation_config": {
+                            "lower_freq_profile_enabled": false,
+                            "profile_day_of_week": null,
+                            "profile_date_of_month": null
+                        },
                         "limit": null,
                         "offset": null,
                         "report_dropped_profiles": false,
@@ -3139,6 +3169,11 @@
                     "title": "Profiling",
                     "default": {
                         "enabled": false,
+                        "operation_config": {
+                            "lower_freq_profile_enabled": false,
+                            "profile_day_of_week": null,
+                            "profile_date_of_month": null
+                        },
                         "limit": null,
                         "offset": null,
                         "report_dropped_profiles": false,
@@ -3927,6 +3962,11 @@
                     "title": "Profiling",
                     "default": {
                         "enabled": false,
+                        "operation_config": {
+                            "lower_freq_profile_enabled": false,
+                            "profile_day_of_week": null,
+                            "profile_date_of_month": null
+                        },
                         "limit": null,
                         "offset": null,
                         "report_dropped_profiles": false,
@@ -4475,6 +4515,11 @@
                     "description": "Data profiling configuration",
                     "default": {
                         "enabled": false,
+                        "operation_config": {
+                            "lower_freq_profile_enabled": false,
+                            "profile_day_of_week": null,
+                            "profile_date_of_month": null
+                        },
                         "warehouse_id": null,
                         "profile_table_level_only": false,
                         "pattern": {
@@ -4774,6 +4819,11 @@
                     "title": "Profiling",
                     "default": {
                         "enabled": false,
+                        "operation_config": {
+                            "lower_freq_profile_enabled": false,
+                            "profile_day_of_week": null,
+                            "profile_date_of_month": null
+                        },
                         "limit": null,
                         "offset": null,
                         "report_dropped_profiles": false,
@@ -4962,6 +5012,11 @@
                     "title": "Profiling",
                     "default": {
                         "enabled": false,
+                        "operation_config": {
+                            "lower_freq_profile_enabled": false,
+                            "profile_day_of_week": null,
+                            "profile_date_of_month": null
+                        },
                         "limit": null,
                         "offset": null,
                         "report_dropped_profiles": false,
@@ -5132,7 +5187,12 @@
                         "enabled": false,
                         "include_field_null_count": true,
                         "include_field_min_value": true,
-                        "include_field_max_value": true
+                        "include_field_max_value": true,
+                        "operation_config": {
+                            "lower_freq_profile_enabled": false,
+                            "profile_day_of_week": null,
+                            "profile_date_of_month": null
+                        }
                     },
                     "allOf": [
                         {
@@ -5949,6 +6009,11 @@
                     "title": "Profiling",
                     "default": {
                         "enabled": false,
+                        "operation_config": {
+                            "lower_freq_profile_enabled": false,
+                            "profile_day_of_week": null,
+                            "profile_date_of_month": null
+                        },
                         "limit": null,
                         "offset": null,
                         "report_dropped_profiles": false,
@@ -6401,6 +6466,11 @@
                     "title": "Profiling",
                     "default": {
                         "enabled": false,
+                        "operation_config": {
+                            "lower_freq_profile_enabled": false,
+                            "profile_day_of_week": null,
+                            "profile_date_of_month": null
+                        },
                         "limit": null,
                         "offset": null,
                         "report_dropped_profiles": false,
@@ -6640,6 +6710,11 @@
                     "title": "Profiling",
                     "default": {
                         "enabled": false,
+                        "operation_config": {
+                            "lower_freq_profile_enabled": false,
+                            "profile_day_of_week": null,
+                            "profile_date_of_month": null
+                        },
                         "limit": null,
                         "offset": null,
                         "report_dropped_profiles": false,
@@ -7064,6 +7139,11 @@
                     "title": "Profiling",
                     "default": {
                         "enabled": false,
+                        "operation_config": {
+                            "lower_freq_profile_enabled": false,
+                            "profile_day_of_week": null,
+                            "profile_date_of_month": null
+                        },
                         "limit": null,
                         "offset": null,
                         "report_dropped_profiles": false,
@@ -7781,6 +7861,11 @@
                     "description": "Data profiling configuration",
                     "default": {
                         "enabled": false,
+                        "operation_config": {
+                            "lower_freq_profile_enabled": false,
+                            "profile_day_of_week": null,
+                            "profile_date_of_month": null
+                        },
                         "profile_table_level_only": false,
                         "max_number_of_fields_to_profile": null,
                         "include_field_null_count": true,
@@ -8185,7 +8270,12 @@
                 "profiling": {
                     "title": "Profiling",
                     "default": {
-                        "enabled": false
+                        "enabled": false,
+                        "operation_config": {
+                            "lower_freq_profile_enabled": false,
+                            "profile_day_of_week": null,
+                            "profile_date_of_month": null
+                        }
                     },
                     "allOf": [
                         {
@@ -8348,6 +8438,11 @@
                     "title": "Profiling",
                     "default": {
                         "enabled": false,
+                        "operation_config": {
+                            "lower_freq_profile_enabled": false,
+                            "profile_day_of_week": null,
+                            "profile_date_of_month": null
+                        },
                         "limit": null,
                         "offset": null,
                         "report_dropped_profiles": false,
@@ -8573,6 +8668,11 @@
                     "title": "Profiling",
                     "default": {
                         "enabled": false,
+                        "operation_config": {
+                            "lower_freq_profile_enabled": false,
+                            "profile_day_of_week": null,
+                            "profile_date_of_month": null
+                        },
                         "limit": null,
                         "offset": null,
                         "report_dropped_profiles": false,
@@ -8830,6 +8930,11 @@
                     "title": "Profiling",
                     "default": {
                         "enabled": false,
+                        "operation_config": {
+                            "lower_freq_profile_enabled": false,
+                            "profile_day_of_week": null,
+                            "profile_date_of_month": null
+                        },
                         "limit": null,
                         "offset": null,
                         "report_dropped_profiles": false,
@@ -9311,6 +9416,11 @@
                     "title": "Profiling",
                     "default": {
                         "enabled": false,
+                        "operation_config": {
+                            "lower_freq_profile_enabled": false,
+                            "profile_day_of_week": null,
+                            "profile_date_of_month": null
+                        },
                         "limit": null,
                         "offset": null,
                         "report_dropped_profiles": false,
@@ -9559,6 +9669,11 @@
                     "title": "Profiling",
                     "default": {
                         "enabled": false,
+                        "operation_config": {
+                            "lower_freq_profile_enabled": false,
+                            "profile_day_of_week": null,
+                            "profile_date_of_month": null
+                        },
                         "limit": null,
                         "offset": null,
                         "report_dropped_profiles": false,
@@ -10084,6 +10199,11 @@
                     "title": "Profiling",
                     "default": {
                         "enabled": false,
+                        "operation_config": {
+                            "lower_freq_profile_enabled": false,
+                            "profile_day_of_week": null,
+                            "profile_date_of_month": null
+                        },
                         "limit": null,
                         "offset": null,
                         "report_dropped_profiles": false,
@@ -10586,6 +10706,11 @@
                     "title": "Profiling",
                     "default": {
                         "enabled": false,
+                        "operation_config": {
+                            "lower_freq_profile_enabled": false,
+                            "profile_day_of_week": null,
+                            "profile_date_of_month": null
+                        },
                         "limit": null,
                         "offset": null,
                         "report_dropped_profiles": false,
@@ -10893,6 +11018,11 @@
                     "title": "Profiling",
                     "default": {
                         "enabled": false,
+                        "operation_config": {
+                            "lower_freq_profile_enabled": false,
+                            "profile_day_of_week": null,
+                            "profile_date_of_month": null
+                        },
                         "limit": null,
                         "offset": null,
                         "report_dropped_profiles": false,
@@ -11057,6 +11187,29 @@
             },
             "additionalProperties": false
         },
+        "OperationConfig": {
+            "title": "OperationConfig",
+            "type": "object",
+            "properties": {
+                "lower_freq_profile_enabled": {
+                    "title": "Lower Freq Profile Enabled",
+                    "description": "Whether to do profiling at lower freq or not. This does not do any scheduling just adds additional checks to when not to run profiling.",
+                    "default": false,
+                    "type": "boolean"
+                },
+                "profile_day_of_week": {
+                    "title": "Profile Day Of Week",
+                    "description": "Number between 0 to 6 for day of week (both inclusive). 0 is Monday and 6 is Sunday. If not specified, defaults to Nothing and this field does not take affect.",
+                    "type": "integer"
+                },
+                "profile_date_of_month": {
+                    "title": "Profile Date Of Month",
+                    "description": "Number between 1 to 31 for date of month (both inclusive). If not specified, defaults to Nothing and this field does not take affect.",
+                    "type": "integer"
+                }
+            },
+            "additionalProperties": false
+        },
         "GEProfilingConfig": {
             "title": "GEProfilingConfig",
             "type": "object",
@@ -11066,6 +11219,15 @@
                     "description": "Whether profiling should be done.",
                     "default": false,
                     "type": "boolean"
+                },
+                "operation_config": {
+                    "title": "Operation Config",
+                    "description": "Experimental feature. To specify operation configs.",
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/OperationConfig"
+                        }
+                    ]
                 },
                 "limit": {
                     "title": "Limit",
@@ -11895,6 +12057,15 @@
                     "description": "Whether to enable profiling for the elastic search source.",
                     "default": false,
                     "type": "boolean"
+                },
+                "operation_config": {
+                    "title": "Operation Config",
+                    "description": "Experimental feature. To specify operation configs.",
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/OperationConfig"
+                        }
+                    ]
                 }
             },
             "additionalProperties": false
@@ -12103,6 +12274,15 @@
                     "default": false,
                     "type": "boolean"
                 },
+                "operation_config": {
+                    "title": "Operation Config",
+                    "description": "Experimental feature. To specify operation configs.",
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/OperationConfig"
+                        }
+                    ]
+                },
                 "warehouse_id": {
                     "title": "Warehouse Id",
                     "description": "SQL Warehouse id, for running profiling queries.",
@@ -12270,6 +12450,15 @@
                     "description": "Whether to profile for the max value of numeric columns.",
                     "default": true,
                     "type": "boolean"
+                },
+                "operation_config": {
+                    "title": "Operation Config",
+                    "description": "Experimental feature. To specify operation configs.",
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/OperationConfig"
+                        }
+                    ]
                 }
             },
             "additionalProperties": false
@@ -12412,6 +12601,15 @@
                     "default": false,
                     "type": "boolean"
                 },
+                "operation_config": {
+                    "title": "Operation Config",
+                    "description": "Experimental feature. To specify operation configs.",
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/OperationConfig"
+                        }
+                    ]
+                },
                 "profile_table_level_only": {
                     "title": "Profile Table Level Only",
                     "description": "Whether to perform profiling at table-level only or include column-level profiling as well.",
@@ -12505,6 +12703,15 @@
                     "description": "Whether profiling should be done. Supports only table-level profiling at this stage",
                     "default": false,
                     "type": "boolean"
+                },
+                "operation_config": {
+                    "title": "Operation Config",
+                    "description": "Experimental feature. To specify operation configs.",
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/OperationConfig"
+                        }
+                    ]
                 }
             },
             "additionalProperties": false
@@ -12650,6 +12857,15 @@
                     "allOf": [
                         {
                             "$ref": "#/definitions/AllowDenyPattern"
+                        }
+                    ]
+                },
+                "operation_config": {
+                    "title": "Operation Config",
+                    "description": "Experimental feature. To specify operation configs.",
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/OperationConfig"
                         }
                     ]
                 }
