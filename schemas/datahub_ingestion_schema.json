@@ -852,13 +852,13 @@
                 },
                 "end_time": {
                     "title": "End Time",
-                    "description": "Latest date of usage to consider. Default: Current time in UTC",
+                    "description": "Latest date of lineage/usage to consider. Default: Current time in UTC",
                     "type": "string",
                     "format": "date-time"
                 },
                 "start_time": {
                     "title": "Start Time",
-                    "description": "Earliest date of usage to consider. Default: Last full day in UTC (or hour, depending on `bucket_duration`)",
+                    "description": "Earliest date of lineage/usage to consider. Default: Last full day in UTC (or hour, depending on `bucket_duration`). You can also specify relative time with respect to end_time such as '-7 days' Or '-7d'.",
                     "type": "string",
                     "format": "date-time"
                 },
@@ -1067,8 +1067,8 @@
                     "description": "Usage related configs",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2023-08-14T18:12:23.242964+00:00",
-                        "start_time": "2023-08-13T00:00:00+00:00",
+                        "end_time": "2023-08-15T00:57:11.871096+00:00",
+                        "start_time": "2023-08-14T00:00:00+00:00",
                         "top_n_queries": 10,
                         "user_email_pattern": {
                             "allow": [
@@ -1730,13 +1730,13 @@
                 },
                 "end_time": {
                     "title": "End Time",
-                    "description": "Latest date of usage to consider. Default: Current time in UTC",
+                    "description": "Latest date of lineage/usage to consider. Default: Current time in UTC",
                     "type": "string",
                     "format": "date-time"
                 },
                 "start_time": {
                     "title": "Start Time",
-                    "description": "Earliest date of usage to consider. Default: Last full day in UTC (or hour, depending on `bucket_duration`)",
+                    "description": "Earliest date of lineage/usage to consider. Default: Last full day in UTC (or hour, depending on `bucket_duration`). You can also specify relative time with respect to end_time such as '-7 days' Or '-7d'.",
                     "type": "string",
                     "format": "date-time"
                 },
@@ -2115,13 +2115,13 @@
                 },
                 "end_time": {
                     "title": "End Time",
-                    "description": "Latest date of usage to consider. Default: Current time in UTC",
+                    "description": "Latest date of lineage/usage to consider. Default: Current time in UTC",
                     "type": "string",
                     "format": "date-time"
                 },
                 "start_time": {
                     "title": "Start Time",
-                    "description": "Earliest date of usage to consider. Default: Last full day in UTC (or hour, depending on `bucket_duration`)",
+                    "description": "Earliest date of lineage/usage to consider. Default: Last full day in UTC (or hour, depending on `bucket_duration`). You can also specify relative time with respect to end_time such as '-7 days' Or '-7d'.",
                     "type": "string",
                     "format": "date-time"
                 },
@@ -3778,13 +3778,13 @@
                 },
                 "end_time": {
                     "title": "End Time",
-                    "description": "Latest date of usage to consider. Default: Current time in UTC",
+                    "description": "Latest date of lineage/usage to consider. Default: Current time in UTC",
                     "type": "string",
                     "format": "date-time"
                 },
                 "start_time": {
                     "title": "Start Time",
-                    "description": "Earliest date of usage to consider. Default: Last full day in UTC (or hour, depending on `bucket_duration`)",
+                    "description": "Earliest date of lineage/usage to consider. Default: Last full day in UTC (or hour, depending on `bucket_duration`). You can also specify relative time with respect to end_time such as '-7 days' Or '-7d'.",
                     "type": "string",
                     "format": "date-time"
                 },
@@ -4352,13 +4352,13 @@
                 },
                 "end_time": {
                     "title": "End Time",
-                    "description": "Latest date of usage to consider. Default: Current time in UTC",
+                    "description": "Latest date of lineage/usage to consider. Default: Current time in UTC",
                     "type": "string",
                     "format": "date-time"
                 },
                 "start_time": {
                     "title": "Start Time",
-                    "description": "Earliest date of usage to consider. Default: Last full day in UTC (or hour, depending on `bucket_duration`)",
+                    "description": "Earliest date of lineage/usage to consider. Default: Last full day in UTC (or hour, depending on `bucket_duration`). You can also specify relative time with respect to end_time such as '-7 days' Or '-7d'.",
                     "type": "string",
                     "format": "date-time"
                 },
@@ -8822,13 +8822,13 @@
                 },
                 "end_time": {
                     "title": "End Time",
-                    "description": "Latest date of usage to consider. Default: Current time in UTC",
+                    "description": "Latest date of lineage/usage to consider. Default: Current time in UTC",
                     "type": "string",
                     "format": "date-time"
                 },
                 "start_time": {
                     "title": "Start Time",
-                    "description": "Earliest date of usage to consider. Default: Last full day in UTC (or hour, depending on `bucket_duration`)",
+                    "description": "Earliest date of lineage/usage to consider. Default: Last full day in UTC (or hour, depending on `bucket_duration`). You can also specify relative time with respect to end_time such as '-7 days' Or '-7d'.",
                     "type": "string",
                     "format": "date-time"
                 },
@@ -9585,13 +9585,13 @@
                 },
                 "end_time": {
                     "title": "End Time",
-                    "description": "Latest date of usage to consider. Default: Current time in UTC",
+                    "description": "Latest date of lineage/usage to consider. Default: Current time in UTC",
                     "type": "string",
                     "format": "date-time"
                 },
                 "start_time": {
                     "title": "Start Time",
-                    "description": "Earliest date of usage to consider. Default: Last full day in UTC (or hour, depending on `bucket_duration`)",
+                    "description": "Earliest date of lineage/usage to consider. Default: Last full day in UTC (or hour, depending on `bucket_duration`). You can also specify relative time with respect to end_time such as '-7 days' Or '-7d'.",
                     "type": "string",
                     "format": "date-time"
                 },
@@ -10568,13 +10568,13 @@
                 },
                 "end_time": {
                     "title": "End Time",
-                    "description": "Latest date of usage to consider. Default: Current time in UTC",
+                    "description": "Latest date of lineage/usage to consider. Default: Current time in UTC",
                     "type": "string",
                     "format": "date-time"
                 },
                 "start_time": {
                     "title": "Start Time",
-                    "description": "Earliest date of usage to consider. Default: Last full day in UTC (or hour, depending on `bucket_duration`)",
+                    "description": "Earliest date of lineage/usage to consider. Default: Last full day in UTC (or hour, depending on `bucket_duration`). You can also specify relative time with respect to end_time such as '-7 days' Or '-7d'.",
                     "type": "string",
                     "format": "date-time"
                 },
@@ -10907,13 +10907,13 @@
                 },
                 "end_time": {
                     "title": "End Time",
-                    "description": "Latest date of usage to consider. Default: Current time in UTC",
+                    "description": "Latest date of lineage/usage to consider. Default: Current time in UTC",
                     "type": "string",
                     "format": "date-time"
                 },
                 "start_time": {
                     "title": "Start Time",
-                    "description": "Earliest date of usage to consider. Default: Last full day in UTC (or hour, depending on `bucket_duration`)",
+                    "description": "Earliest date of lineage/usage to consider. Default: Last full day in UTC (or hour, depending on `bucket_duration`). You can also specify relative time with respect to end_time such as '-7 days' Or '-7d'.",
                     "type": "string",
                     "format": "date-time"
                 },
@@ -11474,13 +11474,13 @@
                 },
                 "end_time": {
                     "title": "End Time",
-                    "description": "Latest date of usage to consider. Default: Current time in UTC",
+                    "description": "Latest date of lineage/usage to consider. Default: Current time in UTC",
                     "type": "string",
                     "format": "date-time"
                 },
                 "start_time": {
                     "title": "Start Time",
-                    "description": "Earliest date of usage to consider. Default: Last full day in UTC (or hour, depending on `bucket_duration`)",
+                    "description": "Earliest date of lineage/usage to consider. Default: Last full day in UTC (or hour, depending on `bucket_duration`). You can also specify relative time with respect to end_time such as '-7 days' Or '-7d'.",
                     "type": "string",
                     "format": "date-time"
                 },
