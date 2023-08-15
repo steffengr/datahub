@@ -1067,7 +1067,7 @@
                     "description": "Usage related configs",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2023-08-15T00:57:11.871096+00:00",
+                        "end_time": "2023-08-15T12:54:05.839727+00:00",
                         "start_time": "2023-08-14T00:00:00+00:00",
                         "top_n_queries": 10,
                         "user_email_pattern": {
@@ -7900,6 +7900,12 @@
                     "description": "Max amount of memory to grant Spark.",
                     "default": "4g",
                     "type": "string"
+                },
+                "spark_config": {
+                    "title": "Spark Config",
+                    "description": "Spark configuration properties to set on the SparkSession. Put config property names into quotes. For example: '\"spark.executor.memory\": \"2g\"'",
+                    "default": {},
+                    "type": "object"
                 },
                 "max_rows": {
                     "title": "Max Rows",
