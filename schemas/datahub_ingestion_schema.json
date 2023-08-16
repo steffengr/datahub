@@ -1181,8 +1181,8 @@
                     "description": "Usage related configs",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2023-08-15T22:23:37.278319+00:00",
-                        "start_time": "2023-08-14T00:00:00+00:00",
+                        "end_time": "2023-08-16T05:16:32.612701+00:00",
+                        "start_time": "2023-08-15T00:00:00+00:00",
                         "top_n_queries": 10,
                         "user_email_pattern": {
                             "allow": [
@@ -7599,6 +7599,12 @@
                     "title": "Pagination Enabled",
                     "description": "Use pagination while do search query (enabled by default).",
                     "default": true,
+                    "type": "boolean"
+                },
+                "use_email_as_username": {
+                    "title": "Use Email As Username",
+                    "description": "Use email for users' usernames instead of username (disabled by default).             If enabled, the user and group urn would be having email as the id part of the urn.",
+                    "default": false,
                     "type": "boolean"
                 },
                 "user_attrs_map": {
