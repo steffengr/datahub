@@ -414,6 +414,12 @@
                     "description": "Whether to extract datasets not used in any PowerBI visualization",
                     "default": false,
                     "type": "boolean"
+                },
+                "enable_advance_lineage_sql_construct": {
+                    "title": "Enable Advance Lineage Sql Construct",
+                    "description": "Whether to enable advance native sql construct for parsing like join, sub-queries. along this flag , the native_query_parsing should be enabled. By default convert_lineage_urns_to_lowercase is enabled, in-case if you have disabled it in previous ingestion execution then it may break lineage as this option generates the upstream datasets URN in lowercase.",
+                    "default": false,
+                    "type": "boolean"
                 }
             },
             "required": [
@@ -11000,7 +11006,7 @@
                     "description": "Usage related configs",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2023-08-23T04:39:10.055574+00:00",
+                        "end_time": "2023-08-23T09:45:13.655985+00:00",
                         "start_time": "2023-08-22T00:00:00+00:00",
                         "top_n_queries": 10,
                         "user_email_pattern": {
