@@ -6319,7 +6319,7 @@
                     "description": "The usage config to use when generating usage statistics",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2023-08-24T17:29:44.199002+00:00",
+                        "end_time": "2023-08-24T18:32:43.943305+00:00",
                         "start_time": "2023-08-23T00:00:00+00:00",
                         "top_n_queries": 10,
                         "user_email_pattern": {
@@ -11119,7 +11119,7 @@
                     "description": "Usage related configs",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2023-08-24T17:29:34.440276+00:00",
+                        "end_time": "2023-08-24T18:32:34.166176+00:00",
                         "start_time": "2023-08-23T00:00:00+00:00",
                         "top_n_queries": 10,
                         "user_email_pattern": {
