@@ -6270,6 +6270,93 @@
             ],
             "additionalProperties": false
         },
+        "sql-queries": {
+            "type": "object",
+            "properties": {
+                "type": {
+                    "type": "string",
+                    "enum": [
+                        "sql-queries"
+                    ]
+                },
+                "config": {
+                    "$ref": "#/definitions/sql-queries_config"
+                }
+            },
+            "required": [
+                "type",
+                "config"
+            ]
+        },
+        "sql-queries_config": {
+            "title": "SqlQueriesSourceConfig",
+            "description": "Any source that connects to a platform should inherit this class",
+            "type": "object",
+            "properties": {
+                "env": {
+                    "title": "Env",
+                    "description": "The environment that all assets produced by this connector belong to",
+                    "default": "PROD",
+                    "type": "string"
+                },
+                "platform_instance": {
+                    "title": "Platform Instance",
+                    "description": "The instance of the platform that all assets produced by this recipe belong to",
+                    "type": "string"
+                },
+                "query_file": {
+                    "title": "Query File",
+                    "description": "Path to file to ingest",
+                    "type": "string"
+                },
+                "platform": {
+                    "title": "Platform",
+                    "description": "The platform for which to generate data, e.g. snowflake",
+                    "type": "string"
+                },
+                "usage": {
+                    "title": "Usage",
+                    "description": "The usage config to use when generating usage statistics",
+                    "default": {
+                        "bucket_duration": "DAY",
+                        "end_time": "2023-08-24T14:45:46.222527+00:00",
+                        "start_time": "2023-08-23T00:00:00+00:00",
+                        "top_n_queries": 10,
+                        "user_email_pattern": {
+                            "allow": [
+                                ".*"
+                            ],
+                            "deny": [],
+                            "ignoreCase": true
+                        },
+                        "include_operational_stats": true,
+                        "include_read_operational_stats": false,
+                        "format_sql_queries": false,
+                        "include_top_n_queries": true
+                    },
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/BaseUsageConfig"
+                        }
+                    ]
+                },
+                "default_db": {
+                    "title": "Default Db",
+                    "description": "The default database to use for unqualified table names",
+                    "type": "string"
+                },
+                "default_schema": {
+                    "title": "Default Schema",
+                    "description": "The default schema to use for unqualified table names",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "query_file",
+                "platform"
+            ],
+            "additionalProperties": false
+        },
         "unity-catalog": {
             "type": "object",
             "properties": {
@@ -7195,6 +7282,14 @@
                     "type": "array",
                     "items": {
                         "type": "string"
+                    }
+                },
+                "shares": {
+                    "title": "Shares",
+                    "description": "Required if current account owns or consumes snowflake share. If specified, connector creates lineage and siblings relationship between current account's database tables and consumer/producer account's database tables. Map of share name -> details of share.",
+                    "type": "object",
+                    "additionalProperties": {
+                        "$ref": "#/definitions/SnowflakeShareConfig"
                     }
                 },
                 "email_as_user_identifier": {
@@ -11024,7 +11119,7 @@
                     "description": "Usage related configs",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2023-08-24T09:47:55.223916+00:00",
+                        "end_time": "2023-08-24T14:45:37.607819+00:00",
                         "start_time": "2023-08-23T00:00:00+00:00",
                         "top_n_queries": 10,
                         "user_email_pattern": {
@@ -12314,6 +12409,81 @@
             },
             "additionalProperties": false
         },
+        "BaseUsageConfig": {
+            "title": "BaseUsageConfig",
+            "type": "object",
+            "properties": {
+                "bucket_duration": {
+                    "description": "Size of the time window to aggregate usage stats.",
+                    "default": "DAY",
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/BucketDuration"
+                        }
+                    ]
+                },
+                "end_time": {
+                    "title": "End Time",
+                    "description": "Latest date of lineage/usage to consider. Default: Current time in UTC",
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "start_time": {
+                    "title": "Start Time",
+                    "description": "Earliest date of lineage/usage to consider. Default: Last full day in UTC (or hour, depending on `bucket_duration`). You can also specify relative time with respect to end_time such as '-7 days' Or '-7d'.",
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "top_n_queries": {
+                    "title": "Top N Queries",
+                    "description": "Number of top queries to save to each table.",
+                    "default": 10,
+                    "exclusiveMinimum": 0,
+                    "type": "integer"
+                },
+                "user_email_pattern": {
+                    "title": "User Email Pattern",
+                    "description": "regex patterns for user emails to filter in usage.",
+                    "default": {
+                        "allow": [
+                            ".*"
+                        ],
+                        "deny": [],
+                        "ignoreCase": true
+                    },
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/AllowDenyPattern"
+                        }
+                    ]
+                },
+                "include_operational_stats": {
+                    "title": "Include Operational Stats",
+                    "description": "Whether to display operational stats.",
+                    "default": true,
+                    "type": "boolean"
+                },
+                "include_read_operational_stats": {
+                    "title": "Include Read Operational Stats",
+                    "description": "Whether to report read operational stats. Experimental.",
+                    "default": false,
+                    "type": "boolean"
+                },
+                "format_sql_queries": {
+                    "title": "Format Sql Queries",
+                    "description": "Whether to format sql queries",
+                    "default": false,
+                    "type": "boolean"
+                },
+                "include_top_n_queries": {
+                    "title": "Include Top N Queries",
+                    "description": "Whether to ingest the top_n_queries.",
+                    "default": true,
+                    "type": "boolean"
+                }
+            },
+            "additionalProperties": false
+        },
         "UnityCatalogProfilerConfig": {
             "title": "UnityCatalogProfilerConfig",
             "type": "object",
@@ -12559,6 +12729,58 @@
                 "skip"
             ],
             "type": "string"
+        },
+        "DatabaseId": {
+            "title": "DatabaseId",
+            "type": "object",
+            "properties": {
+                "database": {
+                    "title": "Database",
+                    "description": "Database created from share in consumer account.",
+                    "type": "string"
+                },
+                "platform_instance": {
+                    "title": "Platform Instance",
+                    "description": "Platform instance of consumer snowflake account.",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "database",
+                "platform_instance"
+            ],
+            "additionalProperties": false
+        },
+        "SnowflakeShareConfig": {
+            "title": "SnowflakeShareConfig",
+            "type": "object",
+            "properties": {
+                "database": {
+                    "title": "Database",
+                    "description": "Database from which share is created.",
+                    "type": "string"
+                },
+                "platform_instance": {
+                    "title": "Platform Instance",
+                    "description": "Platform instance for snowflake account in which share is created.",
+                    "type": "string"
+                },
+                "consumers": {
+                    "title": "Consumers",
+                    "description": "List of databases created in consumer accounts.",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/DatabaseId"
+                    },
+                    "uniqueItems": true
+                }
+            },
+            "required": [
+                "database",
+                "platform_instance",
+                "consumers"
+            ],
+            "additionalProperties": false
         },
         "HMACKey": {
             "title": "HMACKey",
@@ -13255,6 +13477,9 @@
                 },
                 {
                     "$ref": "#/definitions/datahub-lineage-file"
+                },
+                {
+                    "$ref": "#/definitions/sql-queries"
                 },
                 {
                     "$ref": "#/definitions/unity-catalog"
