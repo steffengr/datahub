@@ -10067,6 +10067,30 @@
                     "description": "URI of database to connect to. See https://docs.sqlalchemy.org/en/14/core/engines.html#database-urls. Takes precedence over other connection parameters.",
                     "type": "string"
                 },
+                "include_stored_procedures": {
+                    "title": "Include Stored Procedures",
+                    "description": "Include ingest of stored procedures. Requires access to the 'sys' schema.",
+                    "default": true,
+                    "type": "boolean"
+                },
+                "include_stored_procedures_code": {
+                    "title": "Include Stored Procedures Code",
+                    "description": "Include information about object code.",
+                    "default": true,
+                    "type": "boolean"
+                },
+                "include_jobs": {
+                    "title": "Include Jobs",
+                    "description": "Include ingest of MSSQL Jobs. Requires access to the 'msdb' and 'sys' schema.",
+                    "default": true,
+                    "type": "boolean"
+                },
+                "include_descriptions": {
+                    "title": "Include Descriptions",
+                    "description": "Include table descriptions information.",
+                    "default": true,
+                    "type": "boolean"
+                },
                 "use_odbc": {
                     "title": "Use Odbc",
                     "description": "See https://docs.sqlalchemy.org/en/14/dialects/mssql.html#module-sqlalchemy.dialects.mssql.pyodbc.",
@@ -11000,7 +11024,7 @@
                     "description": "Usage related configs",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2023-08-24T07:53:26.849674+00:00",
+                        "end_time": "2023-08-24T09:47:55.223916+00:00",
                         "start_time": "2023-08-23T00:00:00+00:00",
                         "top_n_queries": 10,
                         "user_email_pattern": {
@@ -11067,6 +11091,12 @@
                     "title": "Include External Url",
                     "description": "Whether to populate BigQuery Console url to Datasets/Tables",
                     "default": true,
+                    "type": "boolean"
+                },
+                "include_data_platform_instance": {
+                    "title": "Include Data Platform Instance",
+                    "description": "Whether to create a DataPlatformInstance aspect, equal to the BigQuery project id. If enabled, will cause redundancy in the browse path for BigQuery entities in the UI, because the project id is represented as the top-level container.",
+                    "default": false,
                     "type": "boolean"
                 },
                 "debug_include_full_payloads": {
