@@ -4278,10 +4278,10 @@
             "description": "Base configuration class for stateful ingestion for source configs to inherit from.",
             "type": "object",
             "properties": {
-                "store_last_profiling_timestamps": {
-                    "title": "Store Last Profiling Timestamps",
-                    "description": "Enable storing last profile timestamp in store.",
-                    "default": false,
+                "enable_stateful_profiling": {
+                    "title": "Enable Stateful Profiling",
+                    "description": "Enable stateful profiling. This will store profiling timestamps per dataset after successful profiling. and will not run profiling again in subsequent run if table has not been updated. ",
+                    "default": true,
                     "type": "boolean"
                 },
                 "incremental_lineage": {
@@ -4296,10 +4296,10 @@
                     "default": false,
                     "type": "boolean"
                 },
-                "store_last_lineage_extraction_timestamp": {
-                    "title": "Store Last Lineage Extraction Timestamp",
-                    "description": "Enable checking last lineage extraction date in store.",
-                    "default": false,
+                "enable_stateful_lineage_ingestion": {
+                    "title": "Enable Stateful Lineage Ingestion",
+                    "description": "Enable stateful lineage ingestion. This will store lineage window timestamps after successful lineage ingestion. and will not run lineage ingestion for same timestamps in subsequent run. ",
+                    "default": true,
                     "type": "boolean"
                 },
                 "bucket_duration": {
@@ -4323,9 +4323,9 @@
                     "type": "string",
                     "format": "date-time"
                 },
-                "store_last_usage_extraction_timestamp": {
-                    "title": "Store Last Usage Extraction Timestamp",
-                    "description": "Enable checking last usage timestamp in store.",
+                "enable_stateful_usage_ingestion": {
+                    "title": "Enable Stateful Usage Ingestion",
+                    "description": "Enable stateful lineage ingestion. This will store usage window timestamps after successful usage ingestion. and will not run usage ingestion for same timestamps in subsequent run. ",
                     "default": true,
                     "type": "boolean"
                 },
@@ -6319,8 +6319,8 @@
                     "description": "The usage config to use when generating usage statistics",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2023-08-26T04:55:10.777477+00:00",
-                        "start_time": "2023-08-25T00:00:00+00:00",
+                        "end_time": "2023-08-28T09:43:40.564965+00:00",
+                        "start_time": "2023-08-27T00:00:00+00:00",
                         "top_n_queries": 10,
                         "user_email_pattern": {
                             "allow": [
@@ -6380,10 +6380,10 @@
             "description": "Base configuration class for stateful ingestion for source configs to inherit from.",
             "type": "object",
             "properties": {
-                "store_last_profiling_timestamps": {
-                    "title": "Store Last Profiling Timestamps",
-                    "description": "Enable storing last profile timestamp in store.",
-                    "default": false,
+                "enable_stateful_profiling": {
+                    "title": "Enable Stateful Profiling",
+                    "description": "Enable stateful profiling. This will store profiling timestamps per dataset after successful profiling. and will not run profiling again in subsequent run if table has not been updated. ",
+                    "default": true,
                     "type": "boolean"
                 },
                 "env": {
@@ -6844,10 +6844,10 @@
                         }
                     ]
                 },
-                "store_last_profiling_timestamps": {
-                    "title": "Store Last Profiling Timestamps",
-                    "description": "Enable storing last profile timestamp in store.",
-                    "default": false,
+                "enable_stateful_profiling": {
+                    "title": "Enable Stateful Profiling",
+                    "description": "Enable stateful profiling. This will store profiling timestamps per dataset after successful profiling. and will not run profiling again in subsequent run if table has not been updated. ",
+                    "default": true,
                     "type": "boolean"
                 },
                 "bucket_duration": {
@@ -6871,9 +6871,27 @@
                     "type": "string",
                     "format": "date-time"
                 },
-                "store_last_usage_extraction_timestamp": {
-                    "title": "Store Last Usage Extraction Timestamp",
-                    "description": "Enable checking last usage timestamp in store.",
+                "enable_stateful_usage_ingestion": {
+                    "title": "Enable Stateful Usage Ingestion",
+                    "description": "Enable stateful lineage ingestion. This will store usage window timestamps after successful usage ingestion. and will not run usage ingestion for same timestamps in subsequent run. ",
+                    "default": true,
+                    "type": "boolean"
+                },
+                "incremental_lineage": {
+                    "title": "Incremental Lineage",
+                    "description": "When enabled, emits lineage as incremental to existing lineage already in DataHub. When disabled, re-states lineage on each run.",
+                    "default": true,
+                    "type": "boolean"
+                },
+                "sql_parser_use_external_process": {
+                    "title": "Sql Parser Use External Process",
+                    "description": "When enabled, sql parser will run in isolated in a separate process. This can affect processing time but can protect from sql parser's mem leak.",
+                    "default": false,
+                    "type": "boolean"
+                },
+                "enable_stateful_lineage_ingestion": {
+                    "title": "Enable Stateful Lineage Ingestion",
+                    "description": "Enable stateful lineage ingestion. This will store lineage window timestamps after successful lineage ingestion. and will not run lineage ingestion for same timestamps in subsequent run. ",
                     "default": true,
                     "type": "boolean"
                 },
@@ -10869,10 +10887,10 @@
             "description": "Base configuration class for stateful ingestion for source configs to inherit from.",
             "type": "object",
             "properties": {
-                "store_last_profiling_timestamps": {
-                    "title": "Store Last Profiling Timestamps",
-                    "description": "Enable storing last profile timestamp in store.",
-                    "default": false,
+                "enable_stateful_profiling": {
+                    "title": "Enable Stateful Profiling",
+                    "description": "Enable stateful profiling. This will store profiling timestamps per dataset after successful profiling. and will not run profiling again in subsequent run if table has not been updated. ",
+                    "default": true,
                     "type": "boolean"
                 },
                 "incremental_lineage": {
@@ -10887,10 +10905,10 @@
                     "default": false,
                     "type": "boolean"
                 },
-                "store_last_lineage_extraction_timestamp": {
-                    "title": "Store Last Lineage Extraction Timestamp",
-                    "description": "Enable checking last lineage extraction date in store.",
-                    "default": false,
+                "enable_stateful_lineage_ingestion": {
+                    "title": "Enable Stateful Lineage Ingestion",
+                    "description": "Enable stateful lineage ingestion. This will store lineage window timestamps after successful lineage ingestion. and will not run lineage ingestion for same timestamps in subsequent run. ",
+                    "default": true,
                     "type": "boolean"
                 },
                 "bucket_duration": {
@@ -10914,9 +10932,9 @@
                     "type": "string",
                     "format": "date-time"
                 },
-                "store_last_usage_extraction_timestamp": {
-                    "title": "Store Last Usage Extraction Timestamp",
-                    "description": "Enable checking last usage timestamp in store.",
+                "enable_stateful_usage_ingestion": {
+                    "title": "Enable Stateful Usage Ingestion",
+                    "description": "Enable stateful lineage ingestion. This will store usage window timestamps after successful usage ingestion. and will not run usage ingestion for same timestamps in subsequent run. ",
                     "default": true,
                     "type": "boolean"
                 },
@@ -11119,8 +11137,8 @@
                     "description": "Usage related configs",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2023-08-26T04:54:58.835119+00:00",
-                        "start_time": "2023-08-25T00:00:00+00:00",
+                        "end_time": "2023-08-28T09:43:32.217351+00:00",
+                        "start_time": "2023-08-27T00:00:00+00:00",
                         "top_n_queries": 10,
                         "user_email_pattern": {
                             "allow": [
