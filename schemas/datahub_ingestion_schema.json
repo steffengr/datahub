@@ -1832,34 +1832,18 @@
                         }
                     ]
                 },
-                "mysql_connection": {
-                    "title": "Mysql Connection",
-                    "description": "MySQL connection config",
-                    "default": {
-                        "username": null,
-                        "host_port": "localhost:3306",
-                        "database": null,
-                        "database_alias": null,
-                        "scheme": "mysql+pymysql",
-                        "sqlalchemy_uri": null,
-                        "options": {}
-                    },
+                "database_connection": {
+                    "title": "Database Connection",
+                    "description": "Database connection config",
                     "allOf": [
                         {
-                            "$ref": "#/definitions/MySQLConnectionConfig"
+                            "$ref": "#/definitions/SQLAlchemyConnectionConfig"
                         }
                     ]
                 },
                 "kafka_connection": {
                     "title": "Kafka Connection",
                     "description": "Kafka connection config",
-                    "default": {
-                        "bootstrap": "localhost:9092",
-                        "schema_registry_url": "http://localhost:8080/schema-registry/api/",
-                        "schema_registry_config": {},
-                        "client_timeout_seconds": 60,
-                        "consumer_config": {}
-                    },
                     "allOf": [
                         {
                             "$ref": "#/definitions/KafkaConsumerConnectionConfig"
@@ -1868,19 +1852,19 @@
                 },
                 "include_all_versions": {
                     "title": "Include All Versions",
-                    "description": "If enabled, include all versions of each aspect. Otherwise, only include the latest version of each aspect.",
+                    "description": "If enabled, include all versions of each aspect. Otherwise, only include the latest version of each aspect. ",
                     "default": false,
                     "type": "boolean"
                 },
-                "mysql_batch_size": {
-                    "title": "Mysql Batch Size",
-                    "description": "Number of records to fetch from MySQL at a time",
+                "database_query_batch_size": {
+                    "title": "Database Query Batch Size",
+                    "description": "Number of records to fetch from the database at a time",
                     "default": 10000,
                     "type": "integer"
                 },
-                "mysql_table_name": {
-                    "title": "Mysql Table Name",
-                    "description": "Name of MySQL table containing all versioned aspects",
+                "database_table_name": {
+                    "title": "Database Table Name",
+                    "description": "Name of database table containing all versioned aspects",
                     "default": "metadata_aspect_v2",
                     "type": "string"
                 },
@@ -6319,8 +6303,8 @@
                     "description": "The usage config to use when generating usage statistics",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2023-08-28T23:26:03.998539+00:00",
-                        "start_time": "2023-08-27T00:00:00+00:00",
+                        "end_time": "2023-08-29T19:22:26.332974+00:00",
+                        "start_time": "2023-08-28T00:00:00+00:00",
                         "top_n_queries": 10,
                         "user_email_pattern": {
                             "allow": [
@@ -11143,8 +11127,8 @@
                     "description": "Usage related configs",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2023-08-28T23:25:56.229759+00:00",
-                        "start_time": "2023-08-27T00:00:00+00:00",
+                        "end_time": "2023-08-29T19:22:16.331073+00:00",
+                        "start_time": "2023-08-28T00:00:00+00:00",
                         "top_n_queries": 10,
                         "user_email_pattern": {
                             "allow": [
@@ -11855,8 +11839,8 @@
             },
             "additionalProperties": false
         },
-        "MySQLConnectionConfig": {
-            "title": "MySQLConnectionConfig",
+        "SQLAlchemyConnectionConfig": {
+            "title": "SQLAlchemyConnectionConfig",
             "type": "object",
             "properties": {
                 "username": {
@@ -11873,8 +11857,7 @@
                 },
                 "host_port": {
                     "title": "Host Port",
-                    "description": "MySQL host URL.",
-                    "default": "localhost:3306",
+                    "description": "host URL",
                     "type": "string"
                 },
                 "database": {
@@ -11889,7 +11872,7 @@
                 },
                 "scheme": {
                     "title": "Scheme",
-                    "default": "mysql+pymysql",
+                    "description": "scheme",
                     "type": "string"
                 },
                 "sqlalchemy_uri": {
@@ -11903,6 +11886,10 @@
                     "type": "object"
                 }
             },
+            "required": [
+                "host_port",
+                "scheme"
+            ],
             "additionalProperties": false
         },
         "KafkaConsumerConnectionConfig": {
