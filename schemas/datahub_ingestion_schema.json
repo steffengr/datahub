@@ -725,8 +725,8 @@
                     "description": "The usage config to use when generating usage statistics",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2023-09-14T19:35:16.473598+00:00",
-                        "start_time": "2023-09-13T00:00:00+00:00",
+                        "end_time": "2023-09-15T19:14:55.977668+00:00",
+                        "start_time": "2023-09-14T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
                         "user_email_pattern": {
@@ -9318,6 +9318,26 @@
                     "deprecated": true,
                     "type": "string"
                 },
+                "credential": {
+                    "title": "Credential",
+                    "description": "BigQuery credential informations",
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/BigQueryCredential"
+                        }
+                    ]
+                },
+                "extra_client_options": {
+                    "title": "Extra Client Options",
+                    "description": "Additional options to pass to google.cloud.logging_v2.client.Client.",
+                    "default": {},
+                    "type": "object"
+                },
+                "project_on_behalf": {
+                    "title": "Project On Behalf",
+                    "description": "[Advanced] The BigQuery project in which queries are executed. Will be passed when creating a job. If not passed, falls back to the project associated with the service account.",
+                    "type": "string"
+                },
                 "project_id_pattern": {
                     "title": "Project Id Pattern",
                     "description": "Regex patterns for project_id to filter in ingestion.",
@@ -9339,8 +9359,8 @@
                     "description": "Usage related configs",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2023-09-14T19:35:07.929276+00:00",
-                        "start_time": "2023-09-13T00:00:00+00:00",
+                        "end_time": "2023-09-15T19:14:48.247412+00:00",
+                        "start_time": "2023-09-14T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
                         "user_email_pattern": {
@@ -9446,11 +9466,6 @@
                         "type": "string"
                     }
                 },
-                "project_on_behalf": {
-                    "title": "Project On Behalf",
-                    "description": "[Advanced] The BigQuery project in which queries are executed. Will be passed when creating a job. If not passed, falls back to the project associated with the service account.",
-                    "type": "string"
-                },
                 "lineage_use_sql_parser": {
                     "title": "Lineage Use Sql Parser",
                     "description": "Use sql parser to resolve view/table lineage.",
@@ -9504,21 +9519,6 @@
                     "default": 1000,
                     "exclusiveMinimum": 0,
                     "type": "integer"
-                },
-                "credential": {
-                    "title": "Credential",
-                    "description": "BigQuery credential informations",
-                    "allOf": [
-                        {
-                            "$ref": "#/definitions/BigQueryCredential"
-                        }
-                    ]
-                },
-                "extra_client_options": {
-                    "title": "Extra Client Options",
-                    "description": "Additional options to pass to google.cloud.logging_v2.client.Client.",
-                    "default": {},
-                    "type": "object"
                 },
                 "include_table_lineage": {
                     "title": "Include Table Lineage",
@@ -13123,6 +13123,74 @@
             },
             "additionalProperties": false
         },
+        "BigQueryCredential": {
+            "title": "BigQueryCredential",
+            "type": "object",
+            "properties": {
+                "project_id": {
+                    "title": "Project Id",
+                    "description": "Project id to set the credentials",
+                    "type": "string"
+                },
+                "private_key_id": {
+                    "title": "Private Key Id",
+                    "description": "Private key id",
+                    "type": "string"
+                },
+                "private_key": {
+                    "title": "Private Key",
+                    "description": "Private key in a form of '-----BEGIN PRIVATE KEY-----\\nprivate-key\\n-----END PRIVATE KEY-----\\n'",
+                    "type": "string"
+                },
+                "client_email": {
+                    "title": "Client Email",
+                    "description": "Client email",
+                    "type": "string"
+                },
+                "client_id": {
+                    "title": "Client Id",
+                    "description": "Client Id",
+                    "type": "string"
+                },
+                "auth_uri": {
+                    "title": "Auth Uri",
+                    "description": "Authentication uri",
+                    "default": "https://accounts.google.com/o/oauth2/auth",
+                    "type": "string"
+                },
+                "token_uri": {
+                    "title": "Token Uri",
+                    "description": "Token uri",
+                    "default": "https://oauth2.googleapis.com/token",
+                    "type": "string"
+                },
+                "auth_provider_x509_cert_url": {
+                    "title": "Auth Provider X509 Cert Url",
+                    "description": "Auth provider x509 certificate url",
+                    "default": "https://www.googleapis.com/oauth2/v1/certs",
+                    "type": "string"
+                },
+                "type": {
+                    "title": "Type",
+                    "description": "Authentication type",
+                    "default": "service_account",
+                    "type": "string"
+                },
+                "client_x509_cert_url": {
+                    "title": "Client X509 Cert Url",
+                    "description": "If not set it will be default to https://www.googleapis.com/robot/v1/metadata/x509/client_email",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "project_id",
+                "private_key_id",
+                "private_key",
+                "client_email",
+                "client_id"
+            ],
+            "additionalProperties": false
+        },
         "BigQueryUsageConfig": {
             "title": "BigQueryUsageConfig",
             "type": "object",
@@ -13209,74 +13277,6 @@
                     "type": "boolean"
                 }
             },
-            "additionalProperties": false
-        },
-        "BigQueryCredential": {
-            "title": "BigQueryCredential",
-            "type": "object",
-            "properties": {
-                "project_id": {
-                    "title": "Project Id",
-                    "description": "Project id to set the credentials",
-                    "type": "string"
-                },
-                "private_key_id": {
-                    "title": "Private Key Id",
-                    "description": "Private key id",
-                    "type": "string"
-                },
-                "private_key": {
-                    "title": "Private Key",
-                    "description": "Private key in a form of '-----BEGIN PRIVATE KEY-----\\nprivate-key\\n-----END PRIVATE KEY-----\\n'",
-                    "type": "string"
-                },
-                "client_email": {
-                    "title": "Client Email",
-                    "description": "Client email",
-                    "type": "string"
-                },
-                "client_id": {
-                    "title": "Client Id",
-                    "description": "Client Id",
-                    "type": "string"
-                },
-                "auth_uri": {
-                    "title": "Auth Uri",
-                    "description": "Authentication uri",
-                    "default": "https://accounts.google.com/o/oauth2/auth",
-                    "type": "string"
-                },
-                "token_uri": {
-                    "title": "Token Uri",
-                    "description": "Token uri",
-                    "default": "https://oauth2.googleapis.com/token",
-                    "type": "string"
-                },
-                "auth_provider_x509_cert_url": {
-                    "title": "Auth Provider X509 Cert Url",
-                    "description": "Auth provider x509 certificate url",
-                    "default": "https://www.googleapis.com/oauth2/v1/certs",
-                    "type": "string"
-                },
-                "type": {
-                    "title": "Type",
-                    "description": "Authentication type",
-                    "default": "service_account",
-                    "type": "string"
-                },
-                "client_x509_cert_url": {
-                    "title": "Client X509 Cert Url",
-                    "description": "If not set it will be default to https://www.googleapis.com/robot/v1/metadata/x509/client_email",
-                    "type": "string"
-                }
-            },
-            "required": [
-                "project_id",
-                "private_key_id",
-                "private_key",
-                "client_email",
-                "client_id"
-            ],
             "additionalProperties": false
         },
         "FileReadMode": {
