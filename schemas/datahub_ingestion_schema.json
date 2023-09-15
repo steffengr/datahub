@@ -452,7 +452,9 @@
                         "query_combiner_enabled": true,
                         "catch_exceptions": true,
                         "partition_profiling_enabled": true,
-                        "partition_datetime": null
+                        "partition_datetime": null,
+                        "use_sampling": true,
+                        "sample_size": 1000
                     },
                     "allOf": [
                         {
@@ -725,7 +727,7 @@
                     "description": "The usage config to use when generating usage statistics",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2023-09-15T19:14:55.977668+00:00",
+                        "end_time": "2023-09-15T20:45:41.683281+00:00",
                         "start_time": "2023-09-14T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
@@ -932,7 +934,9 @@
                         "query_combiner_enabled": true,
                         "catch_exceptions": true,
                         "partition_profiling_enabled": true,
-                        "partition_datetime": null
+                        "partition_datetime": null,
+                        "use_sampling": true,
+                        "sample_size": 1000
                     },
                     "allOf": [
                         {
@@ -1231,7 +1235,9 @@
                         "query_combiner_enabled": true,
                         "catch_exceptions": true,
                         "partition_profiling_enabled": true,
-                        "partition_datetime": null
+                        "partition_datetime": null,
+                        "use_sampling": true,
+                        "sample_size": 1000
                     },
                     "allOf": [
                         {
@@ -2400,7 +2406,9 @@
                         "query_combiner_enabled": true,
                         "catch_exceptions": true,
                         "partition_profiling_enabled": true,
-                        "partition_datetime": null
+                        "partition_datetime": null,
+                        "use_sampling": true,
+                        "sample_size": 1000
                     },
                     "allOf": [
                         {
@@ -2616,7 +2624,9 @@
                         "query_combiner_enabled": true,
                         "catch_exceptions": true,
                         "partition_profiling_enabled": true,
-                        "partition_datetime": null
+                        "partition_datetime": null,
+                        "use_sampling": true,
+                        "sample_size": 1000
                     },
                     "allOf": [
                         {
@@ -3214,7 +3224,9 @@
                         "query_combiner_enabled": true,
                         "catch_exceptions": true,
                         "partition_profiling_enabled": true,
-                        "partition_datetime": null
+                        "partition_datetime": null,
+                        "use_sampling": true,
+                        "sample_size": 1000
                     },
                     "allOf": [
                         {
@@ -3769,7 +3781,9 @@
                         "query_combiner_enabled": true,
                         "catch_exceptions": true,
                         "partition_profiling_enabled": true,
-                        "partition_datetime": null
+                        "partition_datetime": null,
+                        "use_sampling": true,
+                        "sample_size": 1000
                     },
                     "allOf": [
                         {
@@ -4023,7 +4037,9 @@
                         "query_combiner_enabled": true,
                         "catch_exceptions": true,
                         "partition_profiling_enabled": true,
-                        "partition_datetime": null
+                        "partition_datetime": null,
+                        "use_sampling": true,
+                        "sample_size": 1000
                     },
                     "allOf": [
                         {
@@ -4521,7 +4537,9 @@
                         "query_combiner_enabled": true,
                         "catch_exceptions": true,
                         "partition_profiling_enabled": true,
-                        "partition_datetime": null
+                        "partition_datetime": null,
+                        "use_sampling": true,
+                        "sample_size": 1000
                     },
                     "allOf": [
                         {
@@ -5050,7 +5068,9 @@
                         "query_combiner_enabled": true,
                         "catch_exceptions": true,
                         "partition_profiling_enabled": true,
-                        "partition_datetime": null
+                        "partition_datetime": null,
+                        "use_sampling": true,
+                        "sample_size": 1000
                     },
                     "allOf": [
                         {
@@ -5264,7 +5284,9 @@
                         "query_combiner_enabled": true,
                         "catch_exceptions": true,
                         "partition_profiling_enabled": true,
-                        "partition_datetime": null
+                        "partition_datetime": null,
+                        "use_sampling": true,
+                        "sample_size": 1000
                     },
                     "allOf": [
                         {
@@ -6206,7 +6228,9 @@
                         "query_combiner_enabled": true,
                         "catch_exceptions": true,
                         "partition_profiling_enabled": true,
-                        "partition_datetime": null
+                        "partition_datetime": null,
+                        "use_sampling": true,
+                        "sample_size": 1000
                     },
                     "allOf": [
                         {
@@ -6844,7 +6868,9 @@
                         "query_combiner_enabled": true,
                         "catch_exceptions": true,
                         "partition_profiling_enabled": true,
-                        "partition_datetime": null
+                        "partition_datetime": null,
+                        "use_sampling": true,
+                        "sample_size": 1000
                     },
                     "allOf": [
                         {
@@ -7113,7 +7139,9 @@
                         "query_combiner_enabled": true,
                         "catch_exceptions": true,
                         "partition_profiling_enabled": true,
-                        "partition_datetime": null
+                        "partition_datetime": null,
+                        "use_sampling": true,
+                        "sample_size": 1000
                     },
                     "allOf": [
                         {
@@ -7490,7 +7518,9 @@
                         "query_combiner_enabled": true,
                         "catch_exceptions": true,
                         "partition_profiling_enabled": true,
-                        "partition_datetime": null
+                        "partition_datetime": null,
+                        "use_sampling": true,
+                        "sample_size": 1000
                     },
                     "allOf": [
                         {
@@ -8777,7 +8807,9 @@
                         "query_combiner_enabled": true,
                         "catch_exceptions": true,
                         "partition_profiling_enabled": true,
-                        "partition_datetime": null
+                        "partition_datetime": null,
+                        "use_sampling": true,
+                        "sample_size": 1000
                     },
                     "allOf": [
                         {
@@ -9004,7 +9036,9 @@
                         "query_combiner_enabled": true,
                         "catch_exceptions": true,
                         "partition_profiling_enabled": true,
-                        "partition_datetime": null
+                        "partition_datetime": null,
+                        "use_sampling": true,
+                        "sample_size": 1000
                     },
                     "allOf": [
                         {
@@ -9285,7 +9319,9 @@
                         "query_combiner_enabled": true,
                         "catch_exceptions": true,
                         "partition_profiling_enabled": true,
-                        "partition_datetime": null
+                        "partition_datetime": null,
+                        "use_sampling": true,
+                        "sample_size": 1000
                     },
                     "allOf": [
                         {
@@ -9359,7 +9395,7 @@
                     "description": "Usage related configs",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2023-09-15T19:14:48.247412+00:00",
+                        "end_time": "2023-09-15T20:45:33.730374+00:00",
                         "start_time": "2023-09-14T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
@@ -9730,7 +9766,9 @@
                         "query_combiner_enabled": true,
                         "catch_exceptions": true,
                         "partition_profiling_enabled": true,
-                        "partition_datetime": null
+                        "partition_datetime": null,
+                        "use_sampling": true,
+                        "sample_size": 1000
                     },
                     "allOf": [
                         {
@@ -10708,7 +10746,9 @@
                         "query_combiner_enabled": true,
                         "catch_exceptions": true,
                         "partition_profiling_enabled": true,
-                        "partition_datetime": null
+                        "partition_datetime": null,
+                        "use_sampling": true,
+                        "sample_size": 1000
                     },
                     "allOf": [
                         {
@@ -11052,7 +11092,9 @@
                         "query_combiner_enabled": true,
                         "catch_exceptions": true,
                         "partition_profiling_enabled": true,
-                        "partition_datetime": null
+                        "partition_datetime": null,
+                        "use_sampling": true,
+                        "sample_size": 1000
                     },
                     "allOf": [
                         {
@@ -11330,7 +11372,9 @@
                         "query_combiner_enabled": true,
                         "catch_exceptions": true,
                         "partition_profiling_enabled": true,
-                        "partition_datetime": null
+                        "partition_datetime": null,
+                        "use_sampling": true,
+                        "sample_size": 1000
                     },
                     "allOf": [
                         {
@@ -11424,6 +11468,89 @@
                 "name",
                 "url",
                 "swagger_file"
+            ],
+            "additionalProperties": false
+        },
+        "dynamodb": {
+            "type": "object",
+            "properties": {
+                "type": {
+                    "type": "string",
+                    "enum": [
+                        "dynamodb"
+                    ]
+                },
+                "config": {
+                    "$ref": "#/definitions/dynamodb_config"
+                }
+            },
+            "required": [
+                "type",
+                "config"
+            ]
+        },
+        "dynamodb_config": {
+            "title": "DynamoDBConfig",
+            "description": "Any source that is a primary producer of Dataset metadata should inherit this class",
+            "type": "object",
+            "properties": {
+                "stateful_ingestion": {
+                    "$ref": "#/definitions/StatefulStaleMetadataRemovalConfig"
+                },
+                "env": {
+                    "title": "Env",
+                    "description": "The environment that all assets produced by this connector belong to",
+                    "default": "PROD",
+                    "type": "string"
+                },
+                "platform_instance": {
+                    "title": "Platform Instance",
+                    "description": "The instance of the platform that all assets produced by this recipe belong to",
+                    "type": "string"
+                },
+                "aws_access_key_id": {
+                    "title": "Aws Access Key Id",
+                    "description": "AWS Access Key ID.",
+                    "type": "string"
+                },
+                "aws_secret_access_key": {
+                    "title": "Aws Secret Access Key",
+                    "description": "AWS Secret Key.",
+                    "type": "string",
+                    "writeOnly": true,
+                    "format": "password"
+                },
+                "include_table_item": {
+                    "title": "Include Table Item",
+                    "description": "[Advanced] The primary keys of items of a table in dynamodb format the user would like to include in schema. Refer \"Advanced Configurations\" section for more details",
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "array",
+                        "items": {
+                            "type": "object"
+                        }
+                    }
+                },
+                "table_pattern": {
+                    "title": "Table Pattern",
+                    "description": "regex patterns for tables to filter in ingestion.",
+                    "default": {
+                        "allow": [
+                            ".*"
+                        ],
+                        "deny": [],
+                        "ignoreCase": true
+                    },
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/AllowDenyPattern"
+                        }
+                    ]
+                }
+            },
+            "required": [
+                "aws_access_key_id",
+                "aws_secret_access_key"
             ],
             "additionalProperties": false
         },
@@ -11783,14 +11910,27 @@
                 },
                 "partition_profiling_enabled": {
                     "title": "Partition Profiling Enabled",
+                    "description": "Whether to profile partitioned tables. Only BigQuery supports this. If enabled, latest partition data is used for profiling.",
                     "default": true,
                     "type": "boolean"
                 },
                 "partition_datetime": {
                     "title": "Partition Datetime",
-                    "description": "For partitioned datasets profile only the partition which matches the datetime or profile the latest one if not set. Only Bigquery supports this.",
+                    "description": "If specified, profile only the partition which matches this datetime. If not specified, profile the latest partition. Only Bigquery supports this.",
                     "type": "string",
                     "format": "date-time"
+                },
+                "use_sampling": {
+                    "title": "Use Sampling",
+                    "description": "Whether to profile column level stats on sample of table. Only BigQuery supports this. If enabled, profiling is done on rows sampled from table. Sampling is not done for smaller tables. ",
+                    "default": true,
+                    "type": "boolean"
+                },
+                "sample_size": {
+                    "title": "Sample Size",
+                    "description": "Number of rows to be sampled from table for column level profiling.Applicable only if `use_sampling` is set to True.",
+                    "default": 1000,
+                    "type": "integer"
                 }
             },
             "additionalProperties": false
@@ -13559,6 +13699,9 @@
                 },
                 {
                     "$ref": "#/definitions/openapi"
+                },
+                {
+                    "$ref": "#/definitions/dynamodb"
                 }
             ]
         },
