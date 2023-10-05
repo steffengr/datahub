@@ -1606,6 +1606,18 @@
                     "default": false,
                     "type": "boolean"
                 },
+                "use_compiled_code": {
+                    "title": "Use Compiled Code",
+                    "description": "When enabled, uses the compiled dbt code instead of the raw dbt node definition.",
+                    "default": false,
+                    "type": "boolean"
+                },
+                "test_warnings_are_errors": {
+                    "title": "Test Warnings Are Errors",
+                    "description": "When enabled, dbt test warnings will be treated as failures.",
+                    "default": false,
+                    "type": "boolean"
+                },
                 "enable_meta_mapping": {
                     "title": "Enable Meta Mapping",
                     "description": "When enabled, applies the mappings that are defined through the meta_mapping directives.",
@@ -3934,7 +3946,7 @@
                     "description": "The usage config to use when generating usage statistics",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2023-10-05T16:17:20.097216+00:00",
+                        "end_time": "2023-10-05T17:51:30.670073+00:00",
                         "start_time": "2023-10-04T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
@@ -4673,7 +4685,7 @@
                     "description": "Usage related configs",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2023-10-05T16:17:10.906714+00:00",
+                        "end_time": "2023-10-05T17:51:20.101526+00:00",
                         "start_time": "2023-10-04T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
@@ -5042,6 +5054,18 @@
                 "convert_column_urns_to_lowercase": {
                     "title": "Convert Column Urns To Lowercase",
                     "description": "When enabled, converts column URNs to lowercase to ensure cross-platform compatibility. If `target_platform` is Snowflake, the default is True.",
+                    "default": false,
+                    "type": "boolean"
+                },
+                "use_compiled_code": {
+                    "title": "Use Compiled Code",
+                    "description": "When enabled, uses the compiled dbt code instead of the raw dbt node definition.",
+                    "default": false,
+                    "type": "boolean"
+                },
+                "test_warnings_are_errors": {
+                    "title": "Test Warnings Are Errors",
+                    "description": "When enabled, dbt test warnings will be treated as failures.",
                     "default": false,
                     "type": "boolean"
                 },
