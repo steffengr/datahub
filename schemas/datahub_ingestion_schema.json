@@ -3133,6 +3133,12 @@
                     "default": true,
                     "type": "boolean"
                 },
+                "column_lineage_column_limit": {
+                    "title": "Column Lineage Column Limit",
+                    "description": "Limit the number of columns to get column level lineage. ",
+                    "default": 300,
+                    "type": "integer"
+                },
                 "include_usage_statistics": {
                     "title": "Include Usage Statistics",
                     "description": "Generate usage statistics.",
@@ -3968,7 +3974,7 @@
                     "description": "The usage config to use when generating usage statistics",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2023-10-06T05:46:27.044856+00:00",
+                        "end_time": "2023-10-06T14:17:48.381145+00:00",
                         "start_time": "2023-10-05T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
@@ -4707,7 +4713,7 @@
                     "description": "Usage related configs",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2023-10-06T05:46:18.095576+00:00",
+                        "end_time": "2023-10-06T14:17:37.150517+00:00",
                         "start_time": "2023-10-05T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
