@@ -3974,7 +3974,7 @@
                     "description": "The usage config to use when generating usage statistics",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2023-10-12T05:44:03.136900+00:00",
+                        "end_time": "2023-10-12T11:29:36.083699+00:00",
                         "start_time": "2023-10-11T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
@@ -4674,7 +4674,7 @@
                 "sharded_table_pattern": {
                     "title": "Sharded Table Pattern",
                     "description": "The regex pattern to match sharded tables and group as one table. This is a very low level config parameter, only change if you know what you are doing, ",
-                    "default": "((.+)[_$])?(\\d{8})$",
+                    "default": "((.+\\D)[_$]?)?(\\d\\d\\d\\d(?:0[1-9]|1[0-2])(?:0[1-9]|[12][0-9]|3[01]))$",
                     "deprecated": true,
                     "type": "string"
                 },
@@ -4719,7 +4719,7 @@
                     "description": "Usage related configs",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2023-10-12T05:43:52.036816+00:00",
+                        "end_time": "2023-10-12T11:29:28.154906+00:00",
                         "start_time": "2023-10-11T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
