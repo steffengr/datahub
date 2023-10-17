@@ -3151,6 +3151,12 @@
                     "default": true,
                     "type": "boolean"
                 },
+                "include_external_lineage": {
+                    "title": "Include External Lineage",
+                    "description": "Option to enable/disable lineage generation for external tables. Only external S3 tables are supported at the moment.",
+                    "default": true,
+                    "type": "boolean"
+                },
                 "include_notebooks": {
                     "title": "Include Notebooks",
                     "description": "Ingest notebooks, represented as DataHub datasets.",
@@ -4022,8 +4028,8 @@
                     "description": "The usage config to use when generating usage statistics",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2023-10-16T23:25:59.472656+00:00",
-                        "start_time": "2023-10-15T00:00:00+00:00",
+                        "end_time": "2023-10-17T14:26:14.378042+00:00",
+                        "start_time": "2023-10-16T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
                         "user_email_pattern": {
@@ -4779,8 +4785,8 @@
                     "description": "Usage related configs",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2023-10-16T23:25:48.748807+00:00",
-                        "start_time": "2023-10-15T00:00:00+00:00",
+                        "end_time": "2023-10-17T14:26:05.569275+00:00",
+                        "start_time": "2023-10-16T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
                         "user_email_pattern": {
@@ -10974,8 +10980,8 @@
                     "description": "The usage config to use when generating usage statistics",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2023-10-16T23:25:59.856890+00:00",
-                        "start_time": "2023-10-15T00:00:00+00:00",
+                        "end_time": "2023-10-17T14:26:14.687978+00:00",
+                        "start_time": "2023-10-16T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
                         "user_email_pattern": {
