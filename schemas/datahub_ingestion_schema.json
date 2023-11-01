@@ -2993,7 +2993,7 @@
                     "description": "The usage config to use when generating usage statistics",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2023-11-01T04:40:30.261969+00:00",
+                        "end_time": "2023-11-01T07:25:02.916637+00:00",
                         "start_time": "2023-10-31T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
@@ -5721,6 +5721,9 @@
             "description": "Any source that connects to a platform should inherit this class",
             "type": "object",
             "properties": {
+                "stateful_ingestion": {
+                    "$ref": "#/definitions/StatefulStaleMetadataRemovalConfig"
+                },
                 "env": {
                     "title": "Env",
                     "description": "The environment that all assets produced by this connector belong to",
@@ -10003,7 +10006,7 @@
                     "description": "The usage config to use when generating usage statistics",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2023-11-01T04:40:29.755465+00:00",
+                        "end_time": "2023-11-01T07:25:02.416077+00:00",
                         "start_time": "2023-10-31T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
@@ -11555,7 +11558,7 @@
                     "description": "Usage related configs",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2023-11-01T04:40:17.755228+00:00",
+                        "end_time": "2023-11-01T07:24:51.109323+00:00",
                         "start_time": "2023-10-31T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
