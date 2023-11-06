@@ -397,7 +397,7 @@
                         "profile_table_size_limit": 5,
                         "profile_table_row_limit": 5000000,
                         "profile_table_row_count_estimate_only": false,
-                        "max_workers": 10,
+                        "max_workers": 20,
                         "query_combiner_enabled": true,
                         "catch_exceptions": true,
                         "partition_profiling_enabled": true,
@@ -717,7 +717,7 @@
                         "profile_table_size_limit": 5,
                         "profile_table_row_limit": 5000000,
                         "profile_table_row_count_estimate_only": false,
-                        "max_workers": 10,
+                        "max_workers": 20,
                         "query_combiner_enabled": true,
                         "catch_exceptions": true,
                         "partition_profiling_enabled": true,
@@ -1289,7 +1289,7 @@
                         "profile_table_size_limit": 5,
                         "profile_table_row_limit": 5000000,
                         "profile_table_row_count_estimate_only": false,
-                        "max_workers": 10,
+                        "max_workers": 20,
                         "query_combiner_enabled": true,
                         "catch_exceptions": true,
                         "partition_profiling_enabled": true,
@@ -1364,8 +1364,8 @@
                     "description": "The usage config to use when generating usage statistics",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2023-11-02T16:54:57.746863+00:00",
-                        "start_time": "2023-11-01T00:00:00+00:00",
+                        "end_time": "2023-11-06T21:07:02.979732+00:00",
+                        "start_time": "2023-11-05T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
                         "user_email_pattern": {
@@ -1728,7 +1728,7 @@
                 "max_threads": {
                     "title": "Max Threads",
                     "description": "Max parallelism for Looker API calls. Defaults to cpuCount or 40",
-                    "default": 2,
+                    "default": 4,
                     "type": "integer"
                 },
                 "external_base_url": {
@@ -2060,7 +2060,7 @@
                         },
                         "call_analyze": true,
                         "max_wait_secs": 3600,
-                        "max_workers": 10
+                        "max_workers": 20
                     },
                     "allOf": [
                         {
@@ -2434,7 +2434,7 @@
                         "profile_table_size_limit": 5,
                         "profile_table_row_limit": 5000000,
                         "profile_table_row_count_estimate_only": false,
-                        "max_workers": 10,
+                        "max_workers": 20,
                         "query_combiner_enabled": true,
                         "catch_exceptions": true,
                         "partition_profiling_enabled": true,
@@ -2851,7 +2851,7 @@
                         "profile_table_size_limit": 5,
                         "profile_table_row_limit": 5000000,
                         "profile_table_row_count_estimate_only": false,
-                        "max_workers": 10,
+                        "max_workers": 20,
                         "query_combiner_enabled": true,
                         "catch_exceptions": true,
                         "partition_profiling_enabled": true,
@@ -3957,7 +3957,7 @@
                         "profile_table_size_limit": 5,
                         "profile_table_row_limit": 5000000,
                         "profile_table_row_count_estimate_only": false,
-                        "max_workers": 10,
+                        "max_workers": 20,
                         "query_combiner_enabled": true,
                         "catch_exceptions": true,
                         "partition_profiling_enabled": true,
@@ -4703,7 +4703,7 @@
                         "profile_table_size_limit": 5,
                         "profile_table_row_limit": 5000000,
                         "profile_table_row_count_estimate_only": false,
-                        "max_workers": 10,
+                        "max_workers": 20,
                         "query_combiner_enabled": true,
                         "catch_exceptions": true,
                         "partition_profiling_enabled": true,
@@ -5491,8 +5491,8 @@
                     "description": "The usage config to use when generating usage statistics",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2023-11-02T16:54:57.328936+00:00",
-                        "start_time": "2023-11-01T00:00:00+00:00",
+                        "end_time": "2023-11-06T21:07:02.652617+00:00",
+                        "start_time": "2023-11-05T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
                         "user_email_pattern": {
@@ -5730,7 +5730,7 @@
                         "profile_table_size_limit": 5,
                         "profile_table_row_limit": 5000000,
                         "profile_table_row_count_estimate_only": false,
-                        "max_workers": 10,
+                        "max_workers": 20,
                         "query_combiner_enabled": true,
                         "catch_exceptions": true,
                         "partition_profiling_enabled": true,
@@ -6145,7 +6145,7 @@
                         "profile_table_size_limit": 5,
                         "profile_table_row_limit": 5000000,
                         "profile_table_row_count_estimate_only": false,
-                        "max_workers": 10,
+                        "max_workers": 20,
                         "query_combiner_enabled": true,
                         "catch_exceptions": true,
                         "partition_profiling_enabled": true,
@@ -6840,7 +6840,7 @@
                         "profile_table_size_limit": 5,
                         "profile_table_row_limit": 5000000,
                         "profile_table_row_count_estimate_only": false,
-                        "max_workers": 10,
+                        "max_workers": 20,
                         "query_combiner_enabled": true,
                         "catch_exceptions": true,
                         "partition_profiling_enabled": true,
@@ -7244,7 +7244,7 @@
                         "profile_table_size_limit": 5,
                         "profile_table_row_limit": 5000000,
                         "profile_table_row_count_estimate_only": false,
-                        "max_workers": 10,
+                        "max_workers": 20,
                         "query_combiner_enabled": true,
                         "catch_exceptions": true,
                         "partition_profiling_enabled": true,
@@ -7498,7 +7498,7 @@
                         "profile_table_size_limit": 5,
                         "profile_table_row_limit": 5000000,
                         "profile_table_row_count_estimate_only": false,
-                        "max_workers": 10,
+                        "max_workers": 20,
                         "query_combiner_enabled": true,
                         "catch_exceptions": true,
                         "partition_profiling_enabled": true,
@@ -7770,7 +7770,7 @@
                         "profile_table_size_limit": 5,
                         "profile_table_row_limit": 5000000,
                         "profile_table_row_count_estimate_only": false,
-                        "max_workers": 10,
+                        "max_workers": 20,
                         "query_combiner_enabled": true,
                         "catch_exceptions": true,
                         "partition_profiling_enabled": true,
@@ -8133,7 +8133,7 @@
                         "profile_table_size_limit": 5,
                         "profile_table_row_limit": 5000000,
                         "profile_table_row_count_estimate_only": false,
-                        "max_workers": 10,
+                        "max_workers": 20,
                         "query_combiner_enabled": true,
                         "catch_exceptions": true,
                         "partition_profiling_enabled": true,
@@ -8696,7 +8696,7 @@
                         "profile_table_size_limit": 5,
                         "profile_table_row_limit": 5000000,
                         "profile_table_row_count_estimate_only": false,
-                        "max_workers": 10,
+                        "max_workers": 20,
                         "query_combiner_enabled": true,
                         "catch_exceptions": true,
                         "partition_profiling_enabled": true,
@@ -8776,8 +8776,8 @@
                     "description": "Usage related configs",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2023-11-02T16:54:47.469221+00:00",
-                        "start_time": "2023-11-01T00:00:00+00:00",
+                        "end_time": "2023-11-06T21:06:55.077084+00:00",
+                        "start_time": "2023-11-05T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
                         "user_email_pattern": {
@@ -9409,7 +9409,7 @@
                         "profile_table_size_limit": 5,
                         "profile_table_row_limit": 5000000,
                         "profile_table_row_count_estimate_only": false,
-                        "max_workers": 10,
+                        "max_workers": 20,
                         "query_combiner_enabled": true,
                         "catch_exceptions": true,
                         "partition_profiling_enabled": true,
@@ -9718,7 +9718,7 @@
                         "profile_table_size_limit": 5,
                         "profile_table_row_limit": 5000000,
                         "profile_table_row_count_estimate_only": false,
-                        "max_workers": 10,
+                        "max_workers": 20,
                         "query_combiner_enabled": true,
                         "catch_exceptions": true,
                         "partition_profiling_enabled": true,
@@ -10706,7 +10706,7 @@
                         "profile_table_size_limit": 5,
                         "profile_table_row_limit": 5000000,
                         "profile_table_row_count_estimate_only": false,
-                        "max_workers": 10,
+                        "max_workers": 20,
                         "query_combiner_enabled": true,
                         "catch_exceptions": true,
                         "partition_profiling_enabled": true,
@@ -11001,7 +11001,7 @@
                         "profile_table_size_limit": 5,
                         "profile_table_row_limit": 5000000,
                         "profile_table_row_count_estimate_only": false,
-                        "max_workers": 10,
+                        "max_workers": 20,
                         "query_combiner_enabled": true,
                         "catch_exceptions": true,
                         "partition_profiling_enabled": true,
@@ -11269,7 +11269,7 @@
                         "profile_table_size_limit": 5,
                         "profile_table_row_limit": 5000000,
                         "profile_table_row_count_estimate_only": false,
-                        "max_workers": 10,
+                        "max_workers": 20,
                         "query_combiner_enabled": true,
                         "catch_exceptions": true,
                         "partition_profiling_enabled": true,
@@ -11457,7 +11457,7 @@
                 "max_workers": {
                     "title": "Max Workers",
                     "description": "Number of worker threads to use for datahub api ingestion.",
-                    "default": 10,
+                    "default": 20,
                     "hidden_from_docs": true,
                     "type": "integer"
                 }
@@ -11687,7 +11687,7 @@
                         "profile_table_size_limit": 5,
                         "profile_table_row_limit": 5000000,
                         "profile_table_row_count_estimate_only": false,
-                        "max_workers": 10,
+                        "max_workers": 20,
                         "query_combiner_enabled": true,
                         "catch_exceptions": true,
                         "partition_profiling_enabled": true,
@@ -12030,7 +12030,7 @@
                         "profile_table_size_limit": 5,
                         "profile_table_row_limit": 5000000,
                         "profile_table_row_count_estimate_only": false,
-                        "max_workers": 10,
+                        "max_workers": 20,
                         "query_combiner_enabled": true,
                         "catch_exceptions": true,
                         "partition_profiling_enabled": true,
@@ -12199,7 +12199,7 @@
                     "default": {
                         "enabled": false,
                         "sample_size": 100,
-                        "max_workers": 2,
+                        "max_workers": 4,
                         "table_pattern": {
                             "allow": [
                                 ".*"
@@ -12495,7 +12495,7 @@
                         "profile_table_size_limit": 5,
                         "profile_table_row_limit": 5000000,
                         "profile_table_row_count_estimate_only": false,
-                        "max_workers": 10,
+                        "max_workers": 20,
                         "query_combiner_enabled": true,
                         "catch_exceptions": true,
                         "partition_profiling_enabled": true,
@@ -13048,7 +13048,7 @@
                 "max_workers": {
                     "title": "Max Workers",
                     "description": "Number of worker threads to use for profiling. Set to 1 to disable.",
-                    "default": 10,
+                    "default": 20,
                     "type": "integer"
                 },
                 "query_combiner_enabled": {
@@ -13399,7 +13399,7 @@
                 "max_workers": {
                     "title": "Max Workers",
                     "description": "Number of worker threads to use for profiling. Set to 1 to disable.",
-                    "default": 10,
+                    "default": 20,
                     "type": "integer"
                 }
             },
@@ -14529,7 +14529,7 @@
                 "max_workers": {
                     "title": "Max Workers",
                     "description": "Number of worker threads to use for classification. Set to 1 to disable.",
-                    "default": 2,
+                    "default": 4,
                     "type": "integer"
                 },
                 "table_pattern": {
