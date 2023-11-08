@@ -397,7 +397,7 @@
                         "profile_table_size_limit": 5,
                         "profile_table_row_limit": 5000000,
                         "profile_table_row_count_estimate_only": false,
-                        "max_workers": 20,
+                        "max_workers": 10,
                         "query_combiner_enabled": true,
                         "catch_exceptions": true,
                         "partition_profiling_enabled": true,
@@ -717,7 +717,7 @@
                         "profile_table_size_limit": 5,
                         "profile_table_row_limit": 5000000,
                         "profile_table_row_count_estimate_only": false,
-                        "max_workers": 20,
+                        "max_workers": 10,
                         "query_combiner_enabled": true,
                         "catch_exceptions": true,
                         "partition_profiling_enabled": true,
@@ -1289,7 +1289,7 @@
                         "profile_table_size_limit": 5,
                         "profile_table_row_limit": 5000000,
                         "profile_table_row_count_estimate_only": false,
-                        "max_workers": 20,
+                        "max_workers": 10,
                         "query_combiner_enabled": true,
                         "catch_exceptions": true,
                         "partition_profiling_enabled": true,
@@ -1364,8 +1364,8 @@
                     "description": "The usage config to use when generating usage statistics",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2023-11-06T21:07:02.979732+00:00",
-                        "start_time": "2023-11-05T00:00:00+00:00",
+                        "end_time": "2023-11-08T07:12:24.166109+00:00",
+                        "start_time": "2023-11-07T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
                         "user_email_pattern": {
@@ -1728,7 +1728,7 @@
                 "max_threads": {
                     "title": "Max Threads",
                     "description": "Max parallelism for Looker API calls. Defaults to cpuCount or 40",
-                    "default": 4,
+                    "default": 2,
                     "type": "integer"
                 },
                 "external_base_url": {
@@ -2060,7 +2060,7 @@
                         },
                         "call_analyze": true,
                         "max_wait_secs": 3600,
-                        "max_workers": 20
+                        "max_workers": 10
                     },
                     "allOf": [
                         {
@@ -2434,7 +2434,7 @@
                         "profile_table_size_limit": 5,
                         "profile_table_row_limit": 5000000,
                         "profile_table_row_count_estimate_only": false,
-                        "max_workers": 20,
+                        "max_workers": 10,
                         "query_combiner_enabled": true,
                         "catch_exceptions": true,
                         "partition_profiling_enabled": true,
@@ -2851,7 +2851,7 @@
                         "profile_table_size_limit": 5,
                         "profile_table_row_limit": 5000000,
                         "profile_table_row_count_estimate_only": false,
-                        "max_workers": 20,
+                        "max_workers": 10,
                         "query_combiner_enabled": true,
                         "catch_exceptions": true,
                         "partition_profiling_enabled": true,
@@ -3957,7 +3957,7 @@
                         "profile_table_size_limit": 5,
                         "profile_table_row_limit": 5000000,
                         "profile_table_row_count_estimate_only": false,
-                        "max_workers": 20,
+                        "max_workers": 10,
                         "query_combiner_enabled": true,
                         "catch_exceptions": true,
                         "partition_profiling_enabled": true,
@@ -4703,7 +4703,7 @@
                         "profile_table_size_limit": 5,
                         "profile_table_row_limit": 5000000,
                         "profile_table_row_count_estimate_only": false,
-                        "max_workers": 20,
+                        "max_workers": 10,
                         "query_combiner_enabled": true,
                         "catch_exceptions": true,
                         "partition_profiling_enabled": true,
@@ -5491,8 +5491,8 @@
                     "description": "The usage config to use when generating usage statistics",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2023-11-06T21:07:02.652617+00:00",
-                        "start_time": "2023-11-05T00:00:00+00:00",
+                        "end_time": "2023-11-08T07:12:23.744507+00:00",
+                        "start_time": "2023-11-07T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
                         "user_email_pattern": {
@@ -5730,7 +5730,7 @@
                         "profile_table_size_limit": 5,
                         "profile_table_row_limit": 5000000,
                         "profile_table_row_count_estimate_only": false,
-                        "max_workers": 20,
+                        "max_workers": 10,
                         "query_combiner_enabled": true,
                         "catch_exceptions": true,
                         "partition_profiling_enabled": true,
@@ -5945,6 +5945,113 @@
             },
             "additionalProperties": false
         },
+        "fivetran": {
+            "type": "object",
+            "properties": {
+                "type": {
+                    "type": "string",
+                    "enum": [
+                        "fivetran"
+                    ]
+                },
+                "config": {
+                    "$ref": "#/definitions/fivetran_config"
+                }
+            },
+            "required": [
+                "type",
+                "config"
+            ]
+        },
+        "fivetran_config": {
+            "title": "FivetranSourceConfig",
+            "description": "Base configuration class for stateful ingestion for source configs to inherit from.",
+            "type": "object",
+            "properties": {
+                "env": {
+                    "title": "Env",
+                    "description": "The environment that all assets produced by this connector belong to",
+                    "default": "PROD",
+                    "type": "string"
+                },
+                "platform_instance": {
+                    "title": "Platform Instance",
+                    "description": "The instance of the platform that all assets produced by this recipe belong to",
+                    "type": "string"
+                },
+                "stateful_ingestion": {
+                    "title": "Stateful Ingestion",
+                    "description": "Airbyte Stateful Ingestion Config.",
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/StatefulStaleMetadataRemovalConfig"
+                        }
+                    ]
+                },
+                "fivetran_log_config": {
+                    "title": "Fivetran Log Config",
+                    "description": "Fivetran log connector destination server configurations.",
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/FivetranLogConfig"
+                        }
+                    ]
+                },
+                "connector_patterns": {
+                    "title": "Connector Patterns",
+                    "description": "Regex patterns for connectors to filter in ingestion.",
+                    "default": {
+                        "allow": [
+                            ".*"
+                        ],
+                        "deny": [],
+                        "ignoreCase": true
+                    },
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/AllowDenyPattern"
+                        }
+                    ]
+                },
+                "include_column_lineage": {
+                    "title": "Include Column Lineage",
+                    "description": "Populates table->table column lineage.",
+                    "default": true,
+                    "type": "boolean"
+                },
+                "sources_to_database": {
+                    "title": "Sources To Database",
+                    "description": "A mapping of the connector's all sources to its database. Use connector id as key.",
+                    "default": {},
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                },
+                "sources_to_platform_instance": {
+                    "title": "Sources To Platform Instance",
+                    "description": "A mapping of the connector's all sources dataset to platform instance. Use connector id as key.",
+                    "default": {},
+                    "type": "object",
+                    "additionalProperties": {
+                        "$ref": "#/definitions/PlatformDetail"
+                    }
+                },
+                "destination_to_platform_instance": {
+                    "title": "Destination To Platform Instance",
+                    "description": "A mapping of destination dataset to platform instance. Use destination id as key.",
+                    "default": {},
+                    "type": "object",
+                    "additionalProperties": {
+                        "$ref": "#/definitions/PlatformDetail"
+                    }
+                }
+            },
+            "required": [
+                "fivetran_log_config"
+            ],
+            "additionalProperties": false
+        },
         "mssql": {
             "type": "object",
             "properties": {
@@ -6145,7 +6252,7 @@
                         "profile_table_size_limit": 5,
                         "profile_table_row_limit": 5000000,
                         "profile_table_row_count_estimate_only": false,
-                        "max_workers": 20,
+                        "max_workers": 10,
                         "query_combiner_enabled": true,
                         "catch_exceptions": true,
                         "partition_profiling_enabled": true,
@@ -6840,7 +6947,7 @@
                         "profile_table_size_limit": 5,
                         "profile_table_row_limit": 5000000,
                         "profile_table_row_count_estimate_only": false,
-                        "max_workers": 20,
+                        "max_workers": 10,
                         "query_combiner_enabled": true,
                         "catch_exceptions": true,
                         "partition_profiling_enabled": true,
@@ -7244,7 +7351,7 @@
                         "profile_table_size_limit": 5,
                         "profile_table_row_limit": 5000000,
                         "profile_table_row_count_estimate_only": false,
-                        "max_workers": 20,
+                        "max_workers": 10,
                         "query_combiner_enabled": true,
                         "catch_exceptions": true,
                         "partition_profiling_enabled": true,
@@ -7498,7 +7605,7 @@
                         "profile_table_size_limit": 5,
                         "profile_table_row_limit": 5000000,
                         "profile_table_row_count_estimate_only": false,
-                        "max_workers": 20,
+                        "max_workers": 10,
                         "query_combiner_enabled": true,
                         "catch_exceptions": true,
                         "partition_profiling_enabled": true,
@@ -7770,7 +7877,7 @@
                         "profile_table_size_limit": 5,
                         "profile_table_row_limit": 5000000,
                         "profile_table_row_count_estimate_only": false,
-                        "max_workers": 20,
+                        "max_workers": 10,
                         "query_combiner_enabled": true,
                         "catch_exceptions": true,
                         "partition_profiling_enabled": true,
@@ -8133,7 +8240,7 @@
                         "profile_table_size_limit": 5,
                         "profile_table_row_limit": 5000000,
                         "profile_table_row_count_estimate_only": false,
-                        "max_workers": 20,
+                        "max_workers": 10,
                         "query_combiner_enabled": true,
                         "catch_exceptions": true,
                         "partition_profiling_enabled": true,
@@ -8696,7 +8803,7 @@
                         "profile_table_size_limit": 5,
                         "profile_table_row_limit": 5000000,
                         "profile_table_row_count_estimate_only": false,
-                        "max_workers": 20,
+                        "max_workers": 10,
                         "query_combiner_enabled": true,
                         "catch_exceptions": true,
                         "partition_profiling_enabled": true,
@@ -8776,8 +8883,8 @@
                     "description": "Usage related configs",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2023-11-06T21:06:55.077084+00:00",
-                        "start_time": "2023-11-05T00:00:00+00:00",
+                        "end_time": "2023-11-08T07:12:13.937424+00:00",
+                        "start_time": "2023-11-07T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
                         "user_email_pattern": {
@@ -9409,7 +9516,7 @@
                         "profile_table_size_limit": 5,
                         "profile_table_row_limit": 5000000,
                         "profile_table_row_count_estimate_only": false,
-                        "max_workers": 20,
+                        "max_workers": 10,
                         "query_combiner_enabled": true,
                         "catch_exceptions": true,
                         "partition_profiling_enabled": true,
@@ -9718,7 +9825,7 @@
                         "profile_table_size_limit": 5,
                         "profile_table_row_limit": 5000000,
                         "profile_table_row_count_estimate_only": false,
-                        "max_workers": 20,
+                        "max_workers": 10,
                         "query_combiner_enabled": true,
                         "catch_exceptions": true,
                         "partition_profiling_enabled": true,
@@ -10706,7 +10813,7 @@
                         "profile_table_size_limit": 5,
                         "profile_table_row_limit": 5000000,
                         "profile_table_row_count_estimate_only": false,
-                        "max_workers": 20,
+                        "max_workers": 10,
                         "query_combiner_enabled": true,
                         "catch_exceptions": true,
                         "partition_profiling_enabled": true,
@@ -11001,7 +11108,7 @@
                         "profile_table_size_limit": 5,
                         "profile_table_row_limit": 5000000,
                         "profile_table_row_count_estimate_only": false,
-                        "max_workers": 20,
+                        "max_workers": 10,
                         "query_combiner_enabled": true,
                         "catch_exceptions": true,
                         "partition_profiling_enabled": true,
@@ -11269,7 +11376,7 @@
                         "profile_table_size_limit": 5,
                         "profile_table_row_limit": 5000000,
                         "profile_table_row_count_estimate_only": false,
-                        "max_workers": 20,
+                        "max_workers": 10,
                         "query_combiner_enabled": true,
                         "catch_exceptions": true,
                         "partition_profiling_enabled": true,
@@ -11457,7 +11564,7 @@
                 "max_workers": {
                     "title": "Max Workers",
                     "description": "Number of worker threads to use for datahub api ingestion.",
-                    "default": 20,
+                    "default": 10,
                     "hidden_from_docs": true,
                     "type": "integer"
                 }
@@ -11687,7 +11794,7 @@
                         "profile_table_size_limit": 5,
                         "profile_table_row_limit": 5000000,
                         "profile_table_row_count_estimate_only": false,
-                        "max_workers": 20,
+                        "max_workers": 10,
                         "query_combiner_enabled": true,
                         "catch_exceptions": true,
                         "partition_profiling_enabled": true,
@@ -12030,7 +12137,7 @@
                         "profile_table_size_limit": 5,
                         "profile_table_row_limit": 5000000,
                         "profile_table_row_count_estimate_only": false,
-                        "max_workers": 20,
+                        "max_workers": 10,
                         "query_combiner_enabled": true,
                         "catch_exceptions": true,
                         "partition_profiling_enabled": true,
@@ -12199,7 +12306,7 @@
                     "default": {
                         "enabled": false,
                         "sample_size": 100,
-                        "max_workers": 4,
+                        "max_workers": 2,
                         "table_pattern": {
                             "allow": [
                                 ".*"
@@ -12495,7 +12602,7 @@
                         "profile_table_size_limit": 5,
                         "profile_table_row_limit": 5000000,
                         "profile_table_row_count_estimate_only": false,
-                        "max_workers": 20,
+                        "max_workers": 10,
                         "query_combiner_enabled": true,
                         "catch_exceptions": true,
                         "partition_profiling_enabled": true,
@@ -12573,16 +12680,16 @@
                     "description": "Snowflake role.",
                     "type": "string"
                 },
+                "connect_args": {
+                    "title": "Connect Args",
+                    "description": "Connect args to pass to Snowflake SqlAlchemy driver",
+                    "type": "object"
+                },
                 "include_table_lineage": {
                     "title": "Include Table Lineage",
                     "description": "If enabled, populates the snowflake table-to-table and s3-to-snowflake table lineage. Requires appropriate grants given to the role and Snowflake Enterprise Edition or above.",
                     "default": true,
                     "type": "boolean"
-                },
-                "connect_args": {
-                    "title": "Connect Args",
-                    "description": "Connect args to pass to Snowflake SqlAlchemy driver",
-                    "type": "object"
                 },
                 "database_pattern": {
                     "title": "Database Pattern",
@@ -13048,7 +13155,7 @@
                 "max_workers": {
                     "title": "Max Workers",
                     "description": "Number of worker threads to use for profiling. Set to 1 to disable.",
-                    "default": 20,
+                    "default": 10,
                     "type": "integer"
                 },
                 "query_combiner_enabled": {
@@ -13399,7 +13506,7 @@
                 "max_workers": {
                     "title": "Max Workers",
                     "description": "Number of worker threads to use for profiling. Set to 1 to disable.",
-                    "default": 20,
+                    "default": 10,
                     "type": "integer"
                 }
             },
@@ -13831,6 +13938,194 @@
                     "items": {
                         "type": "string"
                     }
+                }
+            },
+            "additionalProperties": false
+        },
+        "OAuthIdentityProvider": {
+            "title": "OAuthIdentityProvider",
+            "description": "An enumeration.",
+            "enum": [
+                "microsoft",
+                "okta"
+            ]
+        },
+        "OAuthConfiguration": {
+            "title": "OAuthConfiguration",
+            "type": "object",
+            "properties": {
+                "provider": {
+                    "description": "Identity provider for oauth.Supported providers are microsoft and okta.",
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/OAuthIdentityProvider"
+                        }
+                    ]
+                },
+                "authority_url": {
+                    "title": "Authority Url",
+                    "description": "Authority url of your identity provider",
+                    "type": "string"
+                },
+                "client_id": {
+                    "title": "Client Id",
+                    "description": "client id of your registered application",
+                    "type": "string"
+                },
+                "scopes": {
+                    "title": "Scopes",
+                    "description": "scopes required to connect to snowflake",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "use_certificate": {
+                    "title": "Use Certificate",
+                    "description": "Do you want to use certificate and private key to authenticate using oauth",
+                    "default": false,
+                    "type": "boolean"
+                },
+                "client_secret": {
+                    "title": "Client Secret",
+                    "description": "client secret of the application if use_certificate = false",
+                    "type": "string",
+                    "writeOnly": true,
+                    "format": "password"
+                },
+                "encoded_oauth_public_key": {
+                    "title": "Encoded Oauth Public Key",
+                    "description": "base64 encoded certificate content if use_certificate = true",
+                    "type": "string"
+                },
+                "encoded_oauth_private_key": {
+                    "title": "Encoded Oauth Private Key",
+                    "description": "base64 encoded private key content if use_certificate = true",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "provider",
+                "authority_url",
+                "client_id",
+                "scopes"
+            ],
+            "additionalProperties": false
+        },
+        "DestinationConfig": {
+            "title": "DestinationConfig",
+            "type": "object",
+            "properties": {
+                "options": {
+                    "title": "Options",
+                    "description": "Any options specified here will be passed to [SQLAlchemy.create_engine](https://docs.sqlalchemy.org/en/14/core/engines.html#sqlalchemy.create_engine) as kwargs.",
+                    "type": "object"
+                },
+                "scheme": {
+                    "title": "Scheme",
+                    "default": "snowflake",
+                    "type": "string"
+                },
+                "username": {
+                    "title": "Username",
+                    "description": "Snowflake username.",
+                    "type": "string"
+                },
+                "password": {
+                    "title": "Password",
+                    "description": "Snowflake password.",
+                    "type": "string",
+                    "writeOnly": true,
+                    "format": "password"
+                },
+                "private_key": {
+                    "title": "Private Key",
+                    "description": "Private key in a form of '-----BEGIN PRIVATE KEY-----\\nprivate-key\\n-----END PRIVATE KEY-----\\n' if using key pair authentication. Encrypted version of private key will be in a form of '-----BEGIN ENCRYPTED PRIVATE KEY-----\\nencrypted-private-key\\n-----END ECNCRYPTED PRIVATE KEY-----\\n' See: https://docs.snowflake.com/en/user-guide/key-pair-auth.html",
+                    "type": "string"
+                },
+                "private_key_path": {
+                    "title": "Private Key Path",
+                    "description": "The path to the private key if using key pair authentication. Ignored if `private_key` is set. See: https://docs.snowflake.com/en/user-guide/key-pair-auth.html",
+                    "type": "string"
+                },
+                "private_key_password": {
+                    "title": "Private Key Password",
+                    "description": "Password for your private key. Required if using key pair authentication with encrypted private key.",
+                    "type": "string",
+                    "writeOnly": true,
+                    "format": "password"
+                },
+                "oauth_config": {
+                    "title": "Oauth Config",
+                    "description": "oauth configuration - https://docs.snowflake.com/en/user-guide/python-connector-example.html#connecting-with-oauth",
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/OAuthConfiguration"
+                        }
+                    ]
+                },
+                "authentication_type": {
+                    "title": "Authentication Type",
+                    "description": "The type of authenticator to use when connecting to Snowflake. Supports \"DEFAULT_AUTHENTICATOR\", \"OAUTH_AUTHENTICATOR\", \"EXTERNAL_BROWSER_AUTHENTICATOR\" and \"KEY_PAIR_AUTHENTICATOR\".",
+                    "default": "DEFAULT_AUTHENTICATOR",
+                    "type": "string"
+                },
+                "account_id": {
+                    "title": "Account Id",
+                    "description": "Snowflake account identifier. e.g. xy12345,  xy12345.us-east-2.aws, xy12345.us-central1.gcp, xy12345.central-us.azure, xy12345.us-west-2.privatelink. Refer [Account Identifiers](https://docs.snowflake.com/en/user-guide/admin-account-identifier.html#format-2-legacy-account-locator-in-a-region) for more details.",
+                    "type": "string"
+                },
+                "warehouse": {
+                    "title": "Warehouse",
+                    "description": "Snowflake warehouse.",
+                    "type": "string"
+                },
+                "role": {
+                    "title": "Role",
+                    "description": "Snowflake role.",
+                    "type": "string"
+                },
+                "connect_args": {
+                    "title": "Connect Args",
+                    "description": "Connect args to pass to Snowflake SqlAlchemy driver",
+                    "type": "object"
+                },
+                "database": {
+                    "title": "Database",
+                    "description": "The fivetran connector log database.",
+                    "type": "string"
+                },
+                "log_schema": {
+                    "title": "Log Schema",
+                    "description": "The fivetran connector log schema.",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "account_id",
+                "database",
+                "log_schema"
+            ],
+            "additionalProperties": false
+        },
+        "FivetranLogConfig": {
+            "title": "FivetranLogConfig",
+            "type": "object",
+            "properties": {
+                "destination_platform": {
+                    "title": "Destination Platform",
+                    "description": "The destination platform where fivetran connector log tables are dumped.",
+                    "default": "snowflake",
+                    "type": "string"
+                },
+                "destination_config": {
+                    "title": "Destination Config",
+                    "description": "If destination platform is 'snowflake', provide snowflake configuration.",
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/DestinationConfig"
+                        }
+                    ]
                 }
             },
             "additionalProperties": false
@@ -14529,7 +14824,7 @@
                 "max_workers": {
                     "title": "Max Workers",
                     "description": "Number of worker threads to use for classification. Set to 1 to disable.",
-                    "default": 4,
+                    "default": 2,
                     "type": "integer"
                 },
                 "table_pattern": {
@@ -14588,76 +14883,6 @@
                     }
                 }
             },
-            "additionalProperties": false
-        },
-        "OAuthIdentityProvider": {
-            "title": "OAuthIdentityProvider",
-            "description": "An enumeration.",
-            "enum": [
-                "microsoft",
-                "okta"
-            ]
-        },
-        "OAuthConfiguration": {
-            "title": "OAuthConfiguration",
-            "type": "object",
-            "properties": {
-                "provider": {
-                    "description": "Identity provider for oauth.Supported providers are microsoft and okta.",
-                    "allOf": [
-                        {
-                            "$ref": "#/definitions/OAuthIdentityProvider"
-                        }
-                    ]
-                },
-                "authority_url": {
-                    "title": "Authority Url",
-                    "description": "Authority url of your identity provider",
-                    "type": "string"
-                },
-                "client_id": {
-                    "title": "Client Id",
-                    "description": "client id of your registered application",
-                    "type": "string"
-                },
-                "scopes": {
-                    "title": "Scopes",
-                    "description": "scopes required to connect to snowflake",
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "use_certificate": {
-                    "title": "Use Certificate",
-                    "description": "Do you want to use certificate and private key to authenticate using oauth",
-                    "default": false,
-                    "type": "boolean"
-                },
-                "client_secret": {
-                    "title": "Client Secret",
-                    "description": "client secret of the application if use_certificate = false",
-                    "type": "string",
-                    "writeOnly": true,
-                    "format": "password"
-                },
-                "encoded_oauth_public_key": {
-                    "title": "Encoded Oauth Public Key",
-                    "description": "base64 encoded certificate content if use_certificate = true",
-                    "type": "string"
-                },
-                "encoded_oauth_private_key": {
-                    "title": "Encoded Oauth Private Key",
-                    "description": "base64 encoded private key content if use_certificate = true",
-                    "type": "string"
-                }
-            },
-            "required": [
-                "provider",
-                "authority_url",
-                "client_id",
-                "scopes"
-            ],
             "additionalProperties": false
         },
         "TagOption": {
@@ -14850,6 +15075,9 @@
                 },
                 {
                     "$ref": "#/definitions/elasticsearch"
+                },
+                {
+                    "$ref": "#/definitions/fivetran"
                 },
                 {
                     "$ref": "#/definitions/mssql"
