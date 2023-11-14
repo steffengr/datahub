@@ -397,7 +397,7 @@
                         "profile_table_size_limit": 5,
                         "profile_table_row_limit": 5000000,
                         "profile_table_row_count_estimate_only": false,
-                        "max_workers": 20,
+                        "max_workers": 10,
                         "query_combiner_enabled": true,
                         "catch_exceptions": true,
                         "partition_profiling_enabled": true,
@@ -717,7 +717,7 @@
                         "profile_table_size_limit": 5,
                         "profile_table_row_limit": 5000000,
                         "profile_table_row_count_estimate_only": false,
-                        "max_workers": 20,
+                        "max_workers": 10,
                         "query_combiner_enabled": true,
                         "catch_exceptions": true,
                         "partition_profiling_enabled": true,
@@ -1289,7 +1289,7 @@
                         "profile_table_size_limit": 5,
                         "profile_table_row_limit": 5000000,
                         "profile_table_row_count_estimate_only": false,
-                        "max_workers": 20,
+                        "max_workers": 10,
                         "query_combiner_enabled": true,
                         "catch_exceptions": true,
                         "partition_profiling_enabled": true,
@@ -1364,8 +1364,8 @@
                     "description": "The usage config to use when generating usage statistics",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2023-11-13T03:41:11.378237+00:00",
-                        "start_time": "2023-11-12T00:00:00+00:00",
+                        "end_time": "2023-11-14T00:09:53.431545+00:00",
+                        "start_time": "2023-11-13T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
                         "user_email_pattern": {
@@ -1728,7 +1728,7 @@
                 "max_threads": {
                     "title": "Max Threads",
                     "description": "Max parallelism for Looker API calls. Defaults to cpuCount or 40",
-                    "default": 4,
+                    "default": 2,
                     "type": "integer"
                 },
                 "external_base_url": {
@@ -2060,7 +2060,7 @@
                         },
                         "call_analyze": true,
                         "max_wait_secs": 3600,
-                        "max_workers": 20
+                        "max_workers": 10
                     },
                     "allOf": [
                         {
@@ -2434,7 +2434,7 @@
                         "profile_table_size_limit": 5,
                         "profile_table_row_limit": 5000000,
                         "profile_table_row_count_estimate_only": false,
-                        "max_workers": 20,
+                        "max_workers": 10,
                         "query_combiner_enabled": true,
                         "catch_exceptions": true,
                         "partition_profiling_enabled": true,
@@ -2851,7 +2851,7 @@
                         "profile_table_size_limit": 5,
                         "profile_table_row_limit": 5000000,
                         "profile_table_row_count_estimate_only": false,
-                        "max_workers": 20,
+                        "max_workers": 10,
                         "query_combiner_enabled": true,
                         "catch_exceptions": true,
                         "partition_profiling_enabled": true,
@@ -3447,7 +3447,7 @@
             "properties": {
                 "incremental_lineage": {
                     "title": "Incremental Lineage",
-                    "description": "When enabled, emits lineage as incremental to existing lineage already in DataHub. When disabled, re-states lineage on each run.",
+                    "description": "When enabled, emits incremental/patch lineage for non-dbt entities. When disabled, re-states lineage on each run.",
                     "default": true,
                     "type": "boolean"
                 },
@@ -3606,6 +3606,18 @@
                 "test_warnings_are_errors": {
                     "title": "Test Warnings Are Errors",
                     "description": "When enabled, dbt test warnings will be treated as failures.",
+                    "default": false,
+                    "type": "boolean"
+                },
+                "infer_dbt_schemas": {
+                    "title": "Infer Dbt Schemas",
+                    "description": "When enabled, schemas will be inferred from the dbt node definition.",
+                    "default": true,
+                    "type": "boolean"
+                },
+                "include_column_lineage": {
+                    "title": "Include Column Lineage",
+                    "description": "When enabled, column-level lineage will be extracted from the dbt node definition. Requires `infer_dbt_schemas` to be enabled. If you run into issues where the column name casing does not match up with properly, providing a datahub_api or using the rest sink will improve accuracy.",
                     "default": false,
                     "type": "boolean"
                 },
@@ -3957,7 +3969,7 @@
                         "profile_table_size_limit": 5,
                         "profile_table_row_limit": 5000000,
                         "profile_table_row_count_estimate_only": false,
-                        "max_workers": 20,
+                        "max_workers": 10,
                         "query_combiner_enabled": true,
                         "catch_exceptions": true,
                         "partition_profiling_enabled": true,
@@ -4703,7 +4715,7 @@
                         "profile_table_size_limit": 5,
                         "profile_table_row_limit": 5000000,
                         "profile_table_row_count_estimate_only": false,
-                        "max_workers": 20,
+                        "max_workers": 10,
                         "query_combiner_enabled": true,
                         "catch_exceptions": true,
                         "partition_profiling_enabled": true,
@@ -5491,8 +5503,8 @@
                     "description": "The usage config to use when generating usage statistics",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2023-11-13T03:41:11.044032+00:00",
-                        "start_time": "2023-11-12T00:00:00+00:00",
+                        "end_time": "2023-11-14T00:09:52.998794+00:00",
+                        "start_time": "2023-11-13T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
                         "user_email_pattern": {
@@ -5730,7 +5742,7 @@
                         "profile_table_size_limit": 5,
                         "profile_table_row_limit": 5000000,
                         "profile_table_row_count_estimate_only": false,
-                        "max_workers": 20,
+                        "max_workers": 10,
                         "query_combiner_enabled": true,
                         "catch_exceptions": true,
                         "partition_profiling_enabled": true,
@@ -6252,7 +6264,7 @@
                         "profile_table_size_limit": 5,
                         "profile_table_row_limit": 5000000,
                         "profile_table_row_count_estimate_only": false,
-                        "max_workers": 20,
+                        "max_workers": 10,
                         "query_combiner_enabled": true,
                         "catch_exceptions": true,
                         "partition_profiling_enabled": true,
@@ -6947,7 +6959,7 @@
                         "profile_table_size_limit": 5,
                         "profile_table_row_limit": 5000000,
                         "profile_table_row_count_estimate_only": false,
-                        "max_workers": 20,
+                        "max_workers": 10,
                         "query_combiner_enabled": true,
                         "catch_exceptions": true,
                         "partition_profiling_enabled": true,
@@ -7351,7 +7363,7 @@
                         "profile_table_size_limit": 5,
                         "profile_table_row_limit": 5000000,
                         "profile_table_row_count_estimate_only": false,
-                        "max_workers": 20,
+                        "max_workers": 10,
                         "query_combiner_enabled": true,
                         "catch_exceptions": true,
                         "partition_profiling_enabled": true,
@@ -7605,7 +7617,7 @@
                         "profile_table_size_limit": 5,
                         "profile_table_row_limit": 5000000,
                         "profile_table_row_count_estimate_only": false,
-                        "max_workers": 20,
+                        "max_workers": 10,
                         "query_combiner_enabled": true,
                         "catch_exceptions": true,
                         "partition_profiling_enabled": true,
@@ -7877,7 +7889,7 @@
                         "profile_table_size_limit": 5,
                         "profile_table_row_limit": 5000000,
                         "profile_table_row_count_estimate_only": false,
-                        "max_workers": 20,
+                        "max_workers": 10,
                         "query_combiner_enabled": true,
                         "catch_exceptions": true,
                         "partition_profiling_enabled": true,
@@ -8240,7 +8252,7 @@
                         "profile_table_size_limit": 5,
                         "profile_table_row_limit": 5000000,
                         "profile_table_row_count_estimate_only": false,
-                        "max_workers": 20,
+                        "max_workers": 10,
                         "query_combiner_enabled": true,
                         "catch_exceptions": true,
                         "partition_profiling_enabled": true,
@@ -8803,7 +8815,7 @@
                         "profile_table_size_limit": 5,
                         "profile_table_row_limit": 5000000,
                         "profile_table_row_count_estimate_only": false,
-                        "max_workers": 20,
+                        "max_workers": 10,
                         "query_combiner_enabled": true,
                         "catch_exceptions": true,
                         "partition_profiling_enabled": true,
@@ -8883,8 +8895,8 @@
                     "description": "Usage related configs",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2023-11-13T03:41:03.091161+00:00",
-                        "start_time": "2023-11-12T00:00:00+00:00",
+                        "end_time": "2023-11-14T00:09:42.871960+00:00",
+                        "start_time": "2023-11-13T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
                         "user_email_pattern": {
@@ -9516,7 +9528,7 @@
                         "profile_table_size_limit": 5,
                         "profile_table_row_limit": 5000000,
                         "profile_table_row_count_estimate_only": false,
-                        "max_workers": 20,
+                        "max_workers": 10,
                         "query_combiner_enabled": true,
                         "catch_exceptions": true,
                         "partition_profiling_enabled": true,
@@ -9825,7 +9837,7 @@
                         "profile_table_size_limit": 5,
                         "profile_table_row_limit": 5000000,
                         "profile_table_row_count_estimate_only": false,
-                        "max_workers": 20,
+                        "max_workers": 10,
                         "query_combiner_enabled": true,
                         "catch_exceptions": true,
                         "partition_profiling_enabled": true,
@@ -10376,7 +10388,7 @@
             "properties": {
                 "incremental_lineage": {
                     "title": "Incremental Lineage",
-                    "description": "When enabled, emits lineage as incremental to existing lineage already in DataHub. When disabled, re-states lineage on each run.",
+                    "description": "When enabled, emits incremental/patch lineage for non-dbt entities. When disabled, re-states lineage on each run.",
                     "default": true,
                     "type": "boolean"
                 },
@@ -10535,6 +10547,18 @@
                 "test_warnings_are_errors": {
                     "title": "Test Warnings Are Errors",
                     "description": "When enabled, dbt test warnings will be treated as failures.",
+                    "default": false,
+                    "type": "boolean"
+                },
+                "infer_dbt_schemas": {
+                    "title": "Infer Dbt Schemas",
+                    "description": "When enabled, schemas will be inferred from the dbt node definition.",
+                    "default": true,
+                    "type": "boolean"
+                },
+                "include_column_lineage": {
+                    "title": "Include Column Lineage",
+                    "description": "When enabled, column-level lineage will be extracted from the dbt node definition. Requires `infer_dbt_schemas` to be enabled. If you run into issues where the column name casing does not match up with properly, providing a datahub_api or using the rest sink will improve accuracy.",
                     "default": false,
                     "type": "boolean"
                 },
@@ -10813,7 +10837,7 @@
                         "profile_table_size_limit": 5,
                         "profile_table_row_limit": 5000000,
                         "profile_table_row_count_estimate_only": false,
-                        "max_workers": 20,
+                        "max_workers": 10,
                         "query_combiner_enabled": true,
                         "catch_exceptions": true,
                         "partition_profiling_enabled": true,
@@ -11108,7 +11132,7 @@
                         "profile_table_size_limit": 5,
                         "profile_table_row_limit": 5000000,
                         "profile_table_row_count_estimate_only": false,
-                        "max_workers": 20,
+                        "max_workers": 10,
                         "query_combiner_enabled": true,
                         "catch_exceptions": true,
                         "partition_profiling_enabled": true,
@@ -11376,7 +11400,7 @@
                         "profile_table_size_limit": 5,
                         "profile_table_row_limit": 5000000,
                         "profile_table_row_count_estimate_only": false,
-                        "max_workers": 20,
+                        "max_workers": 10,
                         "query_combiner_enabled": true,
                         "catch_exceptions": true,
                         "partition_profiling_enabled": true,
@@ -11564,7 +11588,7 @@
                 "max_workers": {
                     "title": "Max Workers",
                     "description": "Number of worker threads to use for datahub api ingestion.",
-                    "default": 20,
+                    "default": 10,
                     "hidden_from_docs": true,
                     "type": "integer"
                 }
@@ -11794,7 +11818,7 @@
                         "profile_table_size_limit": 5,
                         "profile_table_row_limit": 5000000,
                         "profile_table_row_count_estimate_only": false,
-                        "max_workers": 20,
+                        "max_workers": 10,
                         "query_combiner_enabled": true,
                         "catch_exceptions": true,
                         "partition_profiling_enabled": true,
@@ -12137,7 +12161,7 @@
                         "profile_table_size_limit": 5,
                         "profile_table_row_limit": 5000000,
                         "profile_table_row_count_estimate_only": false,
-                        "max_workers": 20,
+                        "max_workers": 10,
                         "query_combiner_enabled": true,
                         "catch_exceptions": true,
                         "partition_profiling_enabled": true,
@@ -12306,7 +12330,7 @@
                     "default": {
                         "enabled": false,
                         "sample_size": 100,
-                        "max_workers": 4,
+                        "max_workers": 2,
                         "table_pattern": {
                             "allow": [
                                 ".*"
@@ -12602,7 +12626,7 @@
                         "profile_table_size_limit": 5,
                         "profile_table_row_limit": 5000000,
                         "profile_table_row_count_estimate_only": false,
-                        "max_workers": 20,
+                        "max_workers": 10,
                         "query_combiner_enabled": true,
                         "catch_exceptions": true,
                         "partition_profiling_enabled": true,
@@ -13157,7 +13181,7 @@
                 "max_workers": {
                     "title": "Max Workers",
                     "description": "Number of worker threads to use for profiling. Set to 1 to disable.",
-                    "default": 20,
+                    "default": 10,
                     "type": "integer"
                 },
                 "query_combiner_enabled": {
@@ -13508,7 +13532,7 @@
                 "max_workers": {
                     "title": "Max Workers",
                     "description": "Number of worker threads to use for profiling. Set to 1 to disable.",
-                    "default": 20,
+                    "default": 10,
                     "type": "integer"
                 }
             },
@@ -14826,7 +14850,7 @@
                 "max_workers": {
                     "title": "Max Workers",
                     "description": "Number of worker threads to use for classification. Set to 1 to disable.",
-                    "default": 4,
+                    "default": 2,
                     "type": "integer"
                 },
                 "table_pattern": {
