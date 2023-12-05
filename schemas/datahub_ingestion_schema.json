@@ -1925,7 +1925,7 @@
                 },
                 "scheme": {
                     "title": "Scheme",
-                    "default": "redshift+psycopg2",
+                    "default": "redshift+redshift_connector",
                     "hidden_from_schema": true,
                     "type": "string"
                 },
@@ -5521,7 +5521,7 @@
                     "description": "The usage config to use when generating usage statistics",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2023-12-05T16:25:36.297762+00:00",
+                        "end_time": "2023-12-05T16:52:32.181667+00:00",
                         "start_time": "2023-12-04T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
@@ -10175,7 +10175,7 @@
                     "description": "The usage config to use when generating usage statistics",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2023-12-05T16:25:35.737446+00:00",
+                        "end_time": "2023-12-05T16:52:31.585070+00:00",
                         "start_time": "2023-12-04T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
@@ -11400,7 +11400,7 @@
                     "description": "Usage related configs",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2023-12-05T16:25:28.338099+00:00",
+                        "end_time": "2023-12-05T16:52:23.491410+00:00",
                         "start_time": "2023-12-04T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
