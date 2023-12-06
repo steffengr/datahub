@@ -3480,6 +3480,198 @@
                         }
                     ]
                 },
+                "incremental_lineage": {
+                    "title": "Incremental Lineage",
+                    "description": "When enabled, emits lineage as incremental to existing lineage already in DataHub. When disabled, re-states lineage on each run.",
+                    "default": false,
+                    "type": "boolean"
+                },
+                "sql_parser_use_external_process": {
+                    "title": "Sql Parser Use External Process",
+                    "description": "When enabled, sql parser will run in isolated in a separate process. This can affect processing time but can protect from sql parser's mem leak.",
+                    "default": false,
+                    "type": "boolean"
+                },
+                "options": {
+                    "title": "Options",
+                    "description": "Any options specified here will be passed to [SQLAlchemy.create_engine](https://docs.sqlalchemy.org/en/14/core/engines.html#sqlalchemy.create_engine) as kwargs.",
+                    "type": "object"
+                },
+                "schema_pattern": {
+                    "title": "Schema Pattern",
+                    "description": "Regex patterns for schemas to filter in ingestion. Specify regex to the full `metastore.catalog.schema` name. e.g. to match all tables in schema analytics, use the regex `^mymetastore\\.mycatalog\\.analytics$`.",
+                    "default": {
+                        "allow": [
+                            ".*"
+                        ],
+                        "deny": [],
+                        "ignoreCase": true
+                    },
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/AllowDenyPattern"
+                        }
+                    ]
+                },
+                "table_pattern": {
+                    "title": "Table Pattern",
+                    "description": "Regex patterns for tables to filter in ingestion. Specify regex to match the entire table name in `catalog.schema.table` format. e.g. to match all tables starting with customer in Customer catalog and public schema, use the regex `Customer\\.public\\.customer.*`.",
+                    "default": {
+                        "allow": [
+                            ".*"
+                        ],
+                        "deny": [],
+                        "ignoreCase": true
+                    },
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/AllowDenyPattern"
+                        }
+                    ]
+                },
+                "view_pattern": {
+                    "title": "View Pattern",
+                    "description": "Regex patterns for views to filter in ingestion. Note: Defaults to table_pattern if not specified. Specify regex to match the entire view name in database.schema.view format. e.g. to match all views starting with customer in Customer database and public schema, use the regex 'Customer.public.customer.*'",
+                    "default": {
+                        "allow": [
+                            ".*"
+                        ],
+                        "deny": [],
+                        "ignoreCase": true
+                    },
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/AllowDenyPattern"
+                        }
+                    ]
+                },
+                "profile_pattern": {
+                    "title": "Profile Pattern",
+                    "description": "Regex patterns to filter tables (or specific columns) for profiling during ingestion. Note that only tables allowed by the `table_pattern` will be considered.",
+                    "default": {
+                        "allow": [
+                            ".*"
+                        ],
+                        "deny": [],
+                        "ignoreCase": true
+                    },
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/AllowDenyPattern"
+                        }
+                    ]
+                },
+                "domain": {
+                    "title": "Domain",
+                    "description": "Attach domains to catalogs, schemas or tables during ingestion using regex patterns. Domain key can be a guid like *urn:li:domain:ec428203-ce86-4db3-985d-5a8ee6df32ba* or a string like \"Marketing\".) If you provide strings, then datahub will attempt to resolve this name to a guid, and will error out if this fails. There can be multiple domain keys specified.",
+                    "default": {},
+                    "type": "object",
+                    "additionalProperties": {
+                        "$ref": "#/definitions/AllowDenyPattern"
+                    }
+                },
+                "include_views": {
+                    "title": "Include Views",
+                    "description": "Whether views should be ingested.",
+                    "default": true,
+                    "type": "boolean"
+                },
+                "include_tables": {
+                    "title": "Include Tables",
+                    "description": "Whether tables should be ingested.",
+                    "default": true,
+                    "type": "boolean"
+                },
+                "include_table_location_lineage": {
+                    "title": "Include Table Location Lineage",
+                    "description": "If the source supports it, include table lineage to the underlying storage location.",
+                    "default": true,
+                    "type": "boolean"
+                },
+                "include_view_lineage": {
+                    "title": "Include View Lineage",
+                    "description": "Populates view->view and table->view lineage using DataHub's sql parser.",
+                    "default": true,
+                    "type": "boolean"
+                },
+                "include_view_column_lineage": {
+                    "title": "Include View Column Lineage",
+                    "description": "Populates column-level lineage for  view->view and table->view lineage using DataHub's sql parser. Requires `include_view_lineage` to be enabled.",
+                    "default": true,
+                    "type": "boolean"
+                },
+                "use_file_backed_cache": {
+                    "title": "Use File Backed Cache",
+                    "description": "Whether to use a file backed cache for the view definitions.",
+                    "default": true,
+                    "type": "boolean"
+                },
+                "profiling": {
+                    "title": "Profiling",
+                    "description": "Data profiling configuration",
+                    "default": {
+                        "enabled": false,
+                        "operation_config": {
+                            "lower_freq_profile_enabled": false,
+                            "profile_day_of_week": null,
+                            "profile_date_of_month": null
+                        },
+                        "limit": null,
+                        "offset": null,
+                        "report_dropped_profiles": false,
+                        "turn_off_expensive_profiling_metrics": false,
+                        "profile_table_level_only": false,
+                        "include_field_null_count": true,
+                        "include_field_distinct_count": true,
+                        "include_field_min_value": true,
+                        "include_field_max_value": true,
+                        "include_field_mean_value": true,
+                        "include_field_median_value": true,
+                        "include_field_stddev_value": true,
+                        "include_field_quantiles": false,
+                        "include_field_distinct_value_frequencies": false,
+                        "include_field_histogram": false,
+                        "include_field_sample_values": true,
+                        "field_sample_values_limit": 20,
+                        "max_number_of_fields_to_profile": null,
+                        "profile_if_updated_since_days": null,
+                        "profile_table_size_limit": 5,
+                        "profile_table_row_limit": 5000000,
+                        "profile_table_row_count_estimate_only": false,
+                        "max_workers": 20,
+                        "query_combiner_enabled": true,
+                        "catch_exceptions": true,
+                        "partition_profiling_enabled": true,
+                        "partition_datetime": null,
+                        "use_sampling": true,
+                        "sample_size": 10000,
+                        "method": "ge",
+                        "warehouse_id": null,
+                        "pattern": {
+                            "allow": [
+                                ".*"
+                            ],
+                            "deny": [],
+                            "ignoreCase": true
+                        },
+                        "max_wait_secs": null
+                    },
+                    "discriminator": {
+                        "propertyName": "method",
+                        "mapping": {
+                            "ge": "#/definitions/UnityCatalogGEProfilerConfig",
+                            "analyze": "#/definitions/UnityCatalogAnalyzeProfilerConfig"
+                        }
+                    },
+                    "oneOf": [
+                        {
+                            "$ref": "#/definitions/UnityCatalogGEProfilerConfig"
+                        },
+                        {
+                            "$ref": "#/definitions/UnityCatalogAnalyzeProfilerConfig"
+                        }
+                    ]
+                },
                 "token": {
                     "title": "Token",
                     "description": "Databricks personal access token",
@@ -3531,38 +3723,6 @@
                         }
                     ]
                 },
-                "schema_pattern": {
-                    "title": "Schema Pattern",
-                    "description": "Regex patterns for schemas to filter in ingestion. Specify regex to the full `metastore.catalog.schema` name. e.g. to match all tables in schema analytics, use the regex `^mymetastore\\.mycatalog\\.analytics$`.",
-                    "default": {
-                        "allow": [
-                            ".*"
-                        ],
-                        "deny": [],
-                        "ignoreCase": true
-                    },
-                    "allOf": [
-                        {
-                            "$ref": "#/definitions/AllowDenyPattern"
-                        }
-                    ]
-                },
-                "table_pattern": {
-                    "title": "Table Pattern",
-                    "description": "Regex patterns for tables to filter in ingestion. Specify regex to match the entire table name in `catalog.schema.table` format. e.g. to match all tables starting with customer in Customer catalog and public schema, use the regex `Customer\\.public\\.customer.*`.",
-                    "default": {
-                        "allow": [
-                            ".*"
-                        ],
-                        "deny": [],
-                        "ignoreCase": true
-                    },
-                    "allOf": [
-                        {
-                            "$ref": "#/definitions/AllowDenyPattern"
-                        }
-                    ]
-                },
                 "notebook_pattern": {
                     "title": "Notebook Pattern",
                     "description": "Regex patterns for notebooks to filter in ingestion, based on notebook *path*. Specify regex to match the entire notebook path in `/<dir>/.../<name>` format. e.g. to match all notebooks in the root Shared directory, use the regex `/Shared/.*`.",
@@ -3578,15 +3738,6 @@
                             "$ref": "#/definitions/AllowDenyPattern"
                         }
                     ]
-                },
-                "domain": {
-                    "title": "Domain",
-                    "description": "Attach domains to catalogs, schemas or tables during ingestion using regex patterns. Domain key can be a guid like *urn:li:domain:ec428203-ce86-4db3-985d-5a8ee6df32ba* or a string like \"Marketing\".) If you provide strings, then datahub will attempt to resolve this name to a guid, and will error out if this fails. There can be multiple domain keys specified.",
-                    "default": {},
-                    "type": "object",
-                    "additionalProperties": {
-                        "$ref": "#/definitions/AllowDenyPattern"
-                    }
                 },
                 "include_table_lineage": {
                     "title": "Include Table Lineage",
@@ -3630,34 +3781,10 @@
                     "default": true,
                     "type": "boolean"
                 },
-                "profiling": {
-                    "title": "Profiling",
-                    "description": "Data profiling configuration",
-                    "default": {
-                        "enabled": false,
-                        "operation_config": {
-                            "lower_freq_profile_enabled": false,
-                            "profile_day_of_week": null,
-                            "profile_date_of_month": null
-                        },
-                        "warehouse_id": null,
-                        "profile_table_level_only": false,
-                        "pattern": {
-                            "allow": [
-                                ".*"
-                            ],
-                            "deny": [],
-                            "ignoreCase": true
-                        },
-                        "call_analyze": true,
-                        "max_wait_secs": 3600,
-                        "max_workers": 20
-                    },
-                    "allOf": [
-                        {
-                            "$ref": "#/definitions/UnityCatalogProfilerConfig"
-                        }
-                    ]
+                "scheme": {
+                    "title": "Scheme",
+                    "default": "databricks",
+                    "type": "string"
                 }
             },
             "required": [
@@ -5520,7 +5647,7 @@
                     "description": "The usage config to use when generating usage statistics",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2023-12-06T11:26:34.076581+00:00",
+                        "end_time": "2023-12-06T19:07:17.707063+00:00",
                         "start_time": "2023-12-05T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
@@ -10174,7 +10301,7 @@
                     "description": "The usage config to use when generating usage statistics",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2023-12-06T11:26:33.744228+00:00",
+                        "end_time": "2023-12-06T19:07:17.375172+00:00",
                         "start_time": "2023-12-05T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
@@ -11399,7 +11526,7 @@
                     "description": "Usage related configs",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2023-12-06T11:26:26.029779+00:00",
+                        "end_time": "2023-12-06T19:07:09.519058+00:00",
                         "start_time": "2023-12-05T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
@@ -12940,8 +13067,8 @@
             ],
             "type": "string"
         },
-        "UnityCatalogProfilerConfig": {
-            "title": "UnityCatalogProfilerConfig",
+        "UnityCatalogGEProfilerConfig": {
+            "title": "UnityCatalogGEProfilerConfig",
             "type": "object",
             "properties": {
                 "enabled": {
@@ -12959,16 +13086,189 @@
                         }
                     ]
                 },
+                "limit": {
+                    "title": "Limit",
+                    "description": "Max number of documents to profile. By default, profiles all documents.",
+                    "type": "integer"
+                },
+                "offset": {
+                    "title": "Offset",
+                    "description": "Offset in documents to profile. By default, uses no offset.",
+                    "type": "integer"
+                },
+                "report_dropped_profiles": {
+                    "title": "Report Dropped Profiles",
+                    "description": "Whether to report datasets or dataset columns which were not profiled. Set to `True` for debugging purposes.",
+                    "default": false,
+                    "type": "boolean"
+                },
+                "turn_off_expensive_profiling_metrics": {
+                    "title": "Turn Off Expensive Profiling Metrics",
+                    "description": "Whether to turn off expensive profiling or not. This turns off profiling for quantiles, distinct_value_frequencies, histogram & sample_values. This also limits maximum number of fields being profiled to 10.",
+                    "default": false,
+                    "type": "boolean"
+                },
+                "profile_table_level_only": {
+                    "title": "Profile Table Level Only",
+                    "description": "Whether to perform profiling at table-level only, or include column-level profiling as well.",
+                    "default": false,
+                    "type": "boolean"
+                },
+                "include_field_null_count": {
+                    "title": "Include Field Null Count",
+                    "description": "Whether to profile for the number of nulls for each column.",
+                    "default": true,
+                    "type": "boolean"
+                },
+                "include_field_distinct_count": {
+                    "title": "Include Field Distinct Count",
+                    "description": "Whether to profile for the number of distinct values for each column.",
+                    "default": true,
+                    "type": "boolean"
+                },
+                "include_field_min_value": {
+                    "title": "Include Field Min Value",
+                    "description": "Whether to profile for the min value of numeric columns.",
+                    "default": true,
+                    "type": "boolean"
+                },
+                "include_field_max_value": {
+                    "title": "Include Field Max Value",
+                    "description": "Whether to profile for the max value of numeric columns.",
+                    "default": true,
+                    "type": "boolean"
+                },
+                "include_field_mean_value": {
+                    "title": "Include Field Mean Value",
+                    "description": "Whether to profile for the mean value of numeric columns.",
+                    "default": true,
+                    "type": "boolean"
+                },
+                "include_field_median_value": {
+                    "title": "Include Field Median Value",
+                    "description": "Whether to profile for the median value of numeric columns.",
+                    "default": true,
+                    "type": "boolean"
+                },
+                "include_field_stddev_value": {
+                    "title": "Include Field Stddev Value",
+                    "description": "Whether to profile for the standard deviation of numeric columns.",
+                    "default": true,
+                    "type": "boolean"
+                },
+                "include_field_quantiles": {
+                    "title": "Include Field Quantiles",
+                    "description": "Whether to profile for the quantiles of numeric columns.",
+                    "default": false,
+                    "type": "boolean"
+                },
+                "include_field_distinct_value_frequencies": {
+                    "title": "Include Field Distinct Value Frequencies",
+                    "description": "Whether to profile for distinct value frequencies.",
+                    "default": false,
+                    "type": "boolean"
+                },
+                "include_field_histogram": {
+                    "title": "Include Field Histogram",
+                    "description": "Whether to profile for the histogram for numeric fields.",
+                    "default": false,
+                    "type": "boolean"
+                },
+                "include_field_sample_values": {
+                    "title": "Include Field Sample Values",
+                    "description": "Whether to profile for the sample values for all columns.",
+                    "default": true,
+                    "type": "boolean"
+                },
+                "field_sample_values_limit": {
+                    "title": "Field Sample Values Limit",
+                    "description": "Upper limit for number of sample values to collect for all columns.",
+                    "default": 20,
+                    "type": "integer"
+                },
+                "max_number_of_fields_to_profile": {
+                    "title": "Max Number Of Fields To Profile",
+                    "description": "A positive integer that specifies the maximum number of columns to profile for any table. `None` implies all columns. The cost of profiling goes up significantly as the number of columns to profile goes up.",
+                    "exclusiveMinimum": 0,
+                    "type": "integer"
+                },
+                "profile_if_updated_since_days": {
+                    "title": "Profile If Updated Since Days",
+                    "description": "Profile table only if it has been updated since these many number of days. If set to `null`, no constraint of last modified time for tables to profile. Supported only in `snowflake` and `BigQuery`.",
+                    "exclusiveMinimum": 0,
+                    "type": "number"
+                },
+                "profile_table_size_limit": {
+                    "title": "Profile Table Size Limit",
+                    "description": "Profile tables only if their size is less then specified GBs. If set to `null`, no limit on the size of tables to profile. Supported only in `snowflake` and `BigQuery`",
+                    "default": 5,
+                    "type": "integer"
+                },
+                "profile_table_row_limit": {
+                    "title": "Profile Table Row Limit",
+                    "description": "Profile tables only if their row count is less then specified count. If set to `null`, no limit on the row count of tables to profile. Supported only in `snowflake` and `BigQuery`",
+                    "default": 5000000,
+                    "type": "integer"
+                },
+                "profile_table_row_count_estimate_only": {
+                    "title": "Profile Table Row Count Estimate Only",
+                    "description": "Use an approximate query for row count. This will be much faster but slightly less accurate. Only supported for Postgres and MySQL. ",
+                    "default": false,
+                    "type": "boolean"
+                },
+                "max_workers": {
+                    "title": "Max Workers",
+                    "description": "Number of worker threads to use for profiling. Set to 1 to disable.",
+                    "default": 20,
+                    "type": "integer"
+                },
+                "query_combiner_enabled": {
+                    "title": "Query Combiner Enabled",
+                    "description": "*This feature is still experimental and can be disabled if it causes issues.* Reduces the total number of queries issued and speeds up profiling by dynamically combining SQL queries where possible.",
+                    "default": true,
+                    "type": "boolean"
+                },
+                "catch_exceptions": {
+                    "title": "Catch Exceptions",
+                    "default": true,
+                    "type": "boolean"
+                },
+                "partition_profiling_enabled": {
+                    "title": "Partition Profiling Enabled",
+                    "description": "Whether to profile partitioned tables. Only BigQuery supports this. If enabled, latest partition data is used for profiling.",
+                    "default": true,
+                    "type": "boolean"
+                },
+                "partition_datetime": {
+                    "title": "Partition Datetime",
+                    "description": "If specified, profile only the partition which matches this datetime. If not specified, profile the latest partition. Only Bigquery supports this.",
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "use_sampling": {
+                    "title": "Use Sampling",
+                    "description": "Whether to profile column level stats on sample of table. Only BigQuery and Snowflake support this. If enabled, profiling is done on rows sampled from table. Sampling is not done for smaller tables. ",
+                    "default": true,
+                    "type": "boolean"
+                },
+                "sample_size": {
+                    "title": "Sample Size",
+                    "description": "Number of rows to be sampled from table for column level profiling.Applicable only if `use_sampling` is set to True.",
+                    "default": 10000,
+                    "type": "integer"
+                },
+                "method": {
+                    "title": "Method",
+                    "default": "ge",
+                    "enum": [
+                        "ge"
+                    ],
+                    "type": "string"
+                },
                 "warehouse_id": {
                     "title": "Warehouse Id",
                     "description": "SQL Warehouse id, for running profiling queries.",
                     "type": "string"
-                },
-                "profile_table_level_only": {
-                    "title": "Profile Table Level Only",
-                    "description": "Whether to perform profiling at table-level only or include column-level profiling as well.",
-                    "default": false,
-                    "type": "boolean"
                 },
                 "pattern": {
                     "title": "Pattern",
@@ -12985,6 +13285,68 @@
                             "$ref": "#/definitions/AllowDenyPattern"
                         }
                     ]
+                },
+                "max_wait_secs": {
+                    "title": "Max Wait Secs",
+                    "description": "Maximum time to wait for a table to be profiled.",
+                    "type": "integer"
+                }
+            },
+            "additionalProperties": false
+        },
+        "UnityCatalogAnalyzeProfilerConfig": {
+            "title": "UnityCatalogAnalyzeProfilerConfig",
+            "type": "object",
+            "properties": {
+                "method": {
+                    "title": "Method",
+                    "default": "analyze",
+                    "enum": [
+                        "analyze"
+                    ],
+                    "type": "string"
+                },
+                "warehouse_id": {
+                    "title": "Warehouse Id",
+                    "description": "SQL Warehouse id, for running profiling queries.",
+                    "type": "string"
+                },
+                "pattern": {
+                    "title": "Pattern",
+                    "description": "Regex patterns to filter tables for profiling during ingestion. Specify regex to match the `catalog.schema.table` format. Note that only tables allowed by the `table_pattern` will be considered.",
+                    "default": {
+                        "allow": [
+                            ".*"
+                        ],
+                        "deny": [],
+                        "ignoreCase": true
+                    },
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/AllowDenyPattern"
+                        }
+                    ]
+                },
+                "enabled": {
+                    "title": "Enabled",
+                    "description": "Whether profiling should be done.",
+                    "default": false,
+                    "type": "boolean"
+                },
+                "operation_config": {
+                    "title": "Operation Config",
+                    "description": "Experimental feature. To specify operation configs.",
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/OperationConfig"
+                        }
+                    ]
+                },
+                "profile_table_level_only": {
+                    "title": "Profile Table Level Only",
+                    "description": "Whether to perform profiling at table-level only or include column-level profiling as well.",
+                    "default": false,
+                    "type": "boolean"
                 },
                 "call_analyze": {
                     "title": "Call Analyze",
