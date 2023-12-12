@@ -3,7 +3,7 @@ from abc import abstractmethod
 from typing import Optional
 
 from gql import Client
-from gql.transport.requests import RequestsHTTPTransport
+from gql.transport.requests import RequestsHTTPTransport, log as requests_logger
 from pydantic import Field
 
 from datahub.configuration import ConfigModel
@@ -30,7 +30,7 @@ class AbstractCircuitBreaker:
         timeout: Optional[int] = None,
     ):
         # logging.basicConfig(level=logging.DEBUG)
-
+        requests_logger.setLevel(logging.WARNING)
         # Select your transport with a defined url endpoint
         self.transport = RequestsHTTPTransport(
             url=datahub_host + "/api/graphql",
