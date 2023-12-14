@@ -1095,7 +1095,7 @@
                     "description": "The usage config to use when generating usage statistics",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2023-12-14T13:20:41.253724+00:00",
+                        "end_time": "2023-12-14T16:12:16.463570+00:00",
                         "start_time": "2023-12-13T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
@@ -3155,7 +3155,7 @@
                     "description": "Usage related configs",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2023-12-14T13:20:32.839768+00:00",
+                        "end_time": "2023-12-14T16:12:08.440085+00:00",
                         "start_time": "2023-12-13T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
@@ -8488,6 +8488,17 @@
                     "description": "Databricks workspace url. e.g. https://my-workspace.cloud.databricks.com",
                     "type": "string"
                 },
+                "warehouse_id": {
+                    "title": "Warehouse Id",
+                    "description": "SQL Warehouse id, for running queries. If not set, will use the default warehouse.",
+                    "type": "string"
+                },
+                "include_hive_metastore": {
+                    "title": "Include Hive Metastore",
+                    "description": "Whether to ingest legacy `hive_metastore` catalog. This requires executing queries on SQL warehouse.",
+                    "default": false,
+                    "type": "boolean"
+                },
                 "workspace_name": {
                     "title": "Workspace Name",
                     "description": "Name of the workspace. Default to deployment name present in workspace_url",
@@ -11757,7 +11768,7 @@
                     "description": "The usage config to use when generating usage statistics",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2023-12-14T13:20:40.920008+00:00",
+                        "end_time": "2023-12-14T16:12:16.128337+00:00",
                         "start_time": "2023-12-13T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
