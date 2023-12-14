@@ -555,7 +555,8 @@
                         "partition_profiling_enabled": true,
                         "partition_datetime": null,
                         "use_sampling": true,
-                        "sample_size": 10000
+                        "sample_size": 10000,
+                        "profile_external_tables": false
                     },
                     "allOf": [
                         {
@@ -981,7 +982,8 @@
                         "partition_profiling_enabled": true,
                         "partition_datetime": null,
                         "use_sampling": true,
-                        "sample_size": 10000
+                        "sample_size": 10000,
+                        "profile_external_tables": false
                     },
                     "allOf": [
                         {
@@ -1095,7 +1097,7 @@
                     "description": "The usage config to use when generating usage statistics",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2023-12-14T22:02:12.997871+00:00",
+                        "end_time": "2023-12-14T23:20:33.127116+00:00",
                         "start_time": "2023-12-13T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
@@ -2140,7 +2142,8 @@
                         "partition_profiling_enabled": true,
                         "partition_datetime": null,
                         "use_sampling": true,
-                        "sample_size": 10000
+                        "sample_size": 10000,
+                        "profile_external_tables": false
                     },
                     "allOf": [
                         {
@@ -2406,7 +2409,8 @@
                         "partition_profiling_enabled": true,
                         "partition_datetime": null,
                         "use_sampling": true,
-                        "sample_size": 10000
+                        "sample_size": 10000,
+                        "profile_external_tables": false
                     },
                     "allOf": [
                         {
@@ -2655,7 +2659,8 @@
                         "partition_profiling_enabled": true,
                         "partition_datetime": null,
                         "use_sampling": true,
-                        "sample_size": 10000
+                        "sample_size": 10000,
+                        "profile_external_tables": false
                     },
                     "allOf": [
                         {
@@ -3081,7 +3086,8 @@
                         "partition_profiling_enabled": true,
                         "partition_datetime": null,
                         "use_sampling": true,
-                        "sample_size": 10000
+                        "sample_size": 10000,
+                        "profile_external_tables": false
                     },
                     "allOf": [
                         {
@@ -3155,7 +3161,7 @@
                     "description": "Usage related configs",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2023-12-14T22:02:04.796169+00:00",
+                        "end_time": "2023-12-14T23:20:25.097281+00:00",
                         "start_time": "2023-12-13T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
@@ -3564,7 +3570,8 @@
                         "partition_profiling_enabled": true,
                         "partition_datetime": null,
                         "use_sampling": true,
-                        "sample_size": 10000
+                        "sample_size": 10000,
+                        "profile_external_tables": false
                     },
                     "allOf": [
                         {
@@ -4315,7 +4322,8 @@
                         "partition_profiling_enabled": true,
                         "partition_datetime": null,
                         "use_sampling": true,
-                        "sample_size": 10000
+                        "sample_size": 10000,
+                        "profile_external_tables": false
                     },
                     "allOf": [
                         {
@@ -4825,7 +4833,8 @@
                         "partition_profiling_enabled": true,
                         "partition_datetime": null,
                         "use_sampling": true,
-                        "sample_size": 10000
+                        "sample_size": 10000,
+                        "profile_external_tables": false
                     },
                     "allOf": [
                         {
@@ -5565,7 +5574,8 @@
                         "partition_profiling_enabled": true,
                         "partition_datetime": null,
                         "use_sampling": true,
-                        "sample_size": 10000
+                        "sample_size": 10000,
+                        "profile_external_tables": false
                     },
                     "allOf": [
                         {
@@ -5841,7 +5851,8 @@
                         "partition_profiling_enabled": true,
                         "partition_datetime": null,
                         "use_sampling": true,
-                        "sample_size": 10000
+                        "sample_size": 10000,
+                        "profile_external_tables": false
                     },
                     "allOf": [
                         {
@@ -6620,7 +6631,8 @@
                         "partition_profiling_enabled": true,
                         "partition_datetime": null,
                         "use_sampling": true,
-                        "sample_size": 10000
+                        "sample_size": 10000,
+                        "profile_external_tables": false
                     },
                     "allOf": [
                         {
@@ -7069,7 +7081,8 @@
                         "partition_profiling_enabled": true,
                         "partition_datetime": null,
                         "use_sampling": true,
-                        "sample_size": 10000
+                        "sample_size": 10000,
+                        "profile_external_tables": false
                     },
                     "allOf": [
                         {
@@ -8451,6 +8464,7 @@
                         "partition_datetime": null,
                         "use_sampling": true,
                         "sample_size": 10000,
+                        "profile_external_tables": false,
                         "method": "ge",
                         "warehouse_id": null,
                         "pattern": {
@@ -8855,7 +8869,8 @@
                         "partition_profiling_enabled": true,
                         "partition_datetime": null,
                         "use_sampling": true,
-                        "sample_size": 10000
+                        "sample_size": 10000,
+                        "profile_external_tables": false
                     },
                     "allOf": [
                         {
@@ -9336,7 +9351,8 @@
                         "partition_profiling_enabled": true,
                         "partition_datetime": null,
                         "use_sampling": true,
-                        "sample_size": 10000
+                        "sample_size": 10000,
+                        "profile_external_tables": false
                     },
                     "allOf": [
                         {
@@ -9849,7 +9865,8 @@
                         "partition_profiling_enabled": true,
                         "partition_datetime": null,
                         "use_sampling": true,
-                        "sample_size": 10000
+                        "sample_size": 10000,
+                        "profile_external_tables": false
                     },
                     "allOf": [
                         {
@@ -10151,7 +10168,8 @@
                         "partition_profiling_enabled": true,
                         "partition_datetime": null,
                         "use_sampling": true,
-                        "sample_size": 10000
+                        "sample_size": 10000,
+                        "profile_external_tables": false
                     },
                     "allOf": [
                         {
@@ -10479,7 +10497,8 @@
                         "partition_profiling_enabled": true,
                         "partition_datetime": null,
                         "use_sampling": true,
-                        "sample_size": 10000
+                        "sample_size": 10000,
+                        "profile_external_tables": false
                     },
                     "allOf": [
                         {
@@ -11381,7 +11400,8 @@
                         "partition_profiling_enabled": true,
                         "partition_datetime": null,
                         "use_sampling": true,
-                        "sample_size": 10000
+                        "sample_size": 10000,
+                        "profile_external_tables": false
                     },
                     "allOf": [
                         {
@@ -11659,7 +11679,8 @@
                         "partition_profiling_enabled": true,
                         "partition_datetime": null,
                         "use_sampling": true,
-                        "sample_size": 10000
+                        "sample_size": 10000,
+                        "profile_external_tables": false
                     },
                     "allOf": [
                         {
@@ -11768,7 +11789,7 @@
                     "description": "The usage config to use when generating usage statistics",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2023-12-14T22:02:12.661737+00:00",
+                        "end_time": "2023-12-14T23:20:32.794460+00:00",
                         "start_time": "2023-12-13T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
@@ -12015,7 +12036,8 @@
                         "partition_profiling_enabled": true,
                         "partition_datetime": null,
                         "use_sampling": true,
-                        "sample_size": 10000
+                        "sample_size": 10000,
+                        "profile_external_tables": false
                     },
                     "allOf": [
                         {
@@ -12728,6 +12750,12 @@
                     "description": "Number of rows to be sampled from table for column level profiling.Applicable only if `use_sampling` is set to True.",
                     "default": 10000,
                     "type": "integer"
+                },
+                "profile_external_tables": {
+                    "title": "Profile External Tables",
+                    "description": "Whether to profile external tables. Only Snowflake and Redshift supports this.",
+                    "default": false,
+                    "type": "boolean"
                 }
             },
             "additionalProperties": false
@@ -14229,6 +14257,12 @@
                     "description": "Number of rows to be sampled from table for column level profiling.Applicable only if `use_sampling` is set to True.",
                     "default": 10000,
                     "type": "integer"
+                },
+                "profile_external_tables": {
+                    "title": "Profile External Tables",
+                    "description": "Whether to profile external tables. Only Snowflake and Redshift supports this.",
+                    "default": false,
+                    "type": "boolean"
                 },
                 "method": {
                     "title": "Method",
