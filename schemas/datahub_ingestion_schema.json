@@ -1097,8 +1097,8 @@
                     "description": "The usage config to use when generating usage statistics",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2023-12-27T20:00:12.641378+00:00",
-                        "start_time": "2023-12-26T00:00:00+00:00",
+                        "end_time": "2023-12-28T00:58:49.302254+00:00",
+                        "start_time": "2023-12-27T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
                         "user_email_pattern": {
@@ -3161,8 +3161,8 @@
                     "description": "Usage related configs",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2023-12-27T20:00:04.594618+00:00",
-                        "start_time": "2023-12-26T00:00:00+00:00",
+                        "end_time": "2023-12-28T00:58:40.835956+00:00",
+                        "start_time": "2023-12-27T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
                         "user_email_pattern": {
@@ -4952,6 +4952,11 @@
                     "title": "Password",
                     "default": "",
                     "type": "string"
+                },
+                "proxies": {
+                    "title": "Proxies",
+                    "description": "Eg. `{'http': 'http://10.10.1.10:3128', 'https': 'http://10.10.1.10:1080'}`.If authentication is required, add it to the proxy url directly e.g. `http://user:pass@10.10.1.10:3128/`.",
+                    "type": "object"
                 },
                 "forced_examples": {
                     "title": "Forced Examples",
@@ -11791,8 +11796,8 @@
                     "description": "The usage config to use when generating usage statistics",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2023-12-27T20:00:12.310888+00:00",
-                        "start_time": "2023-12-26T00:00:00+00:00",
+                        "end_time": "2023-12-28T00:58:48.724466+00:00",
+                        "start_time": "2023-12-27T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
                         "user_email_pattern": {
