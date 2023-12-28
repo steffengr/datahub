@@ -1097,7 +1097,7 @@
                     "description": "The usage config to use when generating usage statistics",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2023-12-28T10:01:08.919040+00:00",
+                        "end_time": "2023-12-28T11:27:43.445684+00:00",
                         "start_time": "2023-12-27T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
@@ -2876,6 +2876,12 @@
                     "default": true,
                     "type": "boolean"
                 },
+                "enable_stateful_lineage_ingestion": {
+                    "title": "Enable Stateful Lineage Ingestion",
+                    "description": "Enable stateful lineage ingestion. This will store lineage window timestamps after successful lineage ingestion. and will not run lineage ingestion for same timestamps in subsequent run. ",
+                    "default": true,
+                    "type": "boolean"
+                },
                 "bucket_duration": {
                     "description": "Size of the time window to aggregate usage stats.",
                     "default": "DAY",
@@ -3167,7 +3173,7 @@
                     "description": "Usage related configs",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2023-12-28T10:01:00.858211+00:00",
+                        "end_time": "2023-12-28T11:27:34.993485+00:00",
                         "start_time": "2023-12-27T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
@@ -6854,6 +6860,12 @@
                     "default": true,
                     "type": "boolean"
                 },
+                "enable_stateful_lineage_ingestion": {
+                    "title": "Enable Stateful Lineage Ingestion",
+                    "description": "Enable stateful lineage ingestion. This will store lineage window timestamps after successful lineage ingestion. and will not run lineage ingestion for same timestamps in subsequent run. ",
+                    "default": true,
+                    "type": "boolean"
+                },
                 "top_n_queries": {
                     "title": "Top N Queries",
                     "description": "Number of top queries to save to each table.",
@@ -7658,7 +7670,7 @@
                 },
                 "schemaSamplingSize": {
                     "title": "Schemasamplingsize",
-                    "description": "Number of documents to use when inferring schema size. If set to `0`, all documents will be scanned.",
+                    "description": "Number of documents to use when inferring schema size. If set to `null`, all documents will be scanned.",
                     "default": 1000,
                     "exclusiveMinimum": 0,
                     "type": "integer"
@@ -9078,6 +9090,12 @@
                 "enable_stateful_profiling": {
                     "title": "Enable Stateful Profiling",
                     "description": "Enable stateful profiling. This will store profiling timestamps per dataset after successful profiling. and will not run profiling again in subsequent run if table has not been updated. ",
+                    "default": true,
+                    "type": "boolean"
+                },
+                "enable_stateful_lineage_ingestion": {
+                    "title": "Enable Stateful Lineage Ingestion",
+                    "description": "Enable stateful lineage ingestion. This will store lineage window timestamps after successful lineage ingestion. and will not run lineage ingestion for same timestamps in subsequent run. ",
                     "default": true,
                     "type": "boolean"
                 },
@@ -11802,7 +11820,7 @@
                     "description": "The usage config to use when generating usage statistics",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2023-12-28T10:01:08.343075+00:00",
+                        "end_time": "2023-12-28T11:27:42.886371+00:00",
                         "start_time": "2023-12-27T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
