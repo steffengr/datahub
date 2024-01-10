@@ -1097,7 +1097,7 @@
                     "description": "The usage config to use when generating usage statistics",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2024-01-10T18:14:09.099820+00:00",
+                        "end_time": "2024-01-10T19:25:37.138912+00:00",
                         "start_time": "2024-01-09T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
@@ -3173,7 +3173,7 @@
                     "description": "Usage related configs",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2024-01-10T18:14:00.220153+00:00",
+                        "end_time": "2024-01-10T19:25:28.736231+00:00",
                         "start_time": "2024-01-09T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
@@ -11815,7 +11815,7 @@
                     "description": "The usage config to use when generating usage statistics",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2024-01-10T18:14:08.457555+00:00",
+                        "end_time": "2024-01-10T19:25:36.530647+00:00",
                         "start_time": "2024-01-09T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
@@ -13277,8 +13277,8 @@
             ],
             "additionalProperties": false
         },
-        "DestinationConfig": {
-            "title": "DestinationConfig",
+        "SnowflakeDestinationConfig": {
+            "title": "SnowflakeDestinationConfig",
             "type": "object",
             "properties": {
                 "options": {
@@ -13373,46 +13373,6 @@
             ],
             "additionalProperties": false
         },
-        "FivetranLogConfig": {
-            "title": "FivetranLogConfig",
-            "type": "object",
-            "properties": {
-                "destination_platform": {
-                    "title": "Destination Platform",
-                    "description": "The destination platform where fivetran connector log tables are dumped.",
-                    "default": "snowflake",
-                    "type": "string"
-                },
-                "destination_config": {
-                    "title": "Destination Config",
-                    "description": "If destination platform is 'snowflake', provide snowflake configuration.",
-                    "allOf": [
-                        {
-                            "$ref": "#/definitions/DestinationConfig"
-                        }
-                    ]
-                }
-            },
-            "additionalProperties": false
-        },
-        "PlatformDetail": {
-            "title": "PlatformDetail",
-            "type": "object",
-            "properties": {
-                "platform_instance": {
-                    "title": "Platform Instance",
-                    "description": "DataHub platform instance name. To generate correct urn for upstream dataset, this should match with platform instance name used in ingestion recipe of other datahub sources.",
-                    "type": "string"
-                },
-                "env": {
-                    "title": "Env",
-                    "description": "The environment that all assets produced by DataHub platform ingestion source belong to",
-                    "default": "PROD",
-                    "type": "string"
-                }
-            },
-            "additionalProperties": false
-        },
         "BigQueryCredential": {
             "title": "BigQueryCredential",
             "type": "object",
@@ -13479,6 +13439,94 @@
                 "client_email",
                 "client_id"
             ],
+            "additionalProperties": false
+        },
+        "BigQueryDestinationConfig": {
+            "title": "BigQueryDestinationConfig",
+            "type": "object",
+            "properties": {
+                "credential": {
+                    "title": "Credential",
+                    "description": "BigQuery credential informations",
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/BigQueryCredential"
+                        }
+                    ]
+                },
+                "extra_client_options": {
+                    "title": "Extra Client Options",
+                    "description": "Additional options to pass to google.cloud.logging_v2.client.Client.",
+                    "default": {},
+                    "type": "object"
+                },
+                "project_on_behalf": {
+                    "title": "Project On Behalf",
+                    "description": "[Advanced] The BigQuery project in which queries are executed. Will be passed when creating a job. If not passed, falls back to the project associated with the service account.",
+                    "type": "string"
+                },
+                "dataset": {
+                    "title": "Dataset",
+                    "description": "The fivetran connector log dataset.",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "dataset"
+            ],
+            "additionalProperties": false
+        },
+        "FivetranLogConfig": {
+            "title": "FivetranLogConfig",
+            "type": "object",
+            "properties": {
+                "destination_platform": {
+                    "title": "Destination Platform",
+                    "description": "The destination platform where fivetran connector log tables are dumped.",
+                    "default": "snowflake",
+                    "enum": [
+                        "snowflake",
+                        "bigquery"
+                    ],
+                    "type": "string"
+                },
+                "snowflake_destination_config": {
+                    "title": "Snowflake Destination Config",
+                    "description": "If destination platform is 'snowflake', provide snowflake configuration.",
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/SnowflakeDestinationConfig"
+                        }
+                    ]
+                },
+                "bigquery_destination_config": {
+                    "title": "Bigquery Destination Config",
+                    "description": "If destination platform is 'bigquery', provide bigquery configuration.",
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/BigQueryDestinationConfig"
+                        }
+                    ]
+                }
+            },
+            "additionalProperties": false
+        },
+        "PlatformDetail": {
+            "title": "PlatformDetail",
+            "type": "object",
+            "properties": {
+                "platform_instance": {
+                    "title": "Platform Instance",
+                    "description": "DataHub platform instance name. To generate correct urn for upstream dataset, this should match with platform instance name used in ingestion recipe of other datahub sources.",
+                    "type": "string"
+                },
+                "env": {
+                    "title": "Env",
+                    "description": "The environment that all assets produced by DataHub platform ingestion source belong to",
+                    "default": "PROD",
+                    "type": "string"
+                }
+            },
             "additionalProperties": false
         },
         "BigQueryUsageConfig": {
