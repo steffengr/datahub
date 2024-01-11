@@ -836,22 +836,6 @@
                     "description": "Any options specified here will be passed to [SQLAlchemy.create_engine](https://docs.sqlalchemy.org/en/14/core/engines.html#sqlalchemy.create_engine) as kwargs. To set connection arguments in the URL, specify them under `connect_args`.",
                     "type": "object"
                 },
-                "schema_pattern": {
-                    "title": "Schema Pattern",
-                    "description": "Deprecated in favour of database_pattern.",
-                    "default": {
-                        "allow": [
-                            ".*"
-                        ],
-                        "deny": [],
-                        "ignoreCase": true
-                    },
-                    "allOf": [
-                        {
-                            "$ref": "#/definitions/AllowDenyPattern"
-                        }
-                    ]
-                },
                 "table_pattern": {
                     "title": "Table Pattern",
                     "description": "Regex patterns for tables to filter in ingestion. Specify regex to match the entire table name in database.schema.table format. e.g. to match all tables starting with customer in Customer database and public schema, use the regex 'Customer.public.customer.*'",
@@ -1097,8 +1081,8 @@
                     "description": "The usage config to use when generating usage statistics",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2024-01-10T19:25:37.138912+00:00",
-                        "start_time": "2024-01-09T00:00:00+00:00",
+                        "end_time": "2024-01-11T01:31:23.747069+00:00",
+                        "start_time": "2024-01-10T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
                         "user_email_pattern": {
@@ -1995,22 +1979,6 @@
                     "title": "Options",
                     "description": "Any options specified here will be passed to [SQLAlchemy.create_engine](https://docs.sqlalchemy.org/en/14/core/engines.html#sqlalchemy.create_engine) as kwargs. To set connection arguments in the URL, specify them under `connect_args`.",
                     "type": "object"
-                },
-                "schema_pattern": {
-                    "title": "Schema Pattern",
-                    "description": "Deprecated in favour of database_pattern.",
-                    "default": {
-                        "allow": [
-                            ".*"
-                        ],
-                        "deny": [],
-                        "ignoreCase": true
-                    },
-                    "allOf": [
-                        {
-                            "$ref": "#/definitions/AllowDenyPattern"
-                        }
-                    ]
                 },
                 "table_pattern": {
                     "title": "Table Pattern",
@@ -3173,8 +3141,8 @@
                     "description": "Usage related configs",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2024-01-10T19:25:28.736231+00:00",
-                        "start_time": "2024-01-09T00:00:00+00:00",
+                        "end_time": "2024-01-11T01:31:15.559773+00:00",
+                        "start_time": "2024-01-10T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
                         "user_email_pattern": {
@@ -5718,22 +5686,6 @@
                     "title": "Options",
                     "description": "Any options specified here will be passed to [SQLAlchemy.create_engine](https://docs.sqlalchemy.org/en/14/core/engines.html#sqlalchemy.create_engine) as kwargs. To set connection arguments in the URL, specify them under `connect_args`.",
                     "type": "object"
-                },
-                "schema_pattern": {
-                    "title": "Schema Pattern",
-                    "description": "Deprecated in favour of database_pattern.",
-                    "default": {
-                        "allow": [
-                            ".*"
-                        ],
-                        "deny": [],
-                        "ignoreCase": true
-                    },
-                    "allOf": [
-                        {
-                            "$ref": "#/definitions/AllowDenyPattern"
-                        }
-                    ]
                 },
                 "table_pattern": {
                     "title": "Table Pattern",
@@ -8743,22 +8695,6 @@
                     "description": "Any options specified here will be passed to [SQLAlchemy.create_engine](https://docs.sqlalchemy.org/en/14/core/engines.html#sqlalchemy.create_engine) as kwargs. To set connection arguments in the URL, specify them under `connect_args`.",
                     "type": "object"
                 },
-                "schema_pattern": {
-                    "title": "Schema Pattern",
-                    "description": "Deprecated in favour of database_pattern.",
-                    "default": {
-                        "allow": [
-                            ".*"
-                        ],
-                        "deny": [],
-                        "ignoreCase": true
-                    },
-                    "allOf": [
-                        {
-                            "$ref": "#/definitions/AllowDenyPattern"
-                        }
-                    ]
-                },
                 "table_pattern": {
                     "title": "Table Pattern",
                     "description": "Regex patterns for tables to filter in ingestion. Specify regex to match the entire table name in database.schema.table format. e.g. to match all tables starting with customer in Customer database and public schema, use the regex 'Customer.public.customer.*'",
@@ -9744,22 +9680,6 @@
                     "title": "Options",
                     "default": {},
                     "type": "object"
-                },
-                "schema_pattern": {
-                    "title": "Schema Pattern",
-                    "description": "Deprecated in favour of database_pattern.",
-                    "default": {
-                        "allow": [
-                            ".*"
-                        ],
-                        "deny": [],
-                        "ignoreCase": true
-                    },
-                    "allOf": [
-                        {
-                            "$ref": "#/definitions/AllowDenyPattern"
-                        }
-                    ]
                 },
                 "table_pattern": {
                     "title": "Table Pattern",
@@ -11559,22 +11479,6 @@
                     "description": "Any options specified here will be passed to [SQLAlchemy.create_engine](https://docs.sqlalchemy.org/en/14/core/engines.html#sqlalchemy.create_engine) as kwargs. To set connection arguments in the URL, specify them under `connect_args`.",
                     "type": "object"
                 },
-                "schema_pattern": {
-                    "title": "Schema Pattern",
-                    "description": "Deprecated in favour of database_pattern.",
-                    "default": {
-                        "allow": [
-                            ".*"
-                        ],
-                        "deny": [],
-                        "ignoreCase": true
-                    },
-                    "allOf": [
-                        {
-                            "$ref": "#/definitions/AllowDenyPattern"
-                        }
-                    ]
-                },
                 "table_pattern": {
                     "title": "Table Pattern",
                     "description": "Regex patterns for tables to filter in ingestion. Specify regex to match the entire table name in database.schema.table format. e.g. to match all tables starting with customer in Customer database and public schema, use the regex 'Customer.public.customer.*'",
@@ -11815,8 +11719,8 @@
                     "description": "The usage config to use when generating usage statistics",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2024-01-10T19:25:36.530647+00:00",
-                        "start_time": "2024-01-09T00:00:00+00:00",
+                        "end_time": "2024-01-11T01:31:23.177244+00:00",
+                        "start_time": "2024-01-10T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
                         "user_email_pattern": {
