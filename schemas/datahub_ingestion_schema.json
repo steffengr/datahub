@@ -246,8 +246,8 @@
                     "description": "The usage config to use when generating usage statistics",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2024-01-31T22:31:46.744314+00:00",
-                        "start_time": "2024-01-30T00:00:00+00:00",
+                        "end_time": "2024-02-01T20:54:08.396784+00:00",
+                        "start_time": "2024-01-31T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
                         "user_email_pattern": {
@@ -3397,7 +3397,7 @@
                 },
                 "shares": {
                     "title": "Shares",
-                    "description": "Required if current account owns or consumes snowflake share. If specified, connector creates lineage and siblings relationship between current account's database tables and consumer/producer account's database tables. Map of share name -> details of share.",
+                    "description": "Required if current account owns or consumes snowflake share.If specified, connector creates lineage and siblings relationship between current account's database tables and consumer/producer account's database tables. Map of share name -> details of share.",
                     "type": "object",
                     "additionalProperties": {
                         "$ref": "#/definitions/SnowflakeShareConfig"
@@ -5759,8 +5759,8 @@
                     "description": "The usage config to use when generating usage statistics",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2024-01-31T22:31:47.093991+00:00",
-                        "start_time": "2024-01-30T00:00:00+00:00",
+                        "end_time": "2024-02-01T20:54:08.750517+00:00",
+                        "start_time": "2024-01-31T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
                         "user_email_pattern": {
@@ -7721,8 +7721,8 @@
                     "description": "Usage related configs",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2024-01-31T22:31:38.582057+00:00",
-                        "start_time": "2024-01-30T00:00:00+00:00",
+                        "end_time": "2024-02-01T20:53:59.851664+00:00",
+                        "start_time": "2024-01-31T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
                         "user_email_pattern": {
@@ -12356,11 +12356,10 @@
                     "default": true,
                     "type": "boolean"
                 },
-                "capture_lineage_query_parser_failures": {
-                    "title": "Capture Lineage Query Parser Failures",
-                    "description": "Whether to capture lineage query parser errors with dataset properties for debugging",
+                "include_table_rename_lineage": {
+                    "title": "Include Table Rename Lineage",
+                    "description": "Whether we should follow `alter table ... rename to` statements when computing lineage. ",
                     "default": false,
-                    "hide_from_schema": true,
                     "type": "boolean"
                 },
                 "table_lineage_mode": {
@@ -12387,6 +12386,12 @@
                     "title": "Extract Column Level Lineage",
                     "description": "Whether to extract column level lineage. This config works with rest-sink only.",
                     "default": true,
+                    "type": "boolean"
+                },
+                "resolve_temp_table_in_lineage": {
+                    "title": "Resolve Temp Table In Lineage",
+                    "description": "Whether to resolve temp table appear in lineage to upstream permanent tables.",
+                    "default": false,
                     "type": "boolean"
                 }
             },
