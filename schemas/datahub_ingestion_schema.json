@@ -3043,8 +3043,8 @@
                     "description": "Usage related configs",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2024-02-24T00:39:39.702769+00:00",
-                        "start_time": "2024-02-23T00:00:00+00:00",
+                        "end_time": "2024-02-26T08:34:36.950436+00:00",
+                        "start_time": "2024-02-25T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
                         "user_email_pattern": {
@@ -9023,6 +9023,27 @@
                     "description": "URI of database to connect to. See https://docs.sqlalchemy.org/en/14/core/engines.html#database-urls. Takes precedence over other connection parameters.",
                     "type": "string"
                 },
+                "catalog_to_connector_details": {
+                    "title": "Catalog To Connector Details",
+                    "description": "A mapping of trino catalog to its connector details like connector database, env and platform instance.This configuration is used to build lineage to the underlying connector. Use catalog name as key.",
+                    "default": {},
+                    "type": "object",
+                    "additionalProperties": {
+                        "$ref": "#/definitions/ConnectorDetail"
+                    }
+                },
+                "ingest_lineage_to_connectors": {
+                    "title": "Ingest Lineage To Connectors",
+                    "description": "Whether lineage of datasets to connectors should be ingested",
+                    "default": true,
+                    "type": "boolean"
+                },
+                "trino_as_primary": {
+                    "title": "Trino As Primary",
+                    "description": "Experimental feature. Whether trino dataset should be primary entity of the set of siblings",
+                    "default": true,
+                    "type": "boolean"
+                },
                 "email_domain": {
                     "title": "Email Domain",
                     "description": "The email domain which will be appended to the users ",
@@ -10495,8 +10516,8 @@
                     "description": "The usage config to use when generating usage statistics",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2024-02-24T00:39:48.326231+00:00",
-                        "start_time": "2024-02-23T00:00:00+00:00",
+                        "end_time": "2024-02-26T08:34:45.137703+00:00",
+                        "start_time": "2024-02-25T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
                         "user_email_pattern": {
@@ -11625,10 +11646,32 @@
                     "title": "Sqlalchemy Uri",
                     "description": "URI of database to connect to. See https://docs.sqlalchemy.org/en/14/core/engines.html#database-urls. Takes precedence over other connection parameters.",
                     "type": "string"
+                },
+                "catalog_to_connector_details": {
+                    "title": "Catalog To Connector Details",
+                    "description": "A mapping of trino catalog to its connector details like connector database, env and platform instance.This configuration is used to build lineage to the underlying connector. Use catalog name as key.",
+                    "default": {},
+                    "type": "object",
+                    "additionalProperties": {
+                        "$ref": "#/definitions/ConnectorDetail"
+                    }
+                },
+                "ingest_lineage_to_connectors": {
+                    "title": "Ingest Lineage To Connectors",
+                    "description": "Whether lineage of datasets to connectors should be ingested",
+                    "default": true,
+                    "type": "boolean"
+                },
+                "trino_as_primary": {
+                    "title": "Trino As Primary",
+                    "description": "Experimental feature. Whether trino dataset should be primary entity of the set of siblings",
+                    "default": true,
+                    "type": "boolean"
                 }
             },
             "required": [
-                "host_port"
+                "host_port",
+                "database"
             ],
             "additionalProperties": false
         },
@@ -11729,8 +11772,8 @@
                     "description": "The usage config to use when generating usage statistics",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2024-02-24T00:39:47.971591+00:00",
-                        "start_time": "2024-02-23T00:00:00+00:00",
+                        "end_time": "2024-02-26T08:34:44.795514+00:00",
+                        "start_time": "2024-02-25T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
                         "user_email_pattern": {
@@ -12273,10 +12316,32 @@
                     "title": "Sqlalchemy Uri",
                     "description": "URI of database to connect to. See https://docs.sqlalchemy.org/en/14/core/engines.html#database-urls. Takes precedence over other connection parameters.",
                     "type": "string"
+                },
+                "catalog_to_connector_details": {
+                    "title": "Catalog To Connector Details",
+                    "description": "A mapping of trino catalog to its connector details like connector database, env and platform instance.This configuration is used to build lineage to the underlying connector. Use catalog name as key.",
+                    "default": {},
+                    "type": "object",
+                    "additionalProperties": {
+                        "$ref": "#/definitions/ConnectorDetail"
+                    }
+                },
+                "ingest_lineage_to_connectors": {
+                    "title": "Ingest Lineage To Connectors",
+                    "description": "Whether lineage of datasets to connectors should be ingested",
+                    "default": true,
+                    "type": "boolean"
+                },
+                "trino_as_primary": {
+                    "title": "Trino As Primary",
+                    "description": "Experimental feature. Whether trino dataset should be primary entity of the set of siblings",
+                    "default": true,
+                    "type": "boolean"
                 }
             },
             "required": [
-                "host_port"
+                "host_port",
+                "database"
             ],
             "additionalProperties": false
         },
@@ -14182,6 +14247,34 @@
                 "client_secret",
                 "base_url"
             ],
+            "additionalProperties": false
+        },
+        "ConnectorDetail": {
+            "title": "ConnectorDetail",
+            "description": "Any source that connects to a platform should inherit this class",
+            "type": "object",
+            "properties": {
+                "env": {
+                    "title": "Env",
+                    "description": "The environment that all assets produced by this connector belong to",
+                    "default": "PROD",
+                    "type": "string"
+                },
+                "platform_instance": {
+                    "title": "Platform Instance",
+                    "description": "The instance of the platform that all assets produced by this recipe belong to",
+                    "type": "string"
+                },
+                "connector_database": {
+                    "title": "Connector Database",
+                    "type": "string"
+                },
+                "connector_platform": {
+                    "title": "Connector Platform",
+                    "description": "A connector's actual platform name. If not provided, will take from metadata tablesEg: hive catalog can have a connector platform as 'hive' or 'glue' or some other metastore.",
+                    "type": "string"
+                }
+            },
             "additionalProperties": false
         },
         "GlueProfilingConfig": {
