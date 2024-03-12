@@ -748,7 +748,7 @@
                     "description": "The usage config to use when generating usage statistics",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2024-03-12T13:34:31.716846+00:00",
+                        "end_time": "2024-03-12T16:31:46.335527+00:00",
                         "start_time": "2024-03-11T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
@@ -810,6 +810,41 @@
             "description": "Base configuration class for stateful ingestion for source configs to inherit from.",
             "type": "object",
             "properties": {
+                "classification": {
+                    "title": "Classification",
+                    "description": "For details, refer [Classification](../../../../metadata-ingestion/docs/dev_guides/classification.md).",
+                    "default": {
+                        "enabled": false,
+                        "sample_size": 100,
+                        "max_workers": 4,
+                        "table_pattern": {
+                            "allow": [
+                                ".*"
+                            ],
+                            "deny": [],
+                            "ignoreCase": true
+                        },
+                        "column_pattern": {
+                            "allow": [
+                                ".*"
+                            ],
+                            "deny": [],
+                            "ignoreCase": true
+                        },
+                        "info_type_to_term": {},
+                        "classifiers": [
+                            {
+                                "type": "datahub",
+                                "config": null
+                            }
+                        ]
+                    },
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/ClassificationConfig"
+                        }
+                    ]
+                },
                 "incremental_lineage": {
                     "title": "Incremental Lineage",
                     "description": "When enabled, emits lineage as incremental to existing lineage already in DataHub. When disabled, re-states lineage on each run.",
@@ -1204,6 +1239,41 @@
             "description": "Base configuration class for stateful ingestion for source configs to inherit from.",
             "type": "object",
             "properties": {
+                "classification": {
+                    "title": "Classification",
+                    "description": "For details, refer [Classification](../../../../metadata-ingestion/docs/dev_guides/classification.md).",
+                    "default": {
+                        "enabled": false,
+                        "sample_size": 100,
+                        "max_workers": 4,
+                        "table_pattern": {
+                            "allow": [
+                                ".*"
+                            ],
+                            "deny": [],
+                            "ignoreCase": true
+                        },
+                        "column_pattern": {
+                            "allow": [
+                                ".*"
+                            ],
+                            "deny": [],
+                            "ignoreCase": true
+                        },
+                        "info_type_to_term": {},
+                        "classifiers": [
+                            {
+                                "type": "datahub",
+                                "config": null
+                            }
+                        ]
+                    },
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/ClassificationConfig"
+                        }
+                    ]
+                },
                 "incremental_lineage": {
                     "title": "Incremental Lineage",
                     "description": "When enabled, emits lineage as incremental to existing lineage already in DataHub. When disabled, re-states lineage on each run.",
@@ -1499,6 +1569,41 @@
             "description": "Base configuration class for stateful ingestion for source configs to inherit from.",
             "type": "object",
             "properties": {
+                "classification": {
+                    "title": "Classification",
+                    "description": "For details, refer [Classification](../../../../metadata-ingestion/docs/dev_guides/classification.md).",
+                    "default": {
+                        "enabled": false,
+                        "sample_size": 100,
+                        "max_workers": 4,
+                        "table_pattern": {
+                            "allow": [
+                                ".*"
+                            ],
+                            "deny": [],
+                            "ignoreCase": true
+                        },
+                        "column_pattern": {
+                            "allow": [
+                                ".*"
+                            ],
+                            "deny": [],
+                            "ignoreCase": true
+                        },
+                        "info_type_to_term": {},
+                        "classifiers": [
+                            {
+                                "type": "datahub",
+                                "config": null
+                            }
+                        ]
+                    },
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/ClassificationConfig"
+                        }
+                    ]
+                },
                 "incremental_lineage": {
                     "title": "Incremental Lineage",
                     "description": "When enabled, emits lineage as incremental to existing lineage already in DataHub. When disabled, re-states lineage on each run.",
@@ -2405,6 +2510,41 @@
             "description": "Base configuration class for stateful ingestion for source configs to inherit from.",
             "type": "object",
             "properties": {
+                "classification": {
+                    "title": "Classification",
+                    "description": "For details, refer [Classification](../../../../metadata-ingestion/docs/dev_guides/classification.md).",
+                    "default": {
+                        "enabled": false,
+                        "sample_size": 100,
+                        "max_workers": 4,
+                        "table_pattern": {
+                            "allow": [
+                                ".*"
+                            ],
+                            "deny": [],
+                            "ignoreCase": true
+                        },
+                        "column_pattern": {
+                            "allow": [
+                                ".*"
+                            ],
+                            "deny": [],
+                            "ignoreCase": true
+                        },
+                        "info_type_to_term": {},
+                        "classifiers": [
+                            {
+                                "type": "datahub",
+                                "config": null
+                            }
+                        ]
+                    },
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/ClassificationConfig"
+                        }
+                    ]
+                },
                 "incremental_lineage": {
                     "title": "Incremental Lineage",
                     "description": "When enabled, emits lineage as incremental to existing lineage already in DataHub. When disabled, re-states lineage on each run.",
@@ -2670,6 +2810,41 @@
             "description": "Base configuration class for stateful ingestion for source configs to inherit from.",
             "type": "object",
             "properties": {
+                "classification": {
+                    "title": "Classification",
+                    "description": "For details, refer [Classification](../../../../metadata-ingestion/docs/dev_guides/classification.md).",
+                    "default": {
+                        "enabled": false,
+                        "sample_size": 100,
+                        "max_workers": 4,
+                        "table_pattern": {
+                            "allow": [
+                                ".*"
+                            ],
+                            "deny": [],
+                            "ignoreCase": true
+                        },
+                        "column_pattern": {
+                            "allow": [
+                                ".*"
+                            ],
+                            "deny": [],
+                            "ignoreCase": true
+                        },
+                        "info_type_to_term": {},
+                        "classifiers": [
+                            {
+                                "type": "datahub",
+                                "config": null
+                            }
+                        ]
+                    },
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/ClassificationConfig"
+                        }
+                    ]
+                },
                 "incremental_lineage": {
                     "title": "Incremental Lineage",
                     "description": "When enabled, emits lineage as incremental to existing lineage already in DataHub. When disabled, re-states lineage on each run.",
@@ -3346,6 +3521,41 @@
             "description": "Base configuration class for stateful ingestion for source configs to inherit from.",
             "type": "object",
             "properties": {
+                "classification": {
+                    "title": "Classification",
+                    "description": "For details, refer [Classification](../../../../metadata-ingestion/docs/dev_guides/classification.md).",
+                    "default": {
+                        "enabled": false,
+                        "sample_size": 100,
+                        "max_workers": 4,
+                        "table_pattern": {
+                            "allow": [
+                                ".*"
+                            ],
+                            "deny": [],
+                            "ignoreCase": true
+                        },
+                        "column_pattern": {
+                            "allow": [
+                                ".*"
+                            ],
+                            "deny": [],
+                            "ignoreCase": true
+                        },
+                        "info_type_to_term": {},
+                        "classifiers": [
+                            {
+                                "type": "datahub",
+                                "config": null
+                            }
+                        ]
+                    },
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/ClassificationConfig"
+                        }
+                    ]
+                },
                 "incremental_lineage": {
                     "title": "Incremental Lineage",
                     "description": "When enabled, emits lineage as incremental to existing lineage already in DataHub. When disabled, re-states lineage on each run.",
@@ -3642,6 +3852,41 @@
             "description": "Base configuration class for stateful ingestion for source configs to inherit from.",
             "type": "object",
             "properties": {
+                "classification": {
+                    "title": "Classification",
+                    "description": "For details, refer [Classification](../../../../metadata-ingestion/docs/dev_guides/classification.md).",
+                    "default": {
+                        "enabled": false,
+                        "sample_size": 100,
+                        "max_workers": 4,
+                        "table_pattern": {
+                            "allow": [
+                                ".*"
+                            ],
+                            "deny": [],
+                            "ignoreCase": true
+                        },
+                        "column_pattern": {
+                            "allow": [
+                                ".*"
+                            ],
+                            "deny": [],
+                            "ignoreCase": true
+                        },
+                        "info_type_to_term": {},
+                        "classifiers": [
+                            {
+                                "type": "datahub",
+                                "config": null
+                            }
+                        ]
+                    },
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/ClassificationConfig"
+                        }
+                    ]
+                },
                 "incremental_lineage": {
                     "title": "Incremental Lineage",
                     "description": "When enabled, emits lineage as incremental to existing lineage already in DataHub. When disabled, re-states lineage on each run.",
@@ -4152,6 +4397,41 @@
             "description": "Base configuration class for stateful ingestion for source configs to inherit from.",
             "type": "object",
             "properties": {
+                "classification": {
+                    "title": "Classification",
+                    "description": "For details, refer [Classification](../../../../metadata-ingestion/docs/dev_guides/classification.md).",
+                    "default": {
+                        "enabled": false,
+                        "sample_size": 100,
+                        "max_workers": 4,
+                        "table_pattern": {
+                            "allow": [
+                                ".*"
+                            ],
+                            "deny": [],
+                            "ignoreCase": true
+                        },
+                        "column_pattern": {
+                            "allow": [
+                                ".*"
+                            ],
+                            "deny": [],
+                            "ignoreCase": true
+                        },
+                        "info_type_to_term": {},
+                        "classifiers": [
+                            {
+                                "type": "datahub",
+                                "config": null
+                            }
+                        ]
+                    },
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/ClassificationConfig"
+                        }
+                    ]
+                },
                 "incremental_lineage": {
                     "title": "Incremental Lineage",
                     "description": "When enabled, emits lineage as incremental to existing lineage already in DataHub. When disabled, re-states lineage on each run.",
@@ -4748,6 +5028,41 @@
             "description": "Base configuration class for stateful ingestion for source configs to inherit from.",
             "type": "object",
             "properties": {
+                "classification": {
+                    "title": "Classification",
+                    "description": "For details, refer [Classification](../../../../metadata-ingestion/docs/dev_guides/classification.md).",
+                    "default": {
+                        "enabled": false,
+                        "sample_size": 100,
+                        "max_workers": 4,
+                        "table_pattern": {
+                            "allow": [
+                                ".*"
+                            ],
+                            "deny": [],
+                            "ignoreCase": true
+                        },
+                        "column_pattern": {
+                            "allow": [
+                                ".*"
+                            ],
+                            "deny": [],
+                            "ignoreCase": true
+                        },
+                        "info_type_to_term": {},
+                        "classifiers": [
+                            {
+                                "type": "datahub",
+                                "config": null
+                            }
+                        ]
+                    },
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/ClassificationConfig"
+                        }
+                    ]
+                },
                 "incremental_lineage": {
                     "title": "Incremental Lineage",
                     "description": "When enabled, emits lineage as incremental to existing lineage already in DataHub. When disabled, re-states lineage on each run.",
@@ -5079,6 +5394,41 @@
                     "description": "Whether to ingest the top_n_queries.",
                     "default": true,
                     "type": "boolean"
+                },
+                "classification": {
+                    "title": "Classification",
+                    "description": "For details, refer [Classification](../../../../metadata-ingestion/docs/dev_guides/classification.md).",
+                    "default": {
+                        "enabled": false,
+                        "sample_size": 100,
+                        "max_workers": 4,
+                        "table_pattern": {
+                            "allow": [
+                                ".*"
+                            ],
+                            "deny": [],
+                            "ignoreCase": true
+                        },
+                        "column_pattern": {
+                            "allow": [
+                                ".*"
+                            ],
+                            "deny": [],
+                            "ignoreCase": true
+                        },
+                        "info_type_to_term": {},
+                        "classifiers": [
+                            {
+                                "type": "datahub",
+                                "config": null
+                            }
+                        ]
+                    },
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/ClassificationConfig"
+                        }
+                    ]
                 },
                 "incremental_lineage": {
                     "title": "Incremental Lineage",
@@ -5627,6 +5977,41 @@
                     "description": "Earliest date of lineage/usage to consider. Default: Last full day in UTC (or hour, depending on `bucket_duration`). You can also specify relative time with respect to end_time such as '-7 days' Or '-7d'.",
                     "type": "string",
                     "format": "date-time"
+                },
+                "classification": {
+                    "title": "Classification",
+                    "description": "For details, refer [Classification](../../../../metadata-ingestion/docs/dev_guides/classification.md).",
+                    "default": {
+                        "enabled": false,
+                        "sample_size": 100,
+                        "max_workers": 4,
+                        "table_pattern": {
+                            "allow": [
+                                ".*"
+                            ],
+                            "deny": [],
+                            "ignoreCase": true
+                        },
+                        "column_pattern": {
+                            "allow": [
+                                ".*"
+                            ],
+                            "deny": [],
+                            "ignoreCase": true
+                        },
+                        "info_type_to_term": {},
+                        "classifiers": [
+                            {
+                                "type": "datahub",
+                                "config": null
+                            }
+                        ]
+                    },
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/ClassificationConfig"
+                        }
+                    ]
                 },
                 "incremental_lineage": {
                     "title": "Incremental Lineage",
@@ -6717,6 +7102,41 @@
             "description": "Base configuration class for stateful ingestion for source configs to inherit from.",
             "type": "object",
             "properties": {
+                "classification": {
+                    "title": "Classification",
+                    "description": "For details, refer [Classification](../../../../metadata-ingestion/docs/dev_guides/classification.md).",
+                    "default": {
+                        "enabled": false,
+                        "sample_size": 100,
+                        "max_workers": 4,
+                        "table_pattern": {
+                            "allow": [
+                                ".*"
+                            ],
+                            "deny": [],
+                            "ignoreCase": true
+                        },
+                        "column_pattern": {
+                            "allow": [
+                                ".*"
+                            ],
+                            "deny": [],
+                            "ignoreCase": true
+                        },
+                        "info_type_to_term": {},
+                        "classifiers": [
+                            {
+                                "type": "datahub",
+                                "config": null
+                            }
+                        ]
+                    },
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/ClassificationConfig"
+                        }
+                    ]
+                },
                 "incremental_lineage": {
                     "title": "Incremental Lineage",
                     "description": "When enabled, emits lineage as incremental to existing lineage already in DataHub. When disabled, re-states lineage on each run.",
@@ -7115,6 +7535,41 @@
             "description": "Base configuration class for stateful ingestion for source configs to inherit from.",
             "type": "object",
             "properties": {
+                "classification": {
+                    "title": "Classification",
+                    "description": "For details, refer [Classification](../../../../metadata-ingestion/docs/dev_guides/classification.md).",
+                    "default": {
+                        "enabled": false,
+                        "sample_size": 100,
+                        "max_workers": 4,
+                        "table_pattern": {
+                            "allow": [
+                                ".*"
+                            ],
+                            "deny": [],
+                            "ignoreCase": true
+                        },
+                        "column_pattern": {
+                            "allow": [
+                                ".*"
+                            ],
+                            "deny": [],
+                            "ignoreCase": true
+                        },
+                        "info_type_to_term": {},
+                        "classifiers": [
+                            {
+                                "type": "datahub",
+                                "config": null
+                            }
+                        ]
+                    },
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/ClassificationConfig"
+                        }
+                    ]
+                },
                 "incremental_lineage": {
                     "title": "Incremental Lineage",
                     "description": "When enabled, emits lineage as incremental to existing lineage already in DataHub. When disabled, re-states lineage on each run.",
@@ -8133,6 +8588,41 @@
                         }
                     ]
                 },
+                "classification": {
+                    "title": "Classification",
+                    "description": "For details, refer [Classification](../../../../metadata-ingestion/docs/dev_guides/classification.md).",
+                    "default": {
+                        "enabled": false,
+                        "sample_size": 100,
+                        "max_workers": 4,
+                        "table_pattern": {
+                            "allow": [
+                                ".*"
+                            ],
+                            "deny": [],
+                            "ignoreCase": true
+                        },
+                        "column_pattern": {
+                            "allow": [
+                                ".*"
+                            ],
+                            "deny": [],
+                            "ignoreCase": true
+                        },
+                        "info_type_to_term": {},
+                        "classifiers": [
+                            {
+                                "type": "datahub",
+                                "config": null
+                            }
+                        ]
+                    },
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/ClassificationConfig"
+                        }
+                    ]
+                },
                 "incremental_lineage": {
                     "title": "Incremental Lineage",
                     "description": "When enabled, emits lineage as incremental to existing lineage already in DataHub. When disabled, re-states lineage on each run.",
@@ -8611,6 +9101,41 @@
             "description": "Base configuration class for stateful ingestion for source configs to inherit from.",
             "type": "object",
             "properties": {
+                "classification": {
+                    "title": "Classification",
+                    "description": "For details, refer [Classification](../../../../metadata-ingestion/docs/dev_guides/classification.md).",
+                    "default": {
+                        "enabled": false,
+                        "sample_size": 100,
+                        "max_workers": 4,
+                        "table_pattern": {
+                            "allow": [
+                                ".*"
+                            ],
+                            "deny": [],
+                            "ignoreCase": true
+                        },
+                        "column_pattern": {
+                            "allow": [
+                                ".*"
+                            ],
+                            "deny": [],
+                            "ignoreCase": true
+                        },
+                        "info_type_to_term": {},
+                        "classifiers": [
+                            {
+                                "type": "datahub",
+                                "config": null
+                            }
+                        ]
+                    },
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/ClassificationConfig"
+                        }
+                    ]
+                },
                 "incremental_lineage": {
                     "title": "Incremental Lineage",
                     "description": "When enabled, emits lineage as incremental to existing lineage already in DataHub. When disabled, re-states lineage on each run.",
@@ -9188,6 +9713,41 @@
                     "default": true,
                     "type": "boolean"
                 },
+                "classification": {
+                    "title": "Classification",
+                    "description": "For details, refer [Classification](../../../../metadata-ingestion/docs/dev_guides/classification.md).",
+                    "default": {
+                        "enabled": false,
+                        "sample_size": 100,
+                        "max_workers": 4,
+                        "table_pattern": {
+                            "allow": [
+                                ".*"
+                            ],
+                            "deny": [],
+                            "ignoreCase": true
+                        },
+                        "column_pattern": {
+                            "allow": [
+                                ".*"
+                            ],
+                            "deny": [],
+                            "ignoreCase": true
+                        },
+                        "info_type_to_term": {},
+                        "classifiers": [
+                            {
+                                "type": "datahub",
+                                "config": null
+                            }
+                        ]
+                    },
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/ClassificationConfig"
+                        }
+                    ]
+                },
                 "incremental_lineage": {
                     "title": "Incremental Lineage",
                     "description": "When enabled, emits lineage as incremental to existing lineage already in DataHub. When disabled, re-states lineage on each run.",
@@ -9446,7 +10006,7 @@
                     "description": "Usage related configs",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2024-03-12T13:34:17.492139+00:00",
+                        "end_time": "2024-03-12T16:31:31.479076+00:00",
                         "start_time": "2024-03-11T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
@@ -9775,6 +10335,41 @@
                     "additionalProperties": {
                         "type": "string"
                     }
+                },
+                "classification": {
+                    "title": "Classification",
+                    "description": "For details, refer [Classification](../../../../metadata-ingestion/docs/dev_guides/classification.md).",
+                    "default": {
+                        "enabled": false,
+                        "sample_size": 100,
+                        "max_workers": 4,
+                        "table_pattern": {
+                            "allow": [
+                                ".*"
+                            ],
+                            "deny": [],
+                            "ignoreCase": true
+                        },
+                        "column_pattern": {
+                            "allow": [
+                                ".*"
+                            ],
+                            "deny": [],
+                            "ignoreCase": true
+                        },
+                        "info_type_to_term": {},
+                        "classifiers": [
+                            {
+                                "type": "datahub",
+                                "config": null
+                            }
+                        ]
+                    },
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/ClassificationConfig"
+                        }
+                    ]
                 },
                 "incremental_lineage": {
                     "title": "Incremental Lineage",
@@ -10382,6 +10977,41 @@
                     "type": "string",
                     "format": "date-time"
                 },
+                "classification": {
+                    "title": "Classification",
+                    "description": "For details, refer [Classification](../../../../metadata-ingestion/docs/dev_guides/classification.md).",
+                    "default": {
+                        "enabled": false,
+                        "sample_size": 100,
+                        "max_workers": 4,
+                        "table_pattern": {
+                            "allow": [
+                                ".*"
+                            ],
+                            "deny": [],
+                            "ignoreCase": true
+                        },
+                        "column_pattern": {
+                            "allow": [
+                                ".*"
+                            ],
+                            "deny": [],
+                            "ignoreCase": true
+                        },
+                        "info_type_to_term": {},
+                        "classifiers": [
+                            {
+                                "type": "datahub",
+                                "config": null
+                            }
+                        ]
+                    },
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/ClassificationConfig"
+                        }
+                    ]
+                },
                 "incremental_lineage": {
                     "title": "Incremental Lineage",
                     "description": "When enabled, emits lineage as incremental to existing lineage already in DataHub. When disabled, re-states lineage on each run.",
@@ -10658,7 +11288,7 @@
                     "description": "The usage config to use when generating usage statistics",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2024-03-12T13:34:32.432749+00:00",
+                        "end_time": "2024-03-12T16:31:46.810072+00:00",
                         "start_time": "2024-03-11T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
@@ -10956,6 +11586,41 @@
                     "additionalProperties": {
                         "type": "string"
                     }
+                },
+                "classification": {
+                    "title": "Classification",
+                    "description": "For details, refer [Classification](../../../../metadata-ingestion/docs/dev_guides/classification.md).",
+                    "default": {
+                        "enabled": false,
+                        "sample_size": 100,
+                        "max_workers": 4,
+                        "table_pattern": {
+                            "allow": [
+                                ".*"
+                            ],
+                            "deny": [],
+                            "ignoreCase": true
+                        },
+                        "column_pattern": {
+                            "allow": [
+                                ".*"
+                            ],
+                            "deny": [],
+                            "ignoreCase": true
+                        },
+                        "info_type_to_term": {},
+                        "classifiers": [
+                            {
+                                "type": "datahub",
+                                "config": null
+                            }
+                        ]
+                    },
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/ClassificationConfig"
+                        }
+                    ]
                 },
                 "incremental_lineage": {
                     "title": "Incremental Lineage",
@@ -11987,6 +12652,41 @@
             "description": "Base configuration class for stateful ingestion for source configs to inherit from.",
             "type": "object",
             "properties": {
+                "classification": {
+                    "title": "Classification",
+                    "description": "For details, refer [Classification](../../../../metadata-ingestion/docs/dev_guides/classification.md).",
+                    "default": {
+                        "enabled": false,
+                        "sample_size": 100,
+                        "max_workers": 4,
+                        "table_pattern": {
+                            "allow": [
+                                ".*"
+                            ],
+                            "deny": [],
+                            "ignoreCase": true
+                        },
+                        "column_pattern": {
+                            "allow": [
+                                ".*"
+                            ],
+                            "deny": [],
+                            "ignoreCase": true
+                        },
+                        "info_type_to_term": {},
+                        "classifiers": [
+                            {
+                                "type": "datahub",
+                                "config": null
+                            }
+                        ]
+                    },
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/ClassificationConfig"
+                        }
+                    ]
+                },
                 "incremental_lineage": {
                     "title": "Incremental Lineage",
                     "description": "When enabled, emits lineage as incremental to existing lineage already in DataHub. When disabled, re-states lineage on each run.",
@@ -12213,6 +12913,41 @@
             "description": "Base configuration class for stateful ingestion for source configs to inherit from.",
             "type": "object",
             "properties": {
+                "classification": {
+                    "title": "Classification",
+                    "description": "For details, refer [Classification](../../../../metadata-ingestion/docs/dev_guides/classification.md).",
+                    "default": {
+                        "enabled": false,
+                        "sample_size": 100,
+                        "max_workers": 4,
+                        "table_pattern": {
+                            "allow": [
+                                ".*"
+                            ],
+                            "deny": [],
+                            "ignoreCase": true
+                        },
+                        "column_pattern": {
+                            "allow": [
+                                ".*"
+                            ],
+                            "deny": [],
+                            "ignoreCase": true
+                        },
+                        "info_type_to_term": {},
+                        "classifiers": [
+                            {
+                                "type": "datahub",
+                                "config": null
+                            }
+                        ]
+                    },
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/ClassificationConfig"
+                        }
+                    ]
+                },
                 "incremental_lineage": {
                     "title": "Incremental Lineage",
                     "description": "When enabled, emits lineage as incremental to existing lineage already in DataHub. When disabled, re-states lineage on each run.",
@@ -13152,6 +13887,105 @@
             },
             "additionalProperties": false
         },
+        "DynamicTypedClassifierConfig": {
+            "title": "DynamicTypedClassifierConfig",
+            "type": "object",
+            "properties": {
+                "type": {
+                    "title": "Type",
+                    "description": "The type of the classifier to use. For DataHub,  use `datahub`",
+                    "type": "string"
+                },
+                "config": {
+                    "title": "Config",
+                    "description": "The configuration required for initializing the classifier. If not specified, uses defaults for classifer type."
+                }
+            },
+            "required": [
+                "type"
+            ],
+            "additionalProperties": false
+        },
+        "ClassificationConfig": {
+            "title": "ClassificationConfig",
+            "type": "object",
+            "properties": {
+                "enabled": {
+                    "title": "Enabled",
+                    "description": "Whether classification should be used to auto-detect glossary terms",
+                    "default": false,
+                    "type": "boolean"
+                },
+                "sample_size": {
+                    "title": "Sample Size",
+                    "description": "Number of sample values used for classification.",
+                    "default": 100,
+                    "type": "integer"
+                },
+                "max_workers": {
+                    "title": "Max Workers",
+                    "description": "Number of worker threads to use for classification. Set to 1 to disable.",
+                    "default": 4,
+                    "type": "integer"
+                },
+                "table_pattern": {
+                    "title": "Table Pattern",
+                    "description": "Regex patterns to filter tables for classification. This is used in combination with other patterns in parent config. Specify regex to match the entire table name in `database.schema.table` format. e.g. to match all tables starting with customer in Customer database and public schema, use the regex 'Customer.public.customer.*'",
+                    "default": {
+                        "allow": [
+                            ".*"
+                        ],
+                        "deny": [],
+                        "ignoreCase": true
+                    },
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/AllowDenyPattern"
+                        }
+                    ]
+                },
+                "column_pattern": {
+                    "title": "Column Pattern",
+                    "description": "Regex patterns to filter columns for classification. This is used in combination with other patterns in parent config. Specify regex to match the column name in `database.schema.table.column` format.",
+                    "default": {
+                        "allow": [
+                            ".*"
+                        ],
+                        "deny": [],
+                        "ignoreCase": true
+                    },
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/AllowDenyPattern"
+                        }
+                    ]
+                },
+                "info_type_to_term": {
+                    "title": "Info Type To Term",
+                    "description": "Optional mapping to provide glossary term identifier for info type",
+                    "default": {},
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                },
+                "classifiers": {
+                    "title": "Classifiers",
+                    "description": "Classifiers to use to auto-detect glossary terms. If more than one classifier, infotype predictions from the classifier defined later in sequence take precedance.",
+                    "default": [
+                        {
+                            "type": "datahub",
+                            "config": null
+                        }
+                    ],
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/DynamicTypedClassifierConfig"
+                    }
+                }
+            },
+            "additionalProperties": false
+        },
         "GEProfilingConfig": {
             "title": "GEProfilingConfig",
             "type": "object",
@@ -13775,105 +14609,6 @@
                 "match",
                 "replace"
             ],
-            "additionalProperties": false
-        },
-        "DynamicTypedClassifierConfig": {
-            "title": "DynamicTypedClassifierConfig",
-            "type": "object",
-            "properties": {
-                "type": {
-                    "title": "Type",
-                    "description": "The type of the classifier to use. For DataHub,  use `datahub`",
-                    "type": "string"
-                },
-                "config": {
-                    "title": "Config",
-                    "description": "The configuration required for initializing the classifier. If not specified, uses defaults for classifer type."
-                }
-            },
-            "required": [
-                "type"
-            ],
-            "additionalProperties": false
-        },
-        "ClassificationConfig": {
-            "title": "ClassificationConfig",
-            "type": "object",
-            "properties": {
-                "enabled": {
-                    "title": "Enabled",
-                    "description": "Whether classification should be used to auto-detect glossary terms",
-                    "default": false,
-                    "type": "boolean"
-                },
-                "sample_size": {
-                    "title": "Sample Size",
-                    "description": "Number of sample values used for classification.",
-                    "default": 100,
-                    "type": "integer"
-                },
-                "max_workers": {
-                    "title": "Max Workers",
-                    "description": "Number of worker threads to use for classification. Set to 1 to disable.",
-                    "default": 4,
-                    "type": "integer"
-                },
-                "table_pattern": {
-                    "title": "Table Pattern",
-                    "description": "Regex patterns to filter tables for classification. This is used in combination with other patterns in parent config. Specify regex to match the entire table name in `database.schema.table` format. e.g. to match all tables starting with customer in Customer database and public schema, use the regex 'Customer.public.customer.*'",
-                    "default": {
-                        "allow": [
-                            ".*"
-                        ],
-                        "deny": [],
-                        "ignoreCase": true
-                    },
-                    "allOf": [
-                        {
-                            "$ref": "#/definitions/AllowDenyPattern"
-                        }
-                    ]
-                },
-                "column_pattern": {
-                    "title": "Column Pattern",
-                    "description": "Regex patterns to filter columns for classification. This is used in combination with other patterns in parent config. Specify regex to match the column name in `database.schema.table.column` format.",
-                    "default": {
-                        "allow": [
-                            ".*"
-                        ],
-                        "deny": [],
-                        "ignoreCase": true
-                    },
-                    "allOf": [
-                        {
-                            "$ref": "#/definitions/AllowDenyPattern"
-                        }
-                    ]
-                },
-                "info_type_to_term": {
-                    "title": "Info Type To Term",
-                    "description": "Optional mapping to provide glossary term identifier for info type",
-                    "default": {},
-                    "type": "object",
-                    "additionalProperties": {
-                        "type": "string"
-                    }
-                },
-                "classifiers": {
-                    "title": "Classifiers",
-                    "description": "Classifiers to use to auto-detect glossary terms. If more than one classifier, infotype predictions from the classifier defined later in sequence take precedance.",
-                    "default": [
-                        {
-                            "type": "datahub",
-                            "config": null
-                        }
-                    ],
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/DynamicTypedClassifierConfig"
-                    }
-                }
-            },
             "additionalProperties": false
         },
         "OAuthIdentityProvider": {
