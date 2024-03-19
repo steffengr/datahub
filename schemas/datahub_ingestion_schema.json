@@ -748,8 +748,8 @@
                     "description": "The usage config to use when generating usage statistics",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2024-03-18T22:14:38.419719+00:00",
-                        "start_time": "2024-03-17T00:00:00+00:00",
+                        "end_time": "2024-03-19T00:46:18.771355+00:00",
+                        "start_time": "2024-03-18T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
                         "user_email_pattern": {
@@ -10025,8 +10025,8 @@
                     "description": "Usage related configs",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2024-03-18T22:14:23.521603+00:00",
-                        "start_time": "2024-03-17T00:00:00+00:00",
+                        "end_time": "2024-03-19T00:46:04.647592+00:00",
+                        "start_time": "2024-03-18T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
                         "user_email_pattern": {
@@ -11307,8 +11307,8 @@
                     "description": "The usage config to use when generating usage statistics",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2024-03-18T22:14:38.884770+00:00",
-                        "start_time": "2024-03-17T00:00:00+00:00",
+                        "end_time": "2024-03-19T00:46:19.227854+00:00",
+                        "start_time": "2024-03-18T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
                         "user_email_pattern": {
@@ -11614,6 +11614,12 @@
                     "description": "Email domain of your organisation so users can be displayed on UI appropriately.",
                     "type": "string"
                 },
+                "incremental_lineage": {
+                    "title": "Incremental Lineage",
+                    "description": "When enabled, emits lineage as incremental to existing lineage already in DataHub. When disabled, re-states lineage on each run.",
+                    "default": false,
+                    "type": "boolean"
+                },
                 "s3_lineage_config": {
                     "title": "S3 Lineage Config",
                     "description": "Common config for S3 lineage generation",
@@ -11640,12 +11646,6 @@
                     "additionalProperties": {
                         "type": "string"
                     }
-                },
-                "incremental_lineage": {
-                    "title": "Incremental Lineage",
-                    "description": "When enabled, emits lineage as incremental to existing lineage already in DataHub. When disabled, re-states lineage on each run.  This config works with rest-sink only.",
-                    "default": false,
-                    "type": "boolean"
                 },
                 "convert_urns_to_lowercase": {
                     "title": "Convert Urns To Lowercase",
