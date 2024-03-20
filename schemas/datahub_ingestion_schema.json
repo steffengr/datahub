@@ -748,7 +748,7 @@
                     "description": "The usage config to use when generating usage statistics",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2024-03-20T08:37:41.134452+00:00",
+                        "end_time": "2024-03-20T10:14:33.549374+00:00",
                         "start_time": "2024-03-19T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
@@ -10025,7 +10025,7 @@
                     "description": "Usage related configs",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2024-03-20T08:37:26.972944+00:00",
+                        "end_time": "2024-03-20T10:14:19.125156+00:00",
                         "start_time": "2024-03-19T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
@@ -11307,7 +11307,7 @@
                     "description": "The usage config to use when generating usage statistics",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2024-03-20T08:37:41.595772+00:00",
+                        "end_time": "2024-03-20T10:14:34.013332+00:00",
                         "start_time": "2024-03-19T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
@@ -11939,6 +11939,12 @@
                     "title": "Resolve Temp Table In Lineage",
                     "description": "Whether to resolve temp table appear in lineage to upstream permanent tables.",
                     "default": true,
+                    "type": "boolean"
+                },
+                "skip_external_tables": {
+                    "title": "Skip External Tables",
+                    "description": "Whether to skip EXTERNAL tables.",
+                    "default": false,
                     "type": "boolean"
                 }
             },
