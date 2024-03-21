@@ -748,7 +748,7 @@
                     "description": "The usage config to use when generating usage statistics",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2024-03-21T08:37:06.930961+00:00",
+                        "end_time": "2024-03-21T10:00:48.640632+00:00",
                         "start_time": "2024-03-20T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
@@ -9682,6 +9682,37 @@
             },
             "additionalProperties": false
         },
+        "datahub-gc": {
+            "type": "object",
+            "properties": {
+                "type": {
+                    "type": "string",
+                    "enum": [
+                        "datahub-gc"
+                    ]
+                },
+                "config": {
+                    "$ref": "#/definitions/datahub-gc_config"
+                }
+            },
+            "required": [
+                "type",
+                "config"
+            ]
+        },
+        "datahub-gc_config": {
+            "title": "DataHubGcSourceConfig",
+            "type": "object",
+            "properties": {
+                "cleanup_expired_tokens": {
+                    "title": "Cleanup Expired Tokens",
+                    "description": "Whether to clean up expired tokens or not",
+                    "default": true,
+                    "type": "boolean"
+                }
+            },
+            "additionalProperties": false
+        },
         "bigquery": {
             "type": "object",
             "properties": {
@@ -10037,7 +10068,7 @@
                     "description": "Usage related configs",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2024-03-21T08:36:52.486403+00:00",
+                        "end_time": "2024-03-21T10:00:34.130450+00:00",
                         "start_time": "2024-03-20T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
@@ -11319,7 +11350,7 @@
                     "description": "The usage config to use when generating usage statistics",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2024-03-21T08:37:07.398812+00:00",
+                        "end_time": "2024-03-21T10:00:49.404586+00:00",
                         "start_time": "2024-03-20T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
@@ -15905,6 +15936,9 @@
                 },
                 {
                     "$ref": "#/definitions/kafka-connect"
+                },
+                {
+                    "$ref": "#/definitions/datahub-gc"
                 },
                 {
                     "$ref": "#/definitions/bigquery"
