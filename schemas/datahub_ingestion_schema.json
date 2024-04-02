@@ -748,7 +748,7 @@
                     "description": "The usage config to use when generating usage statistics",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2024-04-02T14:47:35.128013+00:00",
+                        "end_time": "2024-04-02T16:28:00.656173+00:00",
                         "start_time": "2024-04-01T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
@@ -9750,6 +9750,30 @@
                     "description": "Whether to clean up expired tokens or not",
                     "default": true,
                     "type": "boolean"
+                },
+                "truncate_indices": {
+                    "title": "Truncate Indices",
+                    "description": "Whether to truncate elasticsearch indices or not which can be safely truncated",
+                    "default": true,
+                    "type": "boolean"
+                },
+                "truncate_index_older_than_days": {
+                    "title": "Truncate Index Older Than Days",
+                    "description": "Indices older than this number of days will be truncated",
+                    "default": 30,
+                    "type": "integer"
+                },
+                "truncation_watch_until": {
+                    "title": "Truncation Watch Until",
+                    "description": "Wait for truncation of indices until this number of documents are left",
+                    "default": 10000,
+                    "type": "integer"
+                },
+                "truncation_sleep_between_seconds": {
+                    "title": "Truncation Sleep Between Seconds",
+                    "description": "Sleep between truncation monitoring.",
+                    "default": 30,
+                    "type": "integer"
                 }
             },
             "additionalProperties": false
@@ -10109,7 +10133,7 @@
                     "description": "Usage related configs",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2024-04-02T14:47:20.385342+00:00",
+                        "end_time": "2024-04-02T16:27:45.332443+00:00",
                         "start_time": "2024-04-01T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
@@ -11391,7 +11415,7 @@
                     "description": "The usage config to use when generating usage statistics",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2024-04-02T14:47:35.595363+00:00",
+                        "end_time": "2024-04-02T16:28:01.130102+00:00",
                         "start_time": "2024-04-01T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
