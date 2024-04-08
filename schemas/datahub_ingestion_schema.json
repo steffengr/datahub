@@ -6685,7 +6685,7 @@
                     "description": "Usage related configs",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2024-04-08T03:45:52.016677+00:00",
+                        "end_time": "2024-04-08T10:35:13.277133+00:00",
                         "start_time": "2024-04-07T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
@@ -9228,6 +9228,21 @@
                     "default": 20,
                     "hidden_from_docs": true,
                     "type": "integer"
+                },
+                "urn_pattern": {
+                    "title": "Urn Pattern",
+                    "default": {
+                        "allow": [
+                            ".*"
+                        ],
+                        "deny": [],
+                        "ignoreCase": true
+                    },
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/AllowDenyPattern"
+                        }
+                    ]
                 }
             }
         },
@@ -9678,7 +9693,7 @@
                     "description": "The usage config to use when generating usage statistics",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2024-04-08T03:46:07.279517+00:00",
+                        "end_time": "2024-04-08T10:35:28.985814+00:00",
                         "start_time": "2024-04-07T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
@@ -9975,7 +9990,7 @@
                     "description": "The usage config to use when generating usage statistics",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2024-04-08T03:46:06.806774+00:00",
+                        "end_time": "2024-04-08T10:35:28.497491+00:00",
                         "start_time": "2024-04-07T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
