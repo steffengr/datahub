@@ -6685,7 +6685,7 @@
                     "description": "Usage related configs",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2024-04-11T19:47:26.748451+00:00",
+                        "end_time": "2024-04-11T20:21:10.734262+00:00",
                         "start_time": "2024-04-10T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
@@ -6920,6 +6920,13 @@
                     "description": "Option to exclude empty projects from being ingested.",
                     "default": false,
                     "type": "boolean"
+                },
+                "schema_resolution_batch_size": {
+                    "title": "Schema Resolution Batch Size",
+                    "description": "The number of tables to process in a batch when resolving schema from DataHub.",
+                    "default": 100,
+                    "hidden_from_schema": true,
+                    "type": "integer"
                 }
             },
             "additionalProperties": false
@@ -10015,7 +10022,7 @@
                     "description": "The usage config to use when generating usage statistics",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2024-04-11T19:47:41.783668+00:00",
+                        "end_time": "2024-04-11T20:21:25.743134+00:00",
                         "start_time": "2024-04-10T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
@@ -10312,7 +10319,7 @@
                     "description": "The usage config to use when generating usage statistics",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2024-04-11T19:47:41.303835+00:00",
+                        "end_time": "2024-04-11T20:21:25.275550+00:00",
                         "start_time": "2024-04-10T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
