@@ -3935,7 +3935,7 @@
         },
         "mode_config": {
             "title": "ModeConfig",
-            "description": "Any non-Dataset source that produces lineage to Datasets should inherit this class.\ne.g. Orchestrators, Pipelines, BI Tools etc.",
+            "description": "Base configuration class for stateful ingestion for source configs to inherit from.",
             "type": "object",
             "properties": {
                 "env": {
@@ -3951,6 +3951,9 @@
                     "additionalProperties": {
                         "type": "string"
                     }
+                },
+                "stateful_ingestion": {
+                    "$ref": "#/definitions/StatefulStaleMetadataRemovalConfig"
                 },
                 "connect_uri": {
                     "title": "Connect Uri",
@@ -3999,6 +4002,18 @@
                             "$ref": "#/definitions/ModeAPIConfig"
                         }
                     ]
+                },
+                "ingest_embed_url": {
+                    "title": "Ingest Embed Url",
+                    "description": "Whether to Ingest embed URL for Reports",
+                    "default": true,
+                    "type": "boolean"
+                },
+                "tag_measures_and_dimensions": {
+                    "title": "Tag Measures And Dimensions",
+                    "description": "Tag measures and dimensions in the schema",
+                    "default": true,
+                    "type": "boolean"
                 }
             },
             "required": [
@@ -6685,8 +6700,8 @@
                     "description": "Usage related configs",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2024-04-11T20:21:10.734262+00:00",
-                        "start_time": "2024-04-10T00:00:00+00:00",
+                        "end_time": "2024-04-12T07:09:54.277374+00:00",
+                        "start_time": "2024-04-11T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
                         "user_email_pattern": {
@@ -10022,8 +10037,8 @@
                     "description": "The usage config to use when generating usage statistics",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2024-04-11T20:21:25.743134+00:00",
-                        "start_time": "2024-04-10T00:00:00+00:00",
+                        "end_time": "2024-04-12T07:10:09.850578+00:00",
+                        "start_time": "2024-04-11T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
                         "user_email_pattern": {
@@ -10319,8 +10334,8 @@
                     "description": "The usage config to use when generating usage statistics",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2024-04-11T20:21:25.275550+00:00",
-                        "start_time": "2024-04-10T00:00:00+00:00",
+                        "end_time": "2024-04-12T07:10:09.360417+00:00",
+                        "start_time": "2024-04-11T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
                         "user_email_pattern": {
