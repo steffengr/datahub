@@ -26,4 +26,4 @@ data_quality:
     sql: SELECT COUNT(*) FROM SampleHiveDataset
     operator:
       type: greater_than
-      value: 100
+      value: 50
