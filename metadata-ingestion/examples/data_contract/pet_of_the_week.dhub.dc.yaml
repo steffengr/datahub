@@ -22,6 +22,8 @@ schema:
 data_quality:
   - type: unique
     column: field_foo
+  - type: nonnull
+    column: customer_id
   - type: custom_sql
     sql: SELECT COUNT(*) FROM SampleHiveDataset
     operator:
