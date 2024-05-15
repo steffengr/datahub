@@ -5719,6 +5719,14 @@
                         }
                     ]
                 },
+                "database_hostname_to_platform_instance_map": {
+                    "title": "Database Hostname To Platform Instance Map",
+                    "description": "Mappings to change platform instance in generated dataset urns based on database. Use only if you really know what you are doing.",
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                },
                 "extract_usage_stats": {
                     "title": "Extract Usage Stats",
                     "description": "[experimental] Extract usage statistics for dashboards and charts.",
@@ -7993,7 +8001,7 @@
                     "description": "The usage config to use when generating usage statistics",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2024-05-15T14:01:02.578616+00:00",
+                        "end_time": "2024-05-15T15:32:19.148753+00:00",
                         "start_time": "2024-05-14T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
@@ -8935,7 +8943,7 @@
                     "description": "The usage config to use when generating usage statistics",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2024-05-15T14:01:03.053333+00:00",
+                        "end_time": "2024-05-15T15:32:19.640241+00:00",
                         "start_time": "2024-05-14T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
@@ -9994,7 +10002,7 @@
                     "description": "Usage related configs",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2024-05-15T14:00:47.681064+00:00",
+                        "end_time": "2024-05-15T15:32:04.116844+00:00",
                         "start_time": "2024-05-14T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
