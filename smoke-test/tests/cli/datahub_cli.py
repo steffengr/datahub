@@ -2,11 +2,12 @@ import json
 
 import pytest
 from datahub.ingestion.graph.client import get_default_graph
-from tests.utils import ingest_file_via_rest, wait_for_writes_to_sync
 from datahub.metadata.schema_classes import (
     BrowsePathsV2Class,
     EditableDatasetPropertiesClass,
 )
+
+from tests.utils import ingest_file_via_rest, wait_for_writes_to_sync
 
 ingested_dataset_run_id = ""
 ingested_editable_run_id = ""

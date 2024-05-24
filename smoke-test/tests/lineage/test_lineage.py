@@ -7,7 +7,7 @@ import datahub.emitter.mce_builder as builder
 import networkx as nx
 import pytest
 from datahub.emitter.mcp import MetadataChangeProposalWrapper
-from datahub.ingestion.graph.client import DataHubGraph, get_default_graph,
+from datahub.ingestion.graph.client import DataHubGraph, get_default_graph
 from datahub.metadata.schema_classes import (
     AuditStampClass,
     ChangeAuditStampsClass,
