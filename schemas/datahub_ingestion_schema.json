@@ -946,8 +946,8 @@
                     "description": "The usage config to use when generating usage statistics",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2024-05-27T07:24:14.940351+00:00",
-                        "start_time": "2024-05-26T00:00:00+00:00",
+                        "end_time": "2024-05-28T10:25:41.125514+00:00",
+                        "start_time": "2024-05-27T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
                         "user_email_pattern": {
@@ -2042,6 +2042,14 @@
             "description": "Common AWS credentials config.\n\nCurrently used by:\n    - Glue source\n    - DynamoDB source\n    - SageMaker source",
             "type": "object",
             "properties": {
+                "stateful_ingestion": {
+                    "$ref": "#/definitions/StatefulStaleMetadataRemovalConfig"
+                },
+                "platform_instance": {
+                    "title": "Platform Instance",
+                    "description": "The instance of the platform that all assets produced by this recipe belong to",
+                    "type": "string"
+                },
                 "aws_access_key_id": {
                     "title": "Aws Access Key Id",
                     "description": "AWS access key ID. Can be auto-detected, see [the AWS boto3 docs](https://boto3.amazonaws.com/v1/documentation/api/latest/guide/credentials.html) for details.",
@@ -8333,8 +8341,8 @@
                     "description": "The usage config to use when generating usage statistics",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2024-05-27T07:24:14.438307+00:00",
-                        "start_time": "2024-05-26T00:00:00+00:00",
+                        "end_time": "2024-05-28T10:25:40.626791+00:00",
+                        "start_time": "2024-05-27T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
                         "user_email_pattern": {
@@ -9147,8 +9155,8 @@
                     "description": "Usage related configs",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2024-05-27T07:23:58.834397+00:00",
-                        "start_time": "2024-05-26T00:00:00+00:00",
+                        "end_time": "2024-05-28T10:25:24.826265+00:00",
+                        "start_time": "2024-05-27T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
                         "user_email_pattern": {
