@@ -946,7 +946,7 @@
                     "description": "The usage config to use when generating usage statistics",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2024-06-04T16:16:15.475691+00:00",
+                        "end_time": "2024-06-04T16:54:48.339126+00:00",
                         "start_time": "2024-06-03T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
@@ -8342,7 +8342,7 @@
                     "description": "The usage config to use when generating usage statistics",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2024-06-04T16:16:14.971458+00:00",
+                        "end_time": "2024-06-04T16:54:47.850004+00:00",
                         "start_time": "2024-06-03T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
@@ -9156,7 +9156,7 @@
                     "description": "Usage related configs",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2024-06-04T16:15:58.882552+00:00",
+                        "end_time": "2024-06-04T16:54:33.016082+00:00",
                         "start_time": "2024-06-03T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
@@ -10009,12 +10009,14 @@
                 },
                 "catalog": {
                     "title": "Catalog",
-                    "description": "Catalog configuration where to find Iceberg tables.  See [pyiceberg's catalog configuration details](https://py.iceberg.apache.org/configuration/).",
-                    "allOf": [
-                        {
-                            "$ref": "#/definitions/IcebergCatalogConfig"
+                    "description": "Catalog configuration where to find Iceberg tables.  Only one catalog specification is supported.  The format is the same as [pyiceberg's catalog configuration](https://py.iceberg.apache.org/configuration/), where the catalog name is specified as the object name and attributes are set as key-value pairs.",
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "object",
+                        "additionalProperties": {
+                            "type": "string"
                         }
-                    ]
+                    }
                 },
                 "table_pattern": {
                     "title": "Table Pattern",
@@ -16072,37 +16074,6 @@
             "required": [
                 "hmac_access_id",
                 "hmac_access_secret"
-            ],
-            "additionalProperties": false
-        },
-        "IcebergCatalogConfig": {
-            "title": "IcebergCatalogConfig",
-            "description": "Iceberg catalog config.\n\nhttps://py.iceberg.apache.org/configuration/",
-            "type": "object",
-            "properties": {
-                "name": {
-                    "title": "Name",
-                    "description": "Name of catalog",
-                    "default": "default",
-                    "type": "string"
-                },
-                "type": {
-                    "title": "Type",
-                    "description": "Type of catalog.  See [PyIceberg](https://py.iceberg.apache.org/configuration/) for list of possible values.",
-                    "type": "string"
-                },
-                "config": {
-                    "title": "Config",
-                    "description": "Catalog specific configuration.  See [PyIceberg documentation](https://py.iceberg.apache.org/configuration/) for details.",
-                    "type": "object",
-                    "additionalProperties": {
-                        "type": "string"
-                    }
-                }
-            },
-            "required": [
-                "type",
-                "config"
             ],
             "additionalProperties": false
         },
