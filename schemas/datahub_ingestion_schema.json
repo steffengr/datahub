@@ -946,8 +946,8 @@
                     "description": "The usage config to use when generating usage statistics",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2024-06-13T18:36:28.347373+00:00",
-                        "start_time": "2024-06-12T00:00:00+00:00",
+                        "end_time": "2024-06-14T11:24:09.512687+00:00",
+                        "start_time": "2024-06-13T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
                         "user_email_pattern": {
@@ -8342,8 +8342,8 @@
                     "description": "The usage config to use when generating usage statistics",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2024-06-13T18:36:27.864939+00:00",
-                        "start_time": "2024-06-12T00:00:00+00:00",
+                        "end_time": "2024-06-14T11:24:09.025078+00:00",
+                        "start_time": "2024-06-13T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
                         "user_email_pattern": {
@@ -9156,8 +9156,8 @@
                     "description": "Usage related configs",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2024-06-13T18:36:13.344839+00:00",
-                        "start_time": "2024-06-12T00:00:00+00:00",
+                        "end_time": "2024-06-14T11:23:54.208245+00:00",
+                        "start_time": "2024-06-13T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
                         "user_email_pattern": {
@@ -9333,6 +9333,12 @@
                     "title": "Enable Legacy Sharded Table Support",
                     "description": "Use the legacy sharded table urn suffix added.",
                     "default": true,
+                    "type": "boolean"
+                },
+                "extract_policy_tags_from_catalog": {
+                    "title": "Extract Policy Tags From Catalog",
+                    "description": "This flag enables the extraction of policy tags from the Google Data Catalog API. When enabled, the extractor will fetch policy tags associated with BigQuery table columns. For more information about policy tags and column-level security, refer to the documentation: https://cloud.google.com/bigquery/docs/column-level-security-intro",
+                    "default": false,
                     "type": "boolean"
                 },
                 "scheme": {
