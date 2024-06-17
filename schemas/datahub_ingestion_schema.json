@@ -946,8 +946,8 @@
                     "description": "The usage config to use when generating usage statistics",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2024-06-15T00:27:34.076380+00:00",
-                        "start_time": "2024-06-14T00:00:00+00:00",
+                        "end_time": "2024-06-17T13:15:44.456118+00:00",
+                        "start_time": "2024-06-16T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
                         "user_email_pattern": {
@@ -8376,8 +8376,8 @@
                     "description": "The usage config to use when generating usage statistics",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2024-06-15T00:27:33.563357+00:00",
-                        "start_time": "2024-06-14T00:00:00+00:00",
+                        "end_time": "2024-06-17T13:15:43.963700+00:00",
+                        "start_time": "2024-06-16T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
                         "user_email_pattern": {
@@ -9190,8 +9190,8 @@
                     "description": "Usage related configs",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2024-06-15T00:27:17.607541+00:00",
-                        "start_time": "2024-06-14T00:00:00+00:00",
+                        "end_time": "2024-06-17T13:15:28.637741+00:00",
+                        "start_time": "2024-06-16T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
                         "user_email_pattern": {
@@ -9223,6 +9223,19 @@
                 "capture_table_label_as_tag": {
                     "title": "Capture Table Label As Tag",
                     "description": "Capture BigQuery table labels as DataHub tag",
+                    "default": false,
+                    "anyOf": [
+                        {
+                            "type": "boolean"
+                        },
+                        {
+                            "$ref": "#/definitions/AllowDenyPattern"
+                        }
+                    ]
+                },
+                "capture_view_label_as_tag": {
+                    "title": "Capture View Label As Tag",
+                    "description": "Capture BigQuery view labels as DataHub tag",
                     "default": false,
                     "anyOf": [
                         {
