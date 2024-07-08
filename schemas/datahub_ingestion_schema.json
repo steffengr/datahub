@@ -1703,7 +1703,7 @@
                 },
                 "project_dependencies": {
                     "title": "Project Dependencies",
-                    "description": "A map of project_name to local directory (accessible to the ingestion system) or Git credentials. Every local_dependencies or private remote_dependency listed in the main project's manifest.lkml file should have a corresponding entry here. If a deploy key is not provided, the ingestion system will use the same deploy key as the main project. ",
+                    "description": "A map of project_name to local directory (accessible to the ingestion system) or Git credentials. Every local_dependencies or private remote_dependency listed in the main project's manifest.lkml file should have a corresponding entry here.If a deploy key is not provided, the ingestion system will use the same deploy key as the main project. ",
                     "default": {},
                     "type": "object",
                     "additionalProperties": {
@@ -1816,6 +1816,12 @@
                     "description": "When enabled, looker refinement will be processed to adapt an existing view.",
                     "default": false,
                     "type": "boolean"
+                },
+                "liquid_variable": {
+                    "title": "Liquid Variable",
+                    "description": "A dictionary containing Liquid variables and their corresponding values, utilized in SQL-defined derived views. The Liquid template will be resolved in view.derived_table.sql and view.sql_table_name. Defaults to an empty dictionary.",
+                    "default": {},
+                    "type": "object"
                 }
             },
             "additionalProperties": false
@@ -2846,7 +2852,7 @@
                     "description": "Usage related configs",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2024-07-08T13:31:06.376873+00:00",
+                        "end_time": "2024-07-08T16:50:43.617269+00:00",
                         "start_time": "2024-07-07T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
@@ -9407,7 +9413,7 @@
                     "description": "The usage config to use when generating usage statistics",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2024-07-08T13:31:21.896594+00:00",
+                        "end_time": "2024-07-08T16:50:59.155983+00:00",
                         "start_time": "2024-07-07T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
@@ -11828,7 +11834,7 @@
                     "description": "The usage config to use when generating usage statistics",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2024-07-08T13:31:21.406993+00:00",
+                        "end_time": "2024-07-08T16:50:58.659709+00:00",
                         "start_time": "2024-07-07T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
