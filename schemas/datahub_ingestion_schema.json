@@ -9002,7 +9002,7 @@
                     "description": "Usage related configs",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2024-07-16T18:03:48.623098+00:00",
+                        "end_time": "2024-07-16T18:56:15.931240+00:00",
                         "start_time": "2024-07-15T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
@@ -9136,7 +9136,7 @@
                 "number_of_datasets_process_in_batch_if_profiling_enabled": {
                     "title": "Number Of Datasets Process In Batch If Profiling Enabled",
                     "description": "Number of partitioned table queried in batch when getting metadata. This is a low level config property which should be touched with care. This restriction is needed because we query partitions system view which throws error if we try to touch too many tables.",
-                    "default": 200,
+                    "default": 1000,
                     "type": "integer"
                 },
                 "use_tables_list_query_v2": {
@@ -9268,6 +9268,12 @@
                     "description": "The number of tables to process in a batch when resolving schema from DataHub.",
                     "default": 100,
                     "hidden_from_schema": true,
+                    "type": "integer"
+                },
+                "max_threads_dataset_parallelism": {
+                    "title": "Max Threads Dataset Parallelism",
+                    "description": "Number of worker threads to use to parallelize BigQuery Dataset Metadata Extraction. Set to 1 to disable.",
+                    "default": 20,
                     "type": "integer"
                 }
             },
@@ -12387,7 +12393,7 @@
                     "description": "The usage config to use when generating usage statistics",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2024-07-16T18:04:04.000929+00:00",
+                        "end_time": "2024-07-16T18:56:33.777742+00:00",
                         "start_time": "2024-07-15T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
@@ -14437,7 +14443,7 @@
                     "description": "The usage config to use when generating usage statistics",
                     "default": {
                         "bucket_duration": "DAY",
-                        "end_time": "2024-07-16T18:04:03.501812+00:00",
+                        "end_time": "2024-07-16T18:56:33.253161+00:00",
                         "start_time": "2024-07-15T00:00:00+00:00",
                         "queries_character_limit": 24000,
                         "top_n_queries": 10,
@@ -14749,7 +14755,7 @@
                 },
                 "max_workers": {
                     "title": "Max Workers",
-                    "description": "Number of worker threads to use for classification. Set to 1 to disable.",
+                    "description": "Number of worker processes to use for classification. Set to 1 to disable.",
                     "default": 4,
                     "type": "integer"
                 },
