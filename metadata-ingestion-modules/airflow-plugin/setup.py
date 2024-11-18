@@ -51,6 +51,8 @@ plugins: Dict[str, Set[str]] = {
 # Include datahub-rest in the base requirements.
 base_requirements.update(plugins["datahub-rest"])
 
+# Enforce plugin-v2
+base_requirements.update(plugins["plugin-v2"])
 
 mypy_stubs = {
     "types-dataclasses",
