@@ -209,7 +209,7 @@ def _parse_sql_into_task_metadata(
     # Prepare to run the SQL parser.
     graph = self.context.get(_DATAHUB_GRAPH_CONTEXT_KEY, None)
 
-    self.log.debug(
+    self.log.error(
         "Running the SQL parser %s (platform=%s, default db=%s, schema=%s): %s",
         "with graph client" if graph else "in offline mode",
         platform,
@@ -226,7 +226,7 @@ def _parse_sql_into_task_metadata(
         default_db=default_database,
         default_schema=default_schema,
     )
-    self.log.debug(f"Got sql lineage {sql_parsing_result}")
+    self.log.error(f"Got sql lineage {sql_parsing_result}")
 
     if sql_parsing_result.debug_info.error:
         error = sql_parsing_result.debug_info.error
