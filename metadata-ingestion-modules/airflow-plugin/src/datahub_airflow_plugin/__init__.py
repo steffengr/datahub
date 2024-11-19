@@ -1,6 +1,6 @@
 # Published at https://pypi.org/project/acryl-datahub/.
 __package_name__ = "acryl-datahub-airflow-plugin"
-__version__ = "0.14.1.11"
+__version__ = "0.14.1"
 
 
 def is_dev_mode() -> bool:
