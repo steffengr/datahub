@@ -293,8 +293,8 @@ class AthenaOperatorExtractor(BaseExtractor):
             self,
             sql,
             platform="athena",
-            default_database=None,
-            default_schema=self.operator.database,
+            default_database=self.operator.database,
+            default_schema=None,
         )
 
 
