@@ -222,7 +222,7 @@ def _parse_sql_into_task_metadata(
         graph=graph,
         platform=platform,
         platform_instance=None,
-        env=builder.DEFAULT_ENV,
+        env='DEV',
         default_db=default_database,
         default_schema=default_schema,
     )
@@ -293,8 +293,8 @@ class AthenaOperatorExtractor(BaseExtractor):
             self,
             sql,
             platform="athena",
-            default_database=self.operator.database,
-            default_schema=None,
+            default_database=None,
+            default_schema=self.operator.database,
         )
 
 
