@@ -294,7 +294,7 @@ class AthenaOperatorExtractor(BaseExtractor):
             sql,
             platform="athena",
             default_database=None,
-            default_schema=None,
+            default_schema=self.operator.database,
         )
 
 
